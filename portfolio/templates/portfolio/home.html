@@ -4,15 +4,36 @@
 
 {% block content %}
 
+<style>
+  /* Container to ensure square cropping */
+  .square-image-container {
+    width: 200px;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Image styling to cover the container and centered */
+  .square-image {
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+  }
+</style>
+
 <div class="row justify-content-center my-3">
-  <div class="col-5">
-    <img src="{% static 'portfolio/SquareBlonde.jpg' %}" class="img-fluid">
-  </div>
+<div class="col-5 square-image-container">
+  <img src="{% static 'portfolio/me.jpeg' %}" class="img-fluid square-image">
+</div>
 </div>
 
 <div class="row justify-content-center mb-3">
   <div class="col-md-9 text-center">
-    <h1 id="hometext" class="font-weight-bold">Nick Walter is Commander-in-Chief at ZappyCode and lives in Downtown Tokyo 😊</h1>
+    <h1 id="hometext" class="font-weight-bold">Hello, my name's Ali Zhetpis and I am UX/UI Product designer</h1>
   </div>
 </div>
 
