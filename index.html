@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ali Zhetpis — Product Designer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark');</script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.css" />
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- ── Header ── -->
+  <header class="header">
+    <div class="header__title">
+      <a href="#top" class="header__name">Ali Zhetpis</a>
+      <div class="header__info">
+        <span>Product Designer</span>
+      </div>
+    </div>
+    <nav class="header__nav">
+      <div class="header__links">
+        <a href="#work">Work</a>
+        <a href="https://drive.google.com/file/d/1BqlXDbOcypmIs5KOZLpvaTo1n3LQhssJ/view?usp=sharing" target="_blank" rel="noopener">View CV</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <img id="themeIcon" src="assets/icon-sun.svg" alt="" />
+        </button>
+      </div>
+    </nav>
+    <a href="https://cal.com/alizhetpis" target="_blank" rel="noopener" class="hero__cta header__cta">Schedule a Call</a>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="hero" id="top">
+    <div class="profile-frame" id="cardStack">
+      <div class="photo-card" id="cardC"><!-- back -->
+        <img src="assets/photos/photo3.gif" alt="" />
+      </div>
+      <div class="photo-card" id="cardB"><!-- middle -->
+        <img src="assets/photos/photo2.png" alt="" />
+      </div>
+      <div class="photo-card" id="cardA"><!-- front -->
+        <img src="assets/photos/photo1.png" alt="Ali Zhetpis" />
+      </div>
+    </div>
+    <div class="hero__content">
+      <div class="hero__text">
+        <p>Good design is just<br>clear thinking made visible.</p>
+        <p>Ex Product Designer at Alatau City Invest.<br>Currently: open to work,<br>overqualified for doing nothing.</p>
+      </div>
+      <div class="hero__links">
+        <a href="mailto:alizhetpis@gmail.com">alizhetpis@gmail.com</a>
+        <a href="https://t.me/neouo" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://www.linkedin.com/in/alizhetpis/" target="_blank" rel="noopener">Linkedln</a>
+        <a href="https://drive.google.com/file/d/1BqlXDbOcypmIs5KOZLpvaTo1n3LQhssJ/view?usp=sharing" target="_blank" rel="noopener">View CV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- ── Career Path ── -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section" id="work">
+    <div class="section__heading-row">
+      <div class="section__heading-spacer"></div>
+      <h2 class="section__heading">Career Path</h2>
+    </div>
+
+    <div class="section__items">
+
+      <!-- Alatau City Invest -->
+      <div class="item reveal">
+        <div class="item__info">
+          <div class="item__top">
+            <div class="item__company-row">
+              <div class="item__logo"><img src="assets/logo-aci.svg" alt="Alatau City Invest" /></div>
+              <div class="item__company-text">
+                <span class="item__company-name">Alatau City Invest</span>
+                <span class="item__company-sub">B2C/B2B · Fintech · Investments</span>
+              </div>
+            </div>
+            <p class="item__desc">Managed the parallel launch of the web platform and native mobile app. Completely redesigned the web ecosystem and built the native MVP from scratch. Established a brand-new visual system, product structure, and design voice. Left behind a robust, highly scalable infrastructure that actually scales.</p>
+          </div>
+          <div class="item__meta">
+            <div class="item__meta-row">
+              <span class="item__meta-label">Period</span>
+              <span class="item__meta-value">apr 2025 - jun 2026</span>
+            </div>
+            <div class="item__divider"></div>
+            <div class="item__meta-row">
+              <span class="item__meta-label">Role</span>
+              <span class="item__meta-value">Senior Product Designer</span>
+            </div>
+            <div class="item__divider"></div>
+            <div class="item__meta-row">
+              <span class="item__meta-label">Scope</span>
+              <div class="item__meta-value">
+                <span>Product Strategy,</span>
+                <span>CX/UX Research,</span>
+                <span>Metrics,</span>
+                <span>UI/UX,</span>
+                <span>Prototyping</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item__shots">
+          <img src="assets/aci-1.png" style="width:220px;height:496px;left:76px;top:-84px;" />
+          <img src="assets/aci-2.png" style="width:220px;height:496px;left:336px;top:72px;" />
+          <img src="assets/aci-3.png" style="width:220px;height:496px;left:596px;top:228px;" />
+        </div>
+      </div>
+
+      <!-- Citix -->
+      <div class="item reveal">
+        <div class="item__info">
+          <div class="item__top">
+            <div class="item__company-row">
+              <div class="item__logo"><img src="assets/logo-citix.svg" data-light="assets/logo-citix.svg" data-dark="assets/logo-citix-dark.svg" alt="Citix" /></div>
+              <div class="item__company-text">
+                <span class="item__company-name">Citix</span>
+                <span class="item__company-sub">B2B · Adtech · SaaS</span>
+              </div>
+            </div>
+            <p class="item__desc">Two platforms, one ultimate goal: keep the ad machine moving without friction. Built a high-velocity campaign creator for sales teams and translated massive data into actionable dashboards for managers. Overhauled the workflows from top to bottom. Fewer steps, faster selling.</p>
+          </div>
+          <div class="item__meta">
+            <div class="item__meta-row">
+              <span class="item__meta-label">Period</span>
+              <span class="item__meta-value">apr 2024 - mar 2025</span>
+            </div>
+            <div class="item__divider"></div>
+            <div class="item__meta-row">
+              <span class="item__meta-label">Role</span>
+              <span class="item__meta-value">Senior UX/UI Designer</span>
+            </div>
+            <div class="item__divider"></div>
+            <div class="item__meta-row">
+              <span class="item__meta-label">Scope</span>
+              <div class="item__meta-value">
+                <span>UI/UX,</span>
+                <span>Prototyping,</span>
+                <span>a little Graph Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item__shots">
+          <!-- Wide dashboard screenshot, centered vertically lower half -->
+          <img src="assets/citix-1.png" style="width:693px;height:1203px;left:50%;top:calc(50% + 381.5px);transform:translateX(-50%) translateY(-50%);border-radius:0;box-shadow:0 0 100px rgba(0,0,0,0.05);" />
+        </div>
+      </div>
+
+      <!-- Bereke Bank -->
+      <div class="item reveal">
+        <div class="item__info">
+          <div class="item__top">
+            <div class="item__company-row">
+              <div class="item__logo"><img src="assets/logo-bereke.svg" alt="Bereke Bank" /></div>
+              <div class="item__company-text">
+                <span class="item__company-name">Bereke Bank</span>
+                <span class="item__company-sub">B2C/B2B · Fintech · Transfers &amp; Payments</span>
+              </div>
+            </div>
+            <p class="item__desc">When sanctions hit, we didn't just adapt — we rebuilt. Re-launched Sberbank Kazakhstan into Bereke Bank under an entirely new identity and strategy. I hit the ground running to ship core transfers and payments from scratch. Backed every design decision with rapid usability testing to dominate the market fast.</p>
+          </div>
+          <div class="item__meta">
+            <div class="item__meta-row">
+              <span class="item__meta-label">Period</span>
+              <span class="item__meta-value">sep 2022 - may 2024</span>
+            </div>
+            <div class="item__divider"></div>
+            <div class="item__meta-row">
+              <span class="item__meta-label">Role</span>
+              <span class="item__meta-value">Middle Product Designer</span>
+            </div>
+            <div class="item__divider"></div>
+            <div class="item__meta-row">
+              <span class="item__meta-label">Scope</span>
+              <div class="item__meta-value">
+                <span>Product Strategy,</span>
+                <span>CX/UX Research,</span>
+                <span>Metrics,</span>
+                <span>UI/UX,</span>
+                <span>Prototyping</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item__shots">
+          <img src="assets/bereke-2.png" style="width:220px;height:476px;left:76px;top:-75px;" />
+          <img src="assets/bereke-1.png" style="width:220px;height:476px;left:336px;top:81px;" />
+          <img src="assets/bereke-3.png" style="width:220px;height:477px;left:596px;top:237px;" />
+        </div>
+      </div>
+
+      <!-- Sberbank -->
+      <div class="item reveal">
+        <div class="item__info">
+          <div class="item__top">
+            <div class="item__company-row">
+              <div class="item__logo"><img src="assets/sberbank.svg" alt="Sberbank" /></div>
+              <div class="item__company-text">
+                <span class="item__company-name">Sberbank</span>
+                <span class="item__company-sub">B2С · Fintech · Non-banking services</span>
+              </div>
+            </div>
+            <p class="item__desc">Joined as a junior and quickly stepped up to handle complex product challenges. Designed non-banking ecosystem services where user loyalty and retention were our primary goals. Conducted continuous UX research and usability testing to eliminate interface friction and improve return rates.</p>
+          </div>
+          <div class="item__meta">
+            <div class="item__meta-row">
+              <span class="item__meta-label">Period</span>
+              <span class="item__meta-value">sep 2022 - may 2024</span>
+            </div>
+            <div class="item__divider"></div>
+            <div class="item__meta-row">
+              <span class="item__meta-label">Role</span>
+              <span class="item__meta-value">Junior Product Designer</span>
+            </div>
+            <div class="item__divider"></div>
+            <div class="item__meta-row">
+              <span class="item__meta-label">Scope</span>
+              <div class="item__meta-value">
+                <span>Product Strategy,</span>
+                <span>UI/UX,</span>
+                <span>Prototyping,</span>
+                <span>API integration</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item__shots" data-cursor="Under NDA">
+          <div class="sber-icons">
+            <div class="sber-icon">
+              <div class="sber-icon__dot"><img src="assets/sbr-travel.svg" alt="" /></div>
+              <span class="sber-icon__label">Travel</span>
+            </div>
+            <div class="sber-icon">
+              <div class="sber-icon__dot"><img src="assets/sbr-tickets.svg" alt="" /></div>
+              <span class="sber-icon__label">Tickets</span>
+            </div>
+            <div class="sber-icon">
+              <div class="sber-icon__dot"><img src="assets/sbr-pharma.svg" alt="" /></div>
+              <span class="sber-icon__label">Pharma</span>
+            </div>
+            <div class="sber-icon">
+              <div class="sber-icon__dot"><img src="assets/sbr-prime.svg" alt="" /></div>
+              <span class="sber-icon__label">SberPrime</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /section__items career -->
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- ── Side Activity ── -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section__heading-row">
+      <div class="section__heading-spacer"></div>
+      <h2 class="section__heading">Side Activity</h2>
+    </div>
+
+    <div class="section__items">
+
+      <!-- EnerGo -->
+      <div class="item reveal">
+        <div class="item__info">
+          <div class="item__top">
+            <div class="item__company-row">
+              <div class="item__logo"><img src="assets/logo-energo.svg" alt="EnerGo" /></div>
+              <div class="item__company-text">
+                <span class="item__company-name">EneGo</span>
+                <span class="item__company-sub">B2C · EV · Mobile</span>
+              </div>
+            </div>
+            <p class="item__desc">Led the end-to-end product design for the EnerGo mobile app in Uzbekistan, driving the project from initial market research and CJM to shipping the final iOS and Android apps. Benchmarked global EV platforms, adapted best practices for the local market, and established a scalable visual system while guiding a junior designer through the process.</p>
+          </div>
+          <div class="item__meta">
+            <div class="item__meta-row">
+              <span class="item__meta-label">Period</span>
+              <span class="item__meta-value">2025 · 3 month</span>
+            </div>
+            <div class="item__divider"></div>
+            <div class="item__meta-row">
+              <span class="item__meta-label">Role</span>
+              <span class="item__meta-value">Product Designer</span>
+            </div>
+            <div class="item__divider"></div>
+            <div class="item__meta-row">
+              <span class="item__meta-label">Scope</span>
+              <div class="item__meta-value">
+                <span>Market Research,</span>
+                <span>CJM,</span>
+                <span>UI/UX,</span>
+                <span>Design System,</span>
+                <span>Prototyping</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item__shots">
+          <img src="assets/energo-4.png" style="width:220px;height:476px;left:-54px;top:72px;" />
+          <img src="assets/energo-3.png" style="width:220px;height:476px;left:206px;top:232px;" />
+          <img src="assets/energo-2.png" style="width:220px;height:476px;left:466px;top:-68px;" />
+          <img src="assets/energo-1.png" style="width:220px;height:496px;left:726px;top:72px;" />
+        </div>
+      </div>
+
+      <!-- Alphior -->
+      <div class="item reveal">
+        <div class="item__info">
+          <div class="item__top">
+            <div class="item__company-row">
+              <div class="item__logo"><img src="assets/logo-alphior.svg" data-light="assets/logo-alphior.svg" data-dark="assets/logo-alphior-dark.svg" alt="Alphior" /></div>
+              <div class="item__company-text">
+                <span class="item__company-name">Alphior</span>
+                <span class="item__company-sub">B2B · HR Tech · SaaS</span>
+              </div>
+            </div>
+            <p class="item__desc">Designed an internal CRM and admin platform from scratch to automate complex HR workflows. Transformed a fragmented maze of manual approvals into a streamlined, few-click system, making document processing faster and frictionless. Developed a scalable component library to optimize future product iterations.</p>
+          </div>
+          <div class="item__meta">
+            <div class="item__meta-row">
+              <span class="item__meta-label">Period</span>
+              <span class="item__meta-value">2024 · 4 month</span>
+            </div>
+            <div class="item__divider"></div>
+            <div class="item__meta-row">
+              <span class="item__meta-label">Role</span>
+              <span class="item__meta-value">Product Designer</span>
+            </div>
+            <div class="item__divider"></div>
+            <div class="item__meta-row">
+              <span class="item__meta-label">Scope</span>
+              <div class="item__meta-value">
+                <span>Market Research,</span>
+                <span>CJM,</span>
+                <span>UI/UX,</span>
+                <span>Design System,</span>
+                <span>Prototyping</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item__shots">
+          <img src="assets/alphior-2.png" style="width:693px;height:493px;left:100px;top:-193px;border-radius:0;" />
+          <img src="assets/alphior-1.png" style="width:693px;height:493px;left:50%;top:calc(50% + 266.5px);transform:translateX(-50%) translateY(-50%);border-radius:0;" />
+        </div>
+      </div>
+
+      <!-- AI Parking -->
+      <div class="item reveal">
+        <div class="item__info">
+          <div class="item__top">
+            <div class="item__company-row">
+              <div class="item__logo"><img src="assets/logo-aipark.svg" alt="AI Parking" /></div>
+              <div class="item__company-text">
+                <span class="item__company-name">AI Parking</span>
+                <span class="item__company-sub">B2C · Parking · Mobile</span>
+              </div>
+            </div>
+            <p class="item__desc">Managed the end-to-end design strategy for a complex IoT parking ecosystem. Spearheaded user research and customer development to translate technical hardware constraints into seamless digital scenarios. Ran iterative usability tests to transform complex data into a clean, shipped product that feels entirely effortless.</p>
+          </div>
+          <div class="item__meta">
+            <div class="item__meta-row">
+              <span class="item__meta-label">Period</span>
+              <span class="item__meta-value">2023 · 4 month</span>
+            </div>
+            <div class="item__divider"></div>
+            <div class="item__meta-row">
+              <span class="item__meta-label">Role</span>
+              <span class="item__meta-value">Product Designer</span>
+            </div>
+            <div class="item__divider"></div>
+            <div class="item__meta-row">
+              <span class="item__meta-label">Scope</span>
+              <div class="item__meta-value">
+                <span>Market Research,</span>
+                <span>CJM,</span>
+                <span>UI/UX,</span>
+                <span>Design System,</span>
+                <span>Prototyping</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item__shots">
+          <img src="assets/aipark-1.png" style="width:220px;height:809px;left:76px;top:-85px;" />
+          <img src="assets/aipark-2.png" style="width:220px;height:754px;left:336px;top:86px;" />
+          <img src="assets/aipark-3.png" style="width:220px;height:552px;left:596px;top:-33px;" />
+        </div>
+      </div>
+
+    </div><!-- /section__items side -->
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- ── Skills ── -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="skills" id="about">
+    <div class="section__heading-row" style="padding-bottom:0;">
+      <div class="section__heading-spacer"></div>
+      <h2 class="section__heading">Things I'm good at</h2>
+    </div>
+    <div class="skills__chips-row">
+      <div class="skills__chips-spacer"></div>
+      <div class="skills__chips">
+        <span class="chip reveal">Product Strategy</span>
+        <span class="chip reveal">UX/UI</span>
+        <span class="chip reveal">Design Systems</span>
+        <span class="chip reveal">User Research</span>
+        <span class="chip reveal">Usability Testing</span>
+        <span class="chip reveal">Prototyping</span>
+        <span class="chip reveal">Interaction Design</span>
+        <span class="chip reveal">Cross-functional Collaboration</span>
+        <span class="chip reveal">Metrics</span>
+        <span class="chip reveal">Accessibility</span>
+        <span class="chip reveal">Prompt Engineering</span>
+        <span class="chip reveal">Vibe Coding</span>
+      </div>
+    </div>
+    <div class="skills__cta-row">
+      <div class="skills__chips-spacer"></div>
+      <a href="https://drive.google.com/file/d/1BqlXDbOcypmIs5KOZLpvaTo1n3LQhssJ/view?usp=sharing" target="_blank" rel="noopener" class="btn-dark reveal">View CV</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- ── Footer ── -->
+  <!-- ══════════════════════════════════════════ -->
+  <footer class="footer" id="contact">
+    <div class="footer__divider"></div>
+    <div class="footer__body">
+      <div class="footer__photo"></div>
+      <div class="footer__contact">
+        <p class="footer__heading">If something caught your eye,<br>let's talk</p>
+        <div class="footer__links-grid">
+          <div class="footer__links-col">
+            <a href="mailto:alizhetpis@gmail.com">alizhetpis@gmail.com</a>
+            <a href="https://t.me/neouo" target="_blank" rel="noopener">Telegram</a>
+            <a href="https://www.linkedin.com/in/alizhetpis/" target="_blank" rel="noopener">Linkedln</a>
+          </div>
+          <div class="footer__links-col">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="https://drive.google.com/file/d/1BqlXDbOcypmIs5KOZLpvaTo1n3LQhssJ/view?usp=sharing" target="_blank" rel="noopener">View CV</a>
+          </div>
+        </div>
+        <div class="footer__meta">
+          <span id="local-time"></span>
+          <span class="capitalize">Almaty, Kazakhstan</span>
+          <span id="local-temp">—</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /page-wrap -->
+<div class="cursor-pill" id="cursorPill"><span id="cursorLabel">Drop Soon</span></div>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+  // ── Theme toggle ──────────────────────────────
+  const html      = document.documentElement;
+  const toggle    = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const SUN  = 'assets/icon-sun.svg';
+  const MOON = 'assets/icon-moon.svg';
+
+  function applyTheme(dark) {
+    html.classList.toggle('dark', dark);
+    themeIcon.src = dark ? MOON : SUN;
+    document.querySelectorAll('[data-light]').forEach(img => {
+      img.src = dark ? img.dataset.dark : img.dataset.light;
+    });
+  }
+
+  // Restore saved preference
+  applyTheme(localStorage.getItem('theme') === 'dark');
+
+  toggle.addEventListener('click', () => {
+    const isDark = !html.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    html.classList.add('theme-switching');
+    applyTheme(isDark);
+    setTimeout(() => html.classList.remove('theme-switching'), 520);
+  });
+
+  // ── Reveal on scroll ──────────────────────────
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── Astana time ───────────────────────────────
+  function updateTime() {
+    const t = new Date().toLocaleTimeString('en-GB', {
+      timeZone: 'Asia/Almaty', hour: '2-digit', minute: '2-digit', second: '2-digit'
+    });
+    const el = document.getElementById('local-time');
+    if (el) el.textContent = t;
+  }
+  updateTime();
+  setInterval(updateTime, 1000);
+
+  // ── Almaty weather ────────────────────────────
+  fetch('https://api.open-meteo.com/v1/forecast?latitude=43.2567&longitude=76.9286&current=temperature_2m,weather_code')
+    .then(r => r.json())
+    .then(({ current }) => {
+      const temp = Math.round(current.temperature_2m);
+      document.getElementById('local-temp').textContent = `${temp}°C`;
+    })
+    .catch(() => {});
+
+  // ── Lenis smooth scroll ───────────────────────
+  const lenis = new Lenis({
+    duration: 1.8,
+    easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+  });
+  function lenisRaf(time) { lenis.raf(time); requestAnimationFrame(lenisRaf); }
+  requestAnimationFrame(lenisRaf);
+
+  // ── Section entrance: slide up and lock below header ─
+  const sections = [...document.querySelectorAll('.hero, .section, .skills, .footer')];
+
+  const pageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.style.transition =
+        'opacity 0.55s cubic-bezier(.23,1,.32,1), transform 0.65s cubic-bezier(.34,1.3,.64,1)';
+      e.target.style.opacity   = '1';
+      e.target.style.transform = 'translateY(0)';
+      pageObserver.unobserve(e.target);
+    });
+  }, { threshold: 0.04 });
+
+  sections.slice(1).forEach(s => pageObserver.observe(s));
+
+  // ── Parallax on case images ───────────────────
+  // Wrap each shots panel's content in a layer so we move it as a unit
+  // without disturbing the absolute transforms on individual images
+  const parallaxItems = [...document.querySelectorAll('.item__shots')].map(section => {
+    const layer = document.createElement('div');
+    layer.style.cssText = 'position:absolute;inset:0;will-change:transform;';
+    const zoom = document.createElement('div');
+    zoom.className = 'shots-zoom';
+    [...section.childNodes].forEach(n => zoom.appendChild(n));
+    layer.appendChild(zoom);
+    section.appendChild(layer);
+    return { el: section, layer };
+  });
+
+  lenis.on('scroll', () => {
+    const vh = window.innerHeight;
+    parallaxItems.forEach(({ el, layer }) => {
+      const rect = el.getBoundingClientRect();
+      const progress = (rect.top + rect.height / 2 - vh / 2) / vh;
+      layer.style.transform = `translateY(${progress * 60}px)`;
+    });
+  });
+
+
+  // ── Smooth scroll (via Lenis) ─────────────────
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const href = a.getAttribute('href');
+      if (href === '#top') {
+        lenis.scrollTo(0, {
+          duration: 1.6,
+        });
+        return;
+      }
+      const target = document.querySelector(href);
+      if (!target) return;
+      target.style.transition = 'opacity 0.55s cubic-bezier(.23,1,.32,1), transform 0.65s cubic-bezier(.34,1.3,.64,1)';
+      target.style.opacity = '1';
+      target.style.transform = 'translateY(0)';
+      pageObserver.unobserve(target);
+      lenis.scrollTo(target, { duration: 1.6 });
+    });
+  });
+
+  // ── Three-card shuffle ────────────────────────
+  const stack = document.getElementById('cardStack');
+
+  // cards[0] = front, cards[1] = middle, cards[2] = back
+  let cards = [
+    document.getElementById('cardA'),
+    document.getElementById('cardB'),
+    document.getElementById('cardC'),
+  ];
+
+  const glow      = () => getComputedStyle(document.documentElement).getPropertyValue('--card-glow').trim();
+  const glowHover = () => getComputedStyle(document.documentElement).getPropertyValue('--card-glow-hover').trim();
+  const SHADOW      = () => `0 0 8px 6px ${glow()}`;
+  const SHADOW_HOVER = () => `0 0 16px 10px ${glowHover()}`;
+  const POS = [
+    'translate(-50%, -50%) scale(1)',                       // front
+    'translate(-50%, calc(-50% + 16px)) scale(0.897)',     // middle
+    'translate(-50%, calc(-50% + 28px)) scale(0.803)',     // back
+  ];
+  const TINT = ['transparent', 'rgba(0,0,0,0.45)', 'rgba(0,0,0,0.65)'];
+
+  let pending = [];
+  let hovering = false;
+
+  function setPos(card, i, shadow) {
+    card.style.transform = POS[i];
+    card.style.setProperty('--card-tint', TINT[i]);
+    card.style.boxShadow = shadow;
+  }
+
+  function updateFrontCard() {
+    const [front, mid, back] = cards;
+    front.style.cursor        = 'pointer';
+    front.style.pointerEvents = 'auto';
+    mid.style.cursor          = 'default';
+    mid.style.pointerEvents   = 'none';
+    back.style.cursor         = 'default';
+    back.style.pointerEvents  = 'none';
+  }
+  updateFrontCard();
+
+  // Hover lift on front card
+  stack.addEventListener('mouseover', e => {
+    if (!cards[0].contains(e.target) && e.target !== cards[0]) return;
+    if (hovering || pending.length) return;
+    hovering = true;
+    cards[0].style.transition = 'transform 0.2s cubic-bezier(.23,1,.32,1), box-shadow 0.2s ease';
+    cards[0].style.transform = POS[0].replace('scale(1)', 'scale(1.05)');
+    cards[0].style.boxShadow = SHADOW_HOVER();
+  });
+  stack.addEventListener('mouseout', e => {
+    if (!hovering) return;
+    const rel = e.relatedTarget;
+    if (rel && cards[0].contains(rel)) return;
+    hovering = false;
+    cards[0].style.transition = 'transform 0.3s cubic-bezier(.23,1,.32,1), box-shadow 0.3s ease';
+    cards[0].style.transform = POS[0];
+    cards[0].style.boxShadow = SHADOW();
+  });
+
+  function snapCards() {
+    const [front, mid, back] = cards;
+    pending.forEach(clearTimeout);
+    pending = [];
+    hovering = false;
+    [front, mid, back].forEach(c => c.style.animation = 'none');
+    setPos(front, 2, 'none'); front.style.zIndex = '1';
+    setPos(mid,   0, SHADOW()); mid.style.zIndex   = '3';
+    setPos(back,  1, 'none'); back.style.zIndex  = '2';
+    cards = [mid, back, front];
+    updateFrontCard();
+    mid.style.transition = 'transform 0.2s cubic-bezier(.23,1,.32,1), box-shadow 0.2s ease';
+  }
+
+  stack.addEventListener('click', e => {
+    if (e.target !== cards[0] && !cards[0].contains(e.target)) return;
+    if (pending.length) snapCards();
+
+    hovering = false;
+    const D = 1000;
+    const [front, mid, back] = cards;
+
+    [front, mid, back].forEach(c => c.style.transition = 'none');
+    front.style.zIndex    = '3';
+    front.style.boxShadow = 'none';
+    mid.style.boxShadow   = SHADOW();
+    front.style.animation = `shuffleToBack ${D}ms cubic-bezier(.23,1,.32,1) forwards`;
+
+    pending.push(setTimeout(() => {
+      mid.style.animation = `shuffleToFront ${D}ms cubic-bezier(.23,1,.32,1) forwards`;
+    }, 60));
+    pending.push(setTimeout(() => {
+      back.style.animation = `shuffleToMiddle ${D}ms cubic-bezier(.23,1,.32,1) forwards`;
+    }, 100));
+
+    front.style.setProperty('--card-tint', TINT[2]);
+    mid.style.setProperty('--card-tint', TINT[0]);
+    back.style.setProperty('--card-tint', TINT[1]);
+
+    pending.push(setTimeout(() => {
+      front.style.zIndex = '0';
+      mid.style.zIndex   = '3';
+      back.style.zIndex  = '2';
+    }, D * 0.24));
+
+    pending.push(setTimeout(() => {
+      [front, mid, back].forEach(c => c.style.animation = 'none');
+      setPos(front, 2, 'none'); front.style.zIndex = '1';
+      setPos(mid,   0, SHADOW()); mid.style.zIndex   = '3';
+      setPos(back,  1, 'none'); back.style.zIndex  = '2';
+      cards = [mid, back, front];
+      pending = [];
+      updateFrontCard();
+      mid.style.transition = 'transform 0.2s cubic-bezier(.23,1,.32,1), box-shadow 0.2s ease';
+    }, D + 120));
+  });
+
+  // ── Custom cursor pill ────────────────────────
+  const pill      = document.getElementById('cursorPill');
+  const pillLabel = document.getElementById('cursorLabel');
+  let pillX = 0, pillY = 0, mouseX = 0, mouseY = 0;
+
+  document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+
+  (function followCursor() {
+    pillX += (mouseX - pillX) * 0.18;
+    pillY += (mouseY - pillY) * 0.18;
+    pill.style.left = pillX + 'px';
+    pill.style.top  = pillY + 'px';
+    requestAnimationFrame(followCursor);
+  })();
+
+  document.querySelectorAll('.item__shots').forEach(el => {
+    const label = el.dataset.cursor || 'Drop Soon';
+    el.addEventListener('mouseenter', () => {
+      pillLabel.textContent = label;
+      pill.classList.add('visible');
+    });
+    el.addEventListener('mouseleave', () => pill.classList.remove('visible'));
+  });
+</script>
+</body>
+</html>

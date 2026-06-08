@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx serve *)",
+      "WebFetch(domain:garri.design)",
+      "WebFetch(domain:dziubina.com)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s -L --max-time 30 -A 'Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36' -H 'Accept-Encoding: identity' https://dziubina.com/corsair)",
+      "Read(//tmp/**)"
+    ]
+  }
+}
