@@ -33,12 +33,16 @@
 
   <!-- ── Hero ── -->
   <section class="hero" id="top">
+    <div class="hero__body">
     <div class="profile-frame" id="cardStack">
+      <div class="photo-card" id="cardD"><!-- hidden -->
+        <img src="assets/photos/photo4.jpeg" alt="" />
+      </div>
       <div class="photo-card" id="cardC"><!-- back -->
         <img src="assets/photos/photo3.gif" alt="" />
       </div>
       <div class="photo-card" id="cardB"><!-- middle -->
-        <img src="assets/photos/photo2.png" alt="" />
+        <img src="assets/photos/photo2.jpeg" alt="" />
       </div>
       <div class="photo-card" id="cardA"><!-- front -->
         <img src="assets/photos/photo1.png" alt="Ali Zhetpis" />
@@ -47,21 +51,25 @@
     <div class="hero__content">
       <div class="hero__text">
         <p>Good design is just<br>clear thinking made visible.</p>
-        <p>Ex Product Designer at Alatau City Invest.<br>Currently: open to work,<br>overqualified for doing nothing.</p>
+        <p class="hero__subtext-desktop">Ex Product Designer at Alatau City Invest.<br>Currently: open to work,<br>overqualified for doing nothing.</p>
+        <p class="hero__subtext-mobile">Ex Product Designer at Alatau City Invest. Currently: open to work</p>
       </div>
       <div class="hero__links">
-        <a href="mailto:alizhetpis@gmail.com">alizhetpis@gmail.com</a>
+        <a href="https://drive.google.com/file/d/1BqlXDbOcypmIs5KOZLpvaTo1n3LQhssJ/view?usp=sharing" target="_blank" rel="noopener" class="hero__link-cv">View CV</a>
+        <a href="mailto:alizhetpis@gmail.com" class="hero__link-mail">Mail</a>
         <a href="https://t.me/neouo" target="_blank" rel="noopener">Telegram</a>
-        <a href="https://www.linkedin.com/in/alizhetpis/" target="_blank" rel="noopener">Linkedln</a>
-        <a href="https://drive.google.com/file/d/1BqlXDbOcypmIs5KOZLpvaTo1n3LQhssJ/view?usp=sharing" target="_blank" rel="noopener">View CV</a>
+        <a href="https://www.linkedin.com/in/alizhetpis/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
+    </div><!-- /.hero__body -->
+    <a href="https://cal.com/alizhetpis" target="_blank" rel="noopener" class="hero__cta hero__mobile-cta">Schedule a Call</a>
+    <p class="hero__desktop-note">Case studies are optimized for larger screens.<br>Please visit on a desktop</p>
   </section>
 
   <!-- ══════════════════════════════════════════ -->
   <!-- ── Career Path ── -->
   <!-- ══════════════════════════════════════════ -->
-  <div class="section" id="work">
+  <div class="section section--career" id="work">
     <div class="section__heading-row">
       <div class="section__heading-spacer"></div>
       <h2 class="section__heading">Career Path</h2>
@@ -83,17 +91,18 @@
             <p class="item__desc">Managed the parallel launch of the web platform and native mobile app. Completely redesigned the web ecosystem and built the native MVP from scratch. Established a brand-new visual system, product structure, and design voice. Left behind a robust, highly scalable infrastructure that actually scales.</p>
           </div>
           <div class="item__meta">
-            <div class="item__meta-row">
-              <span class="item__meta-label">Period</span>
-              <span class="item__meta-value">apr 2025 - jun 2026</span>
+            <div class="item__meta-pair">
+              <div class="item__meta-row">
+                <span class="item__meta-label">Period</span>
+                <span class="item__meta-value">apr 2025 - jun 2026</span>
+              </div>
+              <div class="item__meta-row">
+                <span class="item__meta-label">Role</span>
+                <span class="item__meta-value">Senior Product Designer</span>
+              </div>
             </div>
             <div class="item__divider"></div>
-            <div class="item__meta-row">
-              <span class="item__meta-label">Role</span>
-              <span class="item__meta-value">Senior Product Designer</span>
-            </div>
-            <div class="item__divider"></div>
-            <div class="item__meta-row">
+            <div class="item__meta-row item__meta-scope">
               <span class="item__meta-label">Scope</span>
               <div class="item__meta-value">
                 <span>Product Strategy,</span>
@@ -106,9 +115,11 @@
           </div>
         </div>
         <div class="item__shots">
-          <img src="assets/aci-1.png" style="width:220px;height:496px;left:76px;top:-84px;" />
-          <img src="assets/aci-2.png" style="width:220px;height:496px;left:336px;top:72px;" />
-          <img src="assets/aci-3.png" style="width:220px;height:496px;left:596px;top:228px;" />
+          <div class="shots-wrap">
+            <img src="assets/aci-1.png" style="width:220px;height:496px;left:76px;top:-84px;" />
+            <img src="assets/aci-2.png" style="width:220px;height:496px;left:336px;top:72px;" />
+            <img src="assets/aci-3.png" style="width:220px;height:496px;left:596px;top:228px;" />
+          </div>
         </div>
       </div>
 
@@ -126,29 +137,31 @@
             <p class="item__desc">Two platforms, one ultimate goal: keep the ad machine moving without friction. Built a high-velocity campaign creator for sales teams and translated massive data into actionable dashboards for managers. Overhauled the workflows from top to bottom. Fewer steps, faster selling.</p>
           </div>
           <div class="item__meta">
-            <div class="item__meta-row">
-              <span class="item__meta-label">Period</span>
-              <span class="item__meta-value">apr 2024 - mar 2025</span>
+            <div class="item__meta-pair">
+              <div class="item__meta-row">
+                <span class="item__meta-label">Period</span>
+                <span class="item__meta-value">apr 2024 - mar 2025</span>
+              </div>
+              <div class="item__meta-row">
+                <span class="item__meta-label">Role</span>
+                <span class="item__meta-value">Senior UX/UI Designer</span>
+              </div>
             </div>
             <div class="item__divider"></div>
-            <div class="item__meta-row">
-              <span class="item__meta-label">Role</span>
-              <span class="item__meta-value">Senior UX/UI Designer</span>
-            </div>
-            <div class="item__divider"></div>
-            <div class="item__meta-row">
+            <div class="item__meta-row item__meta-scope">
               <span class="item__meta-label">Scope</span>
               <div class="item__meta-value">
                 <span>UI/UX,</span>
                 <span>Prototyping,</span>
-                <span>a little Graph Design</span>
+                <span>Graphic Design</span>
               </div>
             </div>
           </div>
         </div>
         <div class="item__shots">
-          <!-- Wide dashboard screenshot, centered vertically lower half -->
-          <img src="assets/citix-1.png" style="width:693px;height:1203px;left:50%;top:calc(50% + 381.5px);transform:translateX(-50%) translateY(-50%);border-radius:0;box-shadow:0 0 100px rgba(0,0,0,0.05);" />
+          <div class="shots-wrap">
+            <img src="assets/citix-1.png" style="width:693px;height:1203px;left:50%;top:calc(50% + 381.5px);transform:translateX(-50%) translateY(-50%);border-radius:0;box-shadow:0 0 100px rgba(0,0,0,0.05);" />
+          </div>
         </div>
       </div>
 
@@ -166,17 +179,18 @@
             <p class="item__desc">When sanctions hit, we didn't just adapt — we rebuilt. Re-launched Sberbank Kazakhstan into Bereke Bank under an entirely new identity and strategy. I hit the ground running to ship core transfers and payments from scratch. Backed every design decision with rapid usability testing to dominate the market fast.</p>
           </div>
           <div class="item__meta">
-            <div class="item__meta-row">
-              <span class="item__meta-label">Period</span>
-              <span class="item__meta-value">sep 2022 - may 2024</span>
+            <div class="item__meta-pair">
+              <div class="item__meta-row">
+                <span class="item__meta-label">Period</span>
+                <span class="item__meta-value">sep 2022 - may 2024</span>
+              </div>
+              <div class="item__meta-row">
+                <span class="item__meta-label">Role</span>
+                <span class="item__meta-value">Middle Product Designer</span>
+              </div>
             </div>
             <div class="item__divider"></div>
-            <div class="item__meta-row">
-              <span class="item__meta-label">Role</span>
-              <span class="item__meta-value">Middle Product Designer</span>
-            </div>
-            <div class="item__divider"></div>
-            <div class="item__meta-row">
+            <div class="item__meta-row item__meta-scope">
               <span class="item__meta-label">Scope</span>
               <div class="item__meta-value">
                 <span>Product Strategy,</span>
@@ -189,9 +203,11 @@
           </div>
         </div>
         <div class="item__shots">
-          <img src="assets/bereke-2.png" style="width:220px;height:476px;left:76px;top:-75px;" />
-          <img src="assets/bereke-1.png" style="width:220px;height:476px;left:336px;top:81px;" />
-          <img src="assets/bereke-3.png" style="width:220px;height:477px;left:596px;top:237px;" />
+          <div class="shots-wrap">
+            <img src="assets/bereke-2.png" style="width:220px;height:476px;left:76px;top:-75px;" />
+            <img src="assets/bereke-1.png" style="width:220px;height:476px;left:336px;top:81px;" />
+            <img src="assets/bereke-3.png" style="width:220px;height:477px;left:596px;top:237px;" />
+          </div>
         </div>
       </div>
 
@@ -209,17 +225,18 @@
             <p class="item__desc">Joined as a junior and quickly stepped up to handle complex product challenges. Designed non-banking ecosystem services where user loyalty and retention were our primary goals. Conducted continuous UX research and usability testing to eliminate interface friction and improve return rates.</p>
           </div>
           <div class="item__meta">
-            <div class="item__meta-row">
-              <span class="item__meta-label">Period</span>
-              <span class="item__meta-value">sep 2022 - may 2024</span>
+            <div class="item__meta-pair">
+              <div class="item__meta-row">
+                <span class="item__meta-label">Period</span>
+                <span class="item__meta-value">sep 2022 - may 2024</span>
+              </div>
+              <div class="item__meta-row">
+                <span class="item__meta-label">Role</span>
+                <span class="item__meta-value">Junior Product Designer</span>
+              </div>
             </div>
             <div class="item__divider"></div>
-            <div class="item__meta-row">
-              <span class="item__meta-label">Role</span>
-              <span class="item__meta-value">Junior Product Designer</span>
-            </div>
-            <div class="item__divider"></div>
-            <div class="item__meta-row">
+            <div class="item__meta-row item__meta-scope">
               <span class="item__meta-label">Scope</span>
               <div class="item__meta-value">
                 <span>Product Strategy,</span>
@@ -230,24 +247,13 @@
             </div>
           </div>
         </div>
-        <div class="item__shots" data-cursor="Under NDA">
-          <div class="sber-icons">
-            <div class="sber-icon">
-              <div class="sber-icon__dot"><img src="assets/sbr-travel.svg" alt="" /></div>
-              <span class="sber-icon__label">Travel</span>
-            </div>
-            <div class="sber-icon">
-              <div class="sber-icon__dot"><img src="assets/sbr-tickets.svg" alt="" /></div>
-              <span class="sber-icon__label">Tickets</span>
-            </div>
-            <div class="sber-icon">
-              <div class="sber-icon__dot"><img src="assets/sbr-pharma.svg" alt="" /></div>
-              <span class="sber-icon__label">Pharma</span>
-            </div>
-            <div class="sber-icon">
-              <div class="sber-icon__dot"><img src="assets/sbr-prime.svg" alt="" /></div>
-              <span class="sber-icon__label">SberPrime</span>
-            </div>
+        <div class="item__shots sber-shots">
+          <img class="sber-shot sber-shot--1" src="assets/sber-1.png" alt="" />
+          <img class="sber-shot sber-shot--2" src="assets/sber-2.png" alt="" />
+          <img class="sber-shot sber-shot--3" src="assets/sber-3.png" alt="" />
+          <div class="sber-also-covering" data-parallax-skip>
+            <p>also covering</p>
+            <p>Travel, Pharma &amp; SberPrime</p>
           </div>
         </div>
       </div>
@@ -273,24 +279,25 @@
             <div class="item__company-row">
               <div class="item__logo"><img src="assets/logo-energo.svg" alt="EnerGo" /></div>
               <div class="item__company-text">
-                <span class="item__company-name">EneGo</span>
+                <span class="item__company-name">EnerGo</span>
                 <span class="item__company-sub">B2C · EV · Mobile</span>
               </div>
             </div>
             <p class="item__desc">Led the end-to-end product design for the EnerGo mobile app in Uzbekistan, driving the project from initial market research and CJM to shipping the final iOS and Android apps. Benchmarked global EV platforms, adapted best practices for the local market, and established a scalable visual system while guiding a junior designer through the process.</p>
           </div>
           <div class="item__meta">
-            <div class="item__meta-row">
-              <span class="item__meta-label">Period</span>
-              <span class="item__meta-value">2025 · 3 month</span>
+            <div class="item__meta-pair">
+              <div class="item__meta-row">
+                <span class="item__meta-label">Period</span>
+                <span class="item__meta-value">2025 · 3 month</span>
+              </div>
+              <div class="item__meta-row">
+                <span class="item__meta-label">Role</span>
+                <span class="item__meta-value">Product Designer</span>
+              </div>
             </div>
             <div class="item__divider"></div>
-            <div class="item__meta-row">
-              <span class="item__meta-label">Role</span>
-              <span class="item__meta-value">Product Designer</span>
-            </div>
-            <div class="item__divider"></div>
-            <div class="item__meta-row">
+            <div class="item__meta-row item__meta-scope">
               <span class="item__meta-label">Scope</span>
               <div class="item__meta-value">
                 <span>Market Research,</span>
@@ -303,10 +310,12 @@
           </div>
         </div>
         <div class="item__shots">
-          <img src="assets/energo-4.png" style="width:220px;height:476px;left:-54px;top:72px;" />
-          <img src="assets/energo-3.png" style="width:220px;height:476px;left:206px;top:232px;" />
-          <img src="assets/energo-2.png" style="width:220px;height:476px;left:466px;top:-68px;" />
-          <img src="assets/energo-1.png" style="width:220px;height:496px;left:726px;top:72px;" />
+          <div class="shots-wrap">
+            <img src="assets/energo-4.png" style="width:220px;height:476px;left:-54px;top:72px;" />
+            <img src="assets/energo-3.png" style="width:220px;height:476px;left:206px;top:232px;" />
+            <img src="assets/energo-2.png" style="width:220px;height:476px;left:466px;top:-68px;" />
+            <img src="assets/energo-1.png" style="width:220px;height:496px;left:726px;top:72px;" />
+          </div>
         </div>
       </div>
 
@@ -324,17 +333,18 @@
             <p class="item__desc">Designed an internal CRM and admin platform from scratch to automate complex HR workflows. Transformed a fragmented maze of manual approvals into a streamlined, few-click system, making document processing faster and frictionless. Developed a scalable component library to optimize future product iterations.</p>
           </div>
           <div class="item__meta">
-            <div class="item__meta-row">
-              <span class="item__meta-label">Period</span>
-              <span class="item__meta-value">2024 · 4 month</span>
+            <div class="item__meta-pair">
+              <div class="item__meta-row">
+                <span class="item__meta-label">Period</span>
+                <span class="item__meta-value">2024 · 4 month</span>
+              </div>
+              <div class="item__meta-row">
+                <span class="item__meta-label">Role</span>
+                <span class="item__meta-value">Product Designer</span>
+              </div>
             </div>
             <div class="item__divider"></div>
-            <div class="item__meta-row">
-              <span class="item__meta-label">Role</span>
-              <span class="item__meta-value">Product Designer</span>
-            </div>
-            <div class="item__divider"></div>
-            <div class="item__meta-row">
+            <div class="item__meta-row item__meta-scope">
               <span class="item__meta-label">Scope</span>
               <div class="item__meta-value">
                 <span>Market Research,</span>
@@ -347,8 +357,10 @@
           </div>
         </div>
         <div class="item__shots">
-          <img src="assets/alphior-2.png" style="width:693px;height:493px;left:100px;top:-193px;border-radius:0;" />
-          <img src="assets/alphior-1.png" style="width:693px;height:493px;left:50%;top:calc(50% + 266.5px);transform:translateX(-50%) translateY(-50%);border-radius:0;" />
+          <div class="shots-wrap">
+            <img src="assets/alphior-2.png" style="width:693px;height:493px;left:100px;top:-193px;border-radius:0;" />
+            <img src="assets/alphior-1.png" style="width:693px;height:493px;left:50%;top:calc(50% + 266.5px);transform:translateX(-50%) translateY(-50%);border-radius:0;" />
+          </div>
         </div>
       </div>
 
@@ -366,17 +378,18 @@
             <p class="item__desc">Managed the end-to-end design strategy for a complex IoT parking ecosystem. Spearheaded user research and customer development to translate technical hardware constraints into seamless digital scenarios. Ran iterative usability tests to transform complex data into a clean, shipped product that feels entirely effortless.</p>
           </div>
           <div class="item__meta">
-            <div class="item__meta-row">
-              <span class="item__meta-label">Period</span>
-              <span class="item__meta-value">2023 · 4 month</span>
+            <div class="item__meta-pair">
+              <div class="item__meta-row">
+                <span class="item__meta-label">Period</span>
+                <span class="item__meta-value">2023 · 4 month</span>
+              </div>
+              <div class="item__meta-row">
+                <span class="item__meta-label">Role</span>
+                <span class="item__meta-value">Product Designer</span>
+              </div>
             </div>
             <div class="item__divider"></div>
-            <div class="item__meta-row">
-              <span class="item__meta-label">Role</span>
-              <span class="item__meta-value">Product Designer</span>
-            </div>
-            <div class="item__divider"></div>
-            <div class="item__meta-row">
+            <div class="item__meta-row item__meta-scope">
               <span class="item__meta-label">Scope</span>
               <div class="item__meta-value">
                 <span>Market Research,</span>
@@ -389,9 +402,11 @@
           </div>
         </div>
         <div class="item__shots">
-          <img src="assets/aipark-1.png" style="width:220px;height:809px;left:76px;top:-85px;" />
-          <img src="assets/aipark-2.png" style="width:220px;height:754px;left:336px;top:86px;" />
-          <img src="assets/aipark-3.png" style="width:220px;height:552px;left:596px;top:-33px;" />
+          <div class="shots-wrap">
+            <img src="assets/aipark-1.png" style="width:220px;height:809px;left:76px;top:-85px;" />
+            <img src="assets/aipark-2.png" style="width:220px;height:754px;left:336px;top:86px;" />
+            <img src="assets/aipark-3.png" style="width:220px;height:552px;left:596px;top:-33px;" />
+          </div>
         </div>
       </div>
 
@@ -435,19 +450,20 @@
   <footer class="footer" id="contact">
     <div class="footer__divider"></div>
     <div class="footer__body">
-      <div class="footer__photo"></div>
+      <div class="footer__spacer"></div>
       <div class="footer__contact">
         <p class="footer__heading">If something caught your eye,<br>let's talk</p>
         <div class="footer__links-grid">
           <div class="footer__links-col">
-            <a href="mailto:alizhetpis@gmail.com">alizhetpis@gmail.com</a>
+            <a href="https://drive.google.com/file/d/1BqlXDbOcypmIs5KOZLpvaTo1n3LQhssJ/view?usp=sharing" target="_blank" rel="noopener">View CV</a>
+            <a href="mailto:alizhetpis@gmail.com" class="footer__link-mail">Mail</a>
             <a href="https://t.me/neouo" target="_blank" rel="noopener">Telegram</a>
-            <a href="https://www.linkedin.com/in/alizhetpis/" target="_blank" rel="noopener">Linkedln</a>
+            <a href="https://www.linkedin.com/in/alizhetpis/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
-          <div class="footer__links-col">
+          <div class="footer__links-col footer__links-col--nav">
             <a href="#work">Work</a>
             <a href="#about">About</a>
-            <a href="https://drive.google.com/file/d/1BqlXDbOcypmIs5KOZLpvaTo1n3LQhssJ/view?usp=sharing" target="_blank" rel="noopener">View CV</a>
+            <a href="#top">To the Top</a>
           </div>
         </div>
         <div class="footer__meta">
@@ -460,7 +476,6 @@
   </footer>
 
 </div><!-- /page-wrap -->
-<div class="cursor-pill" id="cursorPill"><span id="cursorLabel">Drop Soon</span></div>
 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script>
@@ -549,7 +564,10 @@
     layer.style.cssText = 'position:absolute;inset:0;will-change:transform;';
     const zoom = document.createElement('div');
     zoom.className = 'shots-zoom';
-    [...section.childNodes].forEach(n => zoom.appendChild(n));
+    [...section.childNodes].forEach(n => {
+      if (n.dataset && n.dataset.parallaxSkip !== undefined) return;
+      zoom.appendChild(n);
+    });
     layer.appendChild(zoom);
     section.appendChild(layer);
     return { el: section, layer };
@@ -586,26 +604,29 @@
     });
   });
 
-  // ── Three-card shuffle ────────────────────────
+  // ── Four-card shuffle ────────────────────────
   const stack = document.getElementById('cardStack');
 
-  // cards[0] = front, cards[1] = middle, cards[2] = back
+  // cards[0]=front, cards[1]=mid, cards[2]=back, cards[3]=hidden
   let cards = [
     document.getElementById('cardA'),
     document.getElementById('cardB'),
     document.getElementById('cardC'),
+    document.getElementById('cardD'),
   ];
 
   const glow      = () => getComputedStyle(document.documentElement).getPropertyValue('--card-glow').trim();
   const glowHover = () => getComputedStyle(document.documentElement).getPropertyValue('--card-glow-hover').trim();
-  const SHADOW      = () => `0 0 8px 6px ${glow()}`;
-  const SHADOW_HOVER = () => `0 0 16px 10px ${glowHover()}`;
+  const SHADOW      = () => `0 0 40px 0px ${glow()}`;
+  const SHADOW_HOVER = () => `0 0 56px 4px ${glowHover()}`;
   const POS = [
-    'translate(-50%, -50%) scale(1)',                       // front
-    'translate(-50%, calc(-50% + 16px)) scale(0.897)',     // middle
-    'translate(-50%, calc(-50% + 28px)) scale(0.803)',     // back
+    'translate(-50%, -50%) scale(1)',                       // 0: front
+    'translate(-50%, calc(-50% + 16px)) scale(0.897)',     // 1: mid
+    'translate(-50%, calc(-50% + 28px)) scale(0.803)',     // 2: back
+    'translate(-50%, calc(-50% + 28px)) scale(0.803)',     // 3: hidden (same pos, opacity 0)
   ];
-  const TINT = ['transparent', 'rgba(0,0,0,0.45)', 'rgba(0,0,0,0.65)'];
+  const TINT    = ['transparent', 'rgba(0,0,0,0.45)', 'rgba(0,0,0,0.65)', 'rgba(0,0,0,0.65)'];
+  const OPACITY = ['1', '1', '1', '0'];
 
   let pending = [];
   let hovering = false;
@@ -614,16 +635,14 @@
     card.style.transform = POS[i];
     card.style.setProperty('--card-tint', TINT[i]);
     card.style.boxShadow = shadow;
+    card.style.opacity   = OPACITY[i];
   }
 
   function updateFrontCard() {
-    const [front, mid, back] = cards;
+    const [front, mid, back, hidden] = cards;
     front.style.cursor        = 'pointer';
     front.style.pointerEvents = 'auto';
-    mid.style.cursor          = 'default';
-    mid.style.pointerEvents   = 'none';
-    back.style.cursor         = 'default';
-    back.style.pointerEvents  = 'none';
+    [mid, back, hidden].forEach(c => { c.style.cursor = 'default'; c.style.pointerEvents = 'none'; });
   }
   updateFrontCard();
 
@@ -647,32 +666,39 @@
   });
 
   function snapCards() {
-    const [front, mid, back] = cards;
+    const [front, mid, back, hidden] = cards;
     pending.forEach(clearTimeout);
     pending = [];
     hovering = false;
-    [front, mid, back].forEach(c => c.style.animation = 'none');
-    setPos(front, 2, 'none'); front.style.zIndex = '1';
-    setPos(mid,   0, SHADOW()); mid.style.zIndex   = '3';
-    setPos(back,  1, 'none'); back.style.zIndex  = '2';
-    cards = [mid, back, front];
+    [front, mid, back, hidden].forEach(c => c.style.animation = 'none');
+    setPos(front,  3, 'none'); front.style.zIndex  = '1';
+    setPos(mid,    0, SHADOW()); mid.style.zIndex   = '4';
+    setPos(back,   1, 'none'); back.style.zIndex   = '3';
+    setPos(hidden, 2, 'none'); hidden.style.zIndex = '2';
+    cards = [mid, back, hidden, front];
     updateFrontCard();
     mid.style.transition = 'transform 0.2s cubic-bezier(.23,1,.32,1), box-shadow 0.2s ease';
   }
 
   stack.addEventListener('click', e => {
-    if (e.target !== cards[0] && !cards[0].contains(e.target)) return;
+    const onFront = e.target === cards[0] || cards[0].contains(e.target);
+    const onMid   = pending.length && (e.target === cards[1] || cards[1].contains(e.target));
+    if (!onFront && !onMid) return;
     if (pending.length) snapCards();
 
     hovering = false;
     const D = 1000;
-    const [front, mid, back] = cards;
+    const [front, mid, back, hidden] = cards;
 
-    [front, mid, back].forEach(c => c.style.transition = 'none');
-    front.style.zIndex    = '3';
-    front.style.boxShadow = 'none';
-    mid.style.boxShadow   = SHADOW();
-    front.style.animation = `shuffleToBack ${D}ms cubic-bezier(.23,1,.32,1) forwards`;
+    [front, mid, back, hidden].forEach(c => c.style.transition = 'none');
+    front.style.zIndex        = '4';
+    front.style.boxShadow     = 'none';
+    front.style.pointerEvents = 'none';
+    front.style.cursor        = 'default';
+    mid.style.boxShadow       = SHADOW();
+    mid.style.pointerEvents   = 'auto';
+    mid.style.cursor          = 'pointer';
+    front.style.animation     = `shuffleToHidden ${D}ms cubic-bezier(.23,1,.32,1) forwards`;
 
     pending.push(setTimeout(() => {
       mid.style.animation = `shuffleToFront ${D}ms cubic-bezier(.23,1,.32,1) forwards`;
@@ -680,52 +706,35 @@
     pending.push(setTimeout(() => {
       back.style.animation = `shuffleToMiddle ${D}ms cubic-bezier(.23,1,.32,1) forwards`;
     }, 100));
+    pending.push(setTimeout(() => {
+      hidden.style.animation = `shuffleToBack ${D}ms cubic-bezier(.23,1,.32,1) forwards`;
+    }, 140));
 
-    front.style.setProperty('--card-tint', TINT[2]);
+    front.style.setProperty('--card-tint', TINT[3]);
     mid.style.setProperty('--card-tint', TINT[0]);
     back.style.setProperty('--card-tint', TINT[1]);
+    hidden.style.setProperty('--card-tint', TINT[2]);
 
     pending.push(setTimeout(() => {
-      front.style.zIndex = '0';
-      mid.style.zIndex   = '3';
-      back.style.zIndex  = '2';
+      front.style.zIndex  = '0';
+      mid.style.zIndex    = '4';
+      back.style.zIndex   = '3';
+      hidden.style.zIndex = '2';
     }, D * 0.24));
 
     pending.push(setTimeout(() => {
-      [front, mid, back].forEach(c => c.style.animation = 'none');
-      setPos(front, 2, 'none'); front.style.zIndex = '1';
-      setPos(mid,   0, SHADOW()); mid.style.zIndex   = '3';
-      setPos(back,  1, 'none'); back.style.zIndex  = '2';
-      cards = [mid, back, front];
+      [front, mid, back, hidden].forEach(c => c.style.animation = 'none');
+      setPos(front,  3, 'none'); front.style.zIndex  = '1';
+      setPos(mid,    0, SHADOW()); mid.style.zIndex   = '4';
+      setPos(back,   1, 'none'); back.style.zIndex   = '3';
+      setPos(hidden, 2, 'none'); hidden.style.zIndex = '2';
+      cards = [mid, back, hidden, front];
       pending = [];
       updateFrontCard();
       mid.style.transition = 'transform 0.2s cubic-bezier(.23,1,.32,1), box-shadow 0.2s ease';
     }, D + 120));
   });
 
-  // ── Custom cursor pill ────────────────────────
-  const pill      = document.getElementById('cursorPill');
-  const pillLabel = document.getElementById('cursorLabel');
-  let pillX = 0, pillY = 0, mouseX = 0, mouseY = 0;
-
-  document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
-
-  (function followCursor() {
-    pillX += (mouseX - pillX) * 0.18;
-    pillY += (mouseY - pillY) * 0.18;
-    pill.style.left = pillX + 'px';
-    pill.style.top  = pillY + 'px';
-    requestAnimationFrame(followCursor);
-  })();
-
-  document.querySelectorAll('.item__shots').forEach(el => {
-    const label = el.dataset.cursor || 'Drop Soon';
-    el.addEventListener('mouseenter', () => {
-      pillLabel.textContent = label;
-      pill.classList.add('visible');
-    });
-    el.addEventListener('mouseleave', () => pill.classList.remove('visible'));
-  });
 </script>
 </body>
 </html>
