@@ -477,6 +477,8 @@
 
 </div><!-- /page-wrap -->
 
+<div class="cursor-pill" id="cursorPill"><span id="cursorLabel">Drop Soon</span></div>
+
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script>
   // ── Theme toggle ──────────────────────────────
@@ -602,6 +604,30 @@
       pageObserver.unobserve(target);
       lenis.scrollTo(target, { duration: 1.6 });
     });
+  });
+
+  // ── Custom cursor pill ────────────────────────
+  const pill      = document.getElementById('cursorPill');
+  const pillLabel = document.getElementById('cursorLabel');
+  let pillX = 0, pillY = 0, mouseX = 0, mouseY = 0;
+
+  document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+
+  (function followCursor() {
+    pillX += (mouseX - pillX) * 0.18;
+    pillY += (mouseY - pillY) * 0.18;
+    pill.style.left = pillX + 'px';
+    pill.style.top  = pillY + 'px';
+    requestAnimationFrame(followCursor);
+  })();
+
+  document.querySelectorAll('.item__shots').forEach(el => {
+    const label = el.dataset.cursor || 'Drop Soon';
+    el.addEventListener('mouseenter', () => {
+      pillLabel.textContent = label;
+      pill.classList.add('visible');
+    });
+    el.addEventListener('mouseleave', () => pill.classList.remove('visible'));
   });
 
   // ── Four-card shuffle ────────────────────────
