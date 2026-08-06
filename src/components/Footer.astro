@@ -1,0 +1,28 @@
+---
+import ScheduleCallCTA from './ScheduleCallCTA.astro';
+---
+<footer class="footer" id="contact">
+  <div class="footer__body">
+    <div class="footer__spacer"></div>
+    <div class="footer__contact">
+      <p class="footer__heading">If something caught your eye,<br>let's talk <ScheduleCallCTA location="footer" class="footer__cta" /></p>
+      <div class="footer__links-grid">
+        <div class="footer__links-col">
+          <a href="mailto:alizhetpis@gmail.com" class="link-hover footer__link-mail" data-track="Mail Click" data-track-props='{"location":"footer"}'>Mail</a>
+          <a href="https://t.me/neouo" target="_blank" rel="noopener" class="link-hover" data-track="Telegram Click" data-track-props='{"location":"footer"}'>Telegram</a>
+          <a href="https://www.linkedin.com/in/alizhetpis/" target="_blank" rel="noopener" class="link-hover" data-track="LinkedIn Click" data-track-props='{"location":"footer"}'>LinkedIn</a>
+        </div>
+        <div class="footer__links-col footer__links-col--nav">
+          <a href="https://drive.google.com/file/d/1LUT8kHDPaCcX2PIO8jaxcorvybdGU61r/view?usp=sharing" target="_blank" rel="noopener" class="link-hover" data-track="View CV" data-track-props='{"location":"footer"}'>View CV</a>
+          <a href="#work" class="link-hover nav-work-link">Work</a>
+          <a href="#top" class="link-hover">To the Top</a>
+        </div>
+      </div>
+      <div class="footer__meta">
+        <span id="local-time"></span>
+        <span class="capitalize">Almaty, Kazakhstan</span>
+        <span id="local-temp">—</span>
+      </div>
+    </div>
+  </div>
+</footer>

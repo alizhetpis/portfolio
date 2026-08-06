@@ -2,7 +2,14 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:        #fdfdfd;
+  /* Theme-invariant aliases: always resolve to the same value regardless
+     of html.dark, so JS (e.g. the theme-color <meta> writer) can read
+     "the other theme's" value without toggling the class first. --bg
+     itself still switches with html.dark exactly as before. */
+  --bg-light:  #fdfdfd;
+  --bg-dark:   #111111;
+
+  --bg:        var(--bg-light);
   --dark:      #222222;
   --muted:     #909090;
   --divider:   #dcdcdc;
@@ -14,6 +21,7 @@
   --card-back: #dbdbdb;
   --card-glow:       rgba(255,132,230,0.04);
   --card-glow-hover: rgba(255,132,230,0.09);
+  --energo-green: #2AB674;
 
   --font: 'PP Neue Montreal', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
@@ -31,7 +39,7 @@
 
 /* ── Dark theme overrides ────────────────────── */
 html.dark {
-  --bg:        #111111;
+  --bg:        var(--bg-dark);
   --dark:      #ebebeb;
   --muted:     #909090;
   --divider:   #4a4a4a;
@@ -312,16 +320,22 @@ html.dark .hero__cta:hover { background: rgba(50,83,50,0.65); }
 .hero__link-cv { display: none; }
 .hero__or { font-size: var(--text-sm); color: var(--muted); line-height: var(--line-n); }
 .hero__desktop-note { display: none; }
-.hero__links a:not(.hero__cta) {
+/* Shared hover recipe: dotted underline → solid + fade. Used by the
+   hero contact links and by cross-page link instances (e.g. the
+   EnerGo case-study meta link) — one definition, applied via class. */
+.link-hover {
   text-decoration: underline;
   text-decoration-style: dotted;
   text-decoration-color: var(--link-deco);
   text-underline-offset: 3px;
+  transition: opacity .2s;
+}
+.link-hover:hover { text-decoration-color: var(--dark); opacity: 0.55; }
+
+.hero__links a:not(.hero__cta) {
   color: var(--dark);
   width: fit-content;
 }
-.hero__links a:not(.hero__cta) { transition: opacity .2s; }
-.hero__links a:not(.hero__cta):hover { text-decoration-color: var(--dark); opacity: 0.55; }
 
 /* ── Section wrapper ─────────────────────────── */
 .section {
@@ -625,15 +639,7 @@ html.dark .sber-also-covering {
   flex: 1;
   display: flex; flex-direction: column; gap: 8px; align-items: flex-start;
 }
-.footer__links-col a {
-  text-decoration: underline;
-  text-decoration-style: dotted;
-  text-decoration-color: var(--link-deco);
-  text-underline-offset: 3px;
-  width: fit-content;
-  transition: opacity .2s;
-}
-.footer__links-col a:hover { text-decoration-color: var(--dark); opacity: 0.55; }
+.footer__links-col a { width: fit-content; }
 
 .footer__meta {
   display: flex; gap: 12px; align-items: center;
@@ -648,6 +654,22 @@ html.dark .sber-also-covering {
 
 
 .btn-dark:hover { transform: translateY(0) scale(1.05); opacity: 0.75; }
+
+/* ── Shared scroll-reveal (fade up) ────────────
+   One mechanism for both pages: JS toggles this class (and, for
+   repeat-mode sections, a transient inline transition:none on hide
+   so re-hiding is instant while revealing stays animated — matches
+   the original homepage behavior exactly). Values live here, not
+   duplicated per page. */
+.page-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 1s cubic-bezier(.25,1,.5,1);
+}
+.page-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ── Custom cursor pill ─────────────────────── */
 .item__shots { cursor: none; }

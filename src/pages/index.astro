@@ -1,0 +1,475 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CaseCard from '../components/CaseCard.astro';
+import Chip from '../components/Chip.astro';
+
+const skillChips = [
+  'Product Strategy', 'UX/UI', 'Design Systems', 'User Research',
+  'Usability Testing', 'Prototyping', 'Interaction Design',
+  'Cross-functional Collaboration', 'Metrics', 'Accessibility',
+  'Prompt Engineering', 'Vibe Coding',
+];
+---
+<Layout title="Ali Zhetpis — Product Designer" homeHref="#top" workHref="#work" cloudflareBeacon>
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preload" href="/assets/photos/photo1.png" as="image" />
+    <link rel="preload" href="/assets/photos/photo2.webp" as="image" />
+  </Fragment>
+
+  <!-- ── Hero ── -->
+  <section class="hero" id="top">
+    <div class="hero__body">
+    <div class="profile-frame" id="cardStack">
+      <div class="photo-card" id="cardC"><!-- back -->
+        <video src="/assets/photos/photo3.webm" autoplay loop muted playsinline></video>
+      </div>
+      <div class="photo-card" id="cardB"><!-- middle -->
+        <img src="/assets/photos/photo2.webp" alt="" />
+      </div>
+      <div class="photo-card" id="cardA"><!-- front -->
+        <img src="/assets/photos/photo1.png" alt="Ali Zhetpis" fetchpriority="high" />
+      </div>
+    </div>
+    <div class="hero__content">
+      <div class="hero__text">
+        <p>Hi 👋 I'm Product Designer<br>who's spent a few years<br>making Fintech apps feel a bit more human</p>
+        <p class="hero__subtext-desktop">Ex Product Designer at Alatau City Invest.<br>Currently: open to work</p>
+        <p class="hero__subtext-mobile">Ex Product Designer at Alatau City Invest. Currently: open to work</p>
+      </div>
+      <div class="hero__links">
+        <a href="https://cal.com/alizhetpis" target="_blank" rel="noopener" class="hero__cta hero__cta--inline" data-track="Schedule a Call" data-track-props='{"location":"hero"}'>Schedule a Call</a>
+        <span class="hero__or">or</span>
+        <a href="https://drive.google.com/file/d/1LUT8kHDPaCcX2PIO8jaxcorvybdGU61r/view?usp=sharing" target="_blank" rel="noopener" class="link-hover hero__link-cv" data-track="View CV" data-track-props='{"location":"hero"}'>View CV</a>
+        <a href="mailto:alizhetpis@gmail.com" class="link-hover hero__link-mail" data-track="Mail Click" data-track-props='{"location":"hero"}'>Mail</a>
+        <a href="https://t.me/neouo" target="_blank" rel="noopener" class="link-hover" data-track="Telegram Click" data-track-props='{"location":"hero"}'>Telegram</a>
+        <a href="https://www.linkedin.com/in/alizhetpis/" target="_blank" rel="noopener" class="link-hover" data-track="LinkedIn Click" data-track-props='{"location":"hero"}'>LinkedIn</a>
+      </div>
+    </div>
+    </div><!-- /.hero__body -->
+    <a href="https://cal.com/alizhetpis" target="_blank" rel="noopener" class="hero__cta hero__mobile-cta" data-track="Schedule a Call" data-track-props='{"location":"hero"}'>Schedule a Call</a>
+    <p class="hero__desktop-note">Case studies are optimized for larger screens.<br>Please visit on a desktop</p>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- ── Career Path ── -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section section--career" id="work">
+    <div class="section__heading-row">
+      <div class="section__heading-spacer"></div>
+      <h2 class="section__heading">Career Path</h2>
+    </div>
+
+    <div class="section__items">
+
+      <CaseCard
+        logoSrc="/assets/logo-aci.svg"
+        logoAlt="Alatau City Invest"
+        name="Alatau City Invest"
+        sub="B2C/B2B · Fintech · Investments"
+        desc="Managed the parallel launch of the web platform and native mobile app. Completely redesigned the web ecosystem and built the native MVP from scratch. Established a brand-new visual system, product structure, and design voice. Left behind a robust, highly scalable infrastructure that actually scales."
+        period="apr 2025 - jun 2026"
+        role="Senior Product Designer"
+        scope={["Product Strategy", "CX/UX Research", "Metrics", "UI/UX", "Prototyping"]}
+      >
+        <div class="shots-wrap" slot="shots">
+          <img src="/assets/aci-1.webp" style="width:220px;height:496px;left:76px;top:-84px;" />
+          <img src="/assets/aci-2.webp" style="width:220px;height:496px;left:336px;top:72px;" />
+          <img src="/assets/aci-3.webp" style="width:220px;height:496px;left:596px;top:228px;" />
+        </div>
+      </CaseCard>
+
+      <CaseCard
+        logoSrc="/assets/logo-citix.svg"
+        logoDarkSrc="/assets/logo-citix-dark.svg"
+        logoAlt="Citix"
+        name="Citix"
+        sub="B2B · Adtech · SaaS"
+        desc="Two platforms, one ultimate goal: keep the ad machine moving without friction. Built a high-velocity campaign creator for sales teams and translated massive data into actionable dashboards for managers. Overhauled the workflows from top to bottom. Fewer steps, faster selling."
+        period="apr 2024 - mar 2025"
+        role="Senior UX/UI Designer"
+        scope={["UI/UX", "Prototyping", "Graphic Design"]}
+      >
+        <div class="shots-wrap" slot="shots">
+          <img src="/assets/citix-1.webp" style="width:693px;height:493px;left:50%;top:50%;transform:translateX(-50%) translateY(-50%);border-radius:0;" />
+        </div>
+      </CaseCard>
+
+      <CaseCard
+        logoSrc="/assets/logo-bereke.svg"
+        logoAlt="Bereke Bank"
+        name="Bereke Bank"
+        sub="B2C/B2B · Fintech · Transfers & Payments"
+        desc="When sanctions hit, we didn't just adapt — we rebuilt. Re-launched Sberbank Kazakhstan into Bereke Bank under an entirely new identity and strategy. I hit the ground running to ship core transfers and payments from scratch. Backed every design decision with rapid usability testing to dominate the market fast."
+        period="sep 2022 - may 2024"
+        role="Middle Product Designer"
+        scope={["Product Strategy", "CX/UX Research", "Metrics", "UI/UX", "Prototyping"]}
+        cursorLabel="Under NDA"
+      >
+        <div class="shots-wrap" slot="shots">
+          <img src="/assets/bereke-2.webp" style="width:220px;height:476px;left:76px;top:-75px;" />
+          <img src="/assets/bereke-1.webp" style="width:220px;height:476px;left:336px;top:81px;" />
+          <img src="/assets/bereke-3.webp" style="width:220px;height:477px;left:596px;top:237px;" />
+        </div>
+      </CaseCard>
+
+      <CaseCard
+        logoSrc="/assets/sberbank.svg"
+        logoAlt="Sberbank"
+        name="Sberbank"
+        sub="B2С · Fintech · Non-banking services"
+        desc="Joined as a junior and quickly stepped up to handle complex product challenges. Designed non-banking ecosystem services where user loyalty and retention were our primary goals. Conducted continuous UX research and usability testing to eliminate interface friction and improve return rates."
+        period="sep 2022 - may 2024"
+        role="Junior Product Designer"
+        scope={["Product Strategy", "UI/UX", "Prototyping", "API integration"]}
+        cursorLabel="Under NDA"
+        shotsClass="sber-shots"
+      >
+        <Fragment slot="shots">
+          <img class="sber-shot sber-shot--1" src="/assets/sber-1.webp" alt="" />
+          <img class="sber-shot sber-shot--2" src="/assets/sber-2.webp" alt="" />
+          <img class="sber-shot sber-shot--3" src="/assets/sber-3.webp" alt="" />
+        </Fragment>
+      </CaseCard>
+
+    </div><!-- /section__items career -->
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- ── Side Activity ── -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section" id="freelance">
+    <div class="section__heading-row">
+      <div class="section__heading-spacer"></div>
+      <h2 class="section__heading">Freelance</h2>
+    </div>
+
+    <div class="section__items">
+
+      <CaseCard
+        logoSrc="/assets/logo-energo.svg"
+        logoAlt="EnerGo"
+        name="EnerGo"
+        sub="B2C · EV · Mobile"
+        desc="Led the end-to-end product design for the EnerGo mobile app in Uzbekistan, driving the project from initial market research and CJM to shipping the final iOS and Android apps. Benchmarked global EV platforms, adapted best practices for the local market, and established a scalable visual system while guiding a junior designer through the process."
+        period="2025 · 3 month"
+        role="Product Designer"
+        scope={["Market Research", "CJM", "UI/UX", "Design System", "Prototyping"]}
+        cursorLabel="Drop Soon"
+      >
+        <div class="shots-wrap" slot="shots">
+          <img src="/assets/energo-4.webp" style="width:220px;height:476px;left:76px;top:72px;" />
+          <img src="/assets/energo-3.webp" style="width:220px;height:476px;left:336px;top:232px;" />
+          <img src="/assets/energo-2.webp" style="width:220px;height:476px;left:596px;top:-68px;" />
+        </div>
+      </CaseCard>
+
+      <CaseCard
+        logoSrc="/assets/logo-alphior.svg"
+        logoDarkSrc="/assets/logo-alphior-dark.svg"
+        logoAlt="Alphior"
+        name="Alphior"
+        sub="B2B · HR Tech · SaaS"
+        desc="Designed an internal CRM and admin platform from scratch to automate complex HR workflows. Transformed a fragmented maze of manual approvals into a streamlined, few-click system, making document processing faster and frictionless. Developed a scalable component library to optimize future product iterations."
+        period="2024 · 4 month"
+        role="Product Designer"
+        scope={["Market Research", "CJM", "UI/UX", "Design System", "Prototyping"]}
+        cursorLabel="Drop Soon"
+      >
+        <div class="shots-wrap" slot="shots">
+          <img src="/assets/alphior-1.webp" style="width:693px;height:493px;left:50%;top:50%;transform:translateX(-50%) translateY(-50%);border-radius:0;" />
+        </div>
+      </CaseCard>
+
+      <CaseCard
+        logoSrc="/assets/logo-aipark.svg"
+        logoAlt="AI Parking"
+        name="AI Parking"
+        sub="B2C · Parking · Mobile"
+        desc="Managed the end-to-end design strategy for a complex IoT parking ecosystem. Spearheaded user research and customer development to translate technical hardware constraints into seamless digital scenarios. Ran iterative usability tests to transform complex data into a clean, shipped product that feels entirely effortless."
+        period="2023 · 4 month"
+        role="Product Designer"
+        scope={["Market Research", "CJM", "UI/UX", "Design System", "Prototyping"]}
+        cursorLabel="Drop Soon"
+      >
+        <div class="shots-wrap" slot="shots">
+          <img src="/assets/aipark-1.webp" style="width:220px;height:496px;left:76px;top:-84px;" />
+          <img src="/assets/aipark-2.webp" style="width:220px;height:496px;left:336px;top:72px;" />
+          <img src="/assets/aipark-3.webp" style="width:220px;height:496px;left:596px;top:228px;" />
+        </div>
+      </CaseCard>
+
+    </div><!-- /section__items side -->
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- ── Skills ── -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="skills" id="about">
+    <div class="section__heading-row" style="padding-bottom:0;">
+      <div class="section__heading-spacer"></div>
+      <div style="display:flex; align-items:center; gap:20px; flex:1;">
+        <h2 class="section__heading" style="flex:none;">Things I'm good at</h2>
+        <a href="https://drive.google.com/file/d/1LUT8kHDPaCcX2PIO8jaxcorvybdGU61r/view?usp=sharing" target="_blank" rel="noopener" class="btn-dark" data-track="View CV" data-track-props='{"location":"skills"}'>View CV</a>
+      </div>
+    </div>
+    <div class="skills__chips-row">
+      <div class="skills__chips-spacer"></div>
+      <div class="skills__chips">
+        {skillChips.map(label => <Chip label={label} />)}
+      </div>
+    </div>
+  </div>
+
+  <div class="cursor-pill" id="cursorPill"><span id="cursorLabel">Under NDA</span></div>
+
+  <Fragment slot="scripts">
+    <script is:inline>
+      // ── Hide header CTA when hero is visible ──────
+      const headerCta   = document.querySelector('.header__cta');
+      const heroSection = document.querySelector('.hero');
+      const footerSection = document.querySelector('.footer');
+      let heroVisible = true, footerVisible = false;
+      function updateHeaderCta() {
+        headerCta.classList.toggle('hidden', heroVisible || footerVisible);
+      }
+      new IntersectionObserver((entries) => {
+        heroVisible = entries[0].isIntersecting; updateHeaderCta();
+      }, { threshold: 0.1 }).observe(heroSection);
+      new IntersectionObserver((entries) => {
+        footerVisible = entries[0].isIntersecting; updateHeaderCta();
+      }, { threshold: 0.1 }).observe(footerSection);
+
+      // ── Astana time ───────────────────────────────
+      function updateTime() {
+        const t = new Date().toLocaleTimeString('en-GB', {
+          timeZone: 'Asia/Almaty', hour: '2-digit', minute: '2-digit', second: '2-digit'
+        });
+        const el = document.getElementById('local-time');
+        if (el) el.textContent = t;
+      }
+      updateTime();
+      setInterval(updateTime, 1000);
+
+      // ── Almaty weather ────────────────────────────
+      fetch('https://api.open-meteo.com/v1/forecast?latitude=43.2567&longitude=76.9286&current=temperature_2m,weather_code')
+        .then(r => r.json())
+        .then(({ current }) => {
+          const temp = Math.round(current.temperature_2m);
+          document.getElementById('local-temp').textContent = `${temp}°C`;
+        })
+        .catch(() => {});
+
+      document.getElementById('homeLink').addEventListener('click', e => {
+        e.preventDefault();
+        lenis.scrollTo(0, { duration: 0.9, easing: t => 1 - Math.pow(1 - t, 3) });
+      });
+      document.querySelectorAll('.nav-work-link').forEach(el => {
+        el.addEventListener('click', e => {
+          e.preventDefault();
+          const headerH = document.querySelector('.header').offsetHeight;
+          const workTop = document.getElementById('work').offsetTop - headerH - 16;
+          lenis.scrollTo(workTop, { duration: 0.7, easing: t => 1 - Math.pow(1 - t, 3) });
+        });
+      });
+
+      document.querySelectorAll('.item__shots img, .item__shots video').forEach(el => el.setAttribute('loading', 'lazy'));
+
+      // ── Section entrance: slide up and lock below header ─
+      const sections = [...document.querySelectorAll('.hero, .section, .skills, .footer')];
+      observeReveal(sections.slice(1), { repeat: true, threshold: 0.04 });
+
+      // ── Parallax on case images ───────────────────
+      // Wrap each shots panel's content in a layer so we move it as a unit
+      // without disturbing the absolute transforms on individual images
+      const parallaxItems = [...document.querySelectorAll('.item__shots')].map(section => {
+        const layer = document.createElement('div');
+        layer.style.cssText = 'position:absolute;inset:0;will-change:transform;';
+        const zoom = document.createElement('div');
+        zoom.className = 'shots-zoom';
+        [...section.childNodes].forEach(n => {
+          if (n.dataset && n.dataset.parallaxSkip !== undefined) return;
+          zoom.appendChild(n);
+        });
+        layer.appendChild(zoom);
+        section.appendChild(layer);
+        return { el: section, layer };
+      });
+
+      lenis.on('scroll', () => {
+        const vh = window.innerHeight;
+        parallaxItems.forEach(({ el, layer }) => {
+          const rect = el.getBoundingClientRect();
+          const progress = (rect.top + rect.height / 2 - vh / 2) / vh;
+          layer.style.transform = `translateY(${progress * 60}px)`;
+        });
+      });
+
+      // ── Smooth scroll (via Lenis) ─────────────────
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          e.preventDefault();
+          const href = a.getAttribute('href');
+          if (href === '#top') {
+            lenis.scrollTo(0, {
+              duration: 1.6,
+            });
+            return;
+          }
+          const target = document.querySelector(href);
+          if (!target) return;
+          lenis.scrollTo(target, { duration: 1.6 });
+        });
+      });
+
+      // ── Custom cursor pill ────────────────────────
+      const pill      = document.getElementById('cursorPill');
+      const pillLabel = document.getElementById('cursorLabel');
+      let pillX = 0, pillY = 0, mouseX = 0, mouseY = 0;
+
+      document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+
+      (function followCursor() {
+        pillX += (mouseX - pillX) * 0.18;
+        pillY += (mouseY - pillY) * 0.18;
+        pill.style.left = pillX + 'px';
+        pill.style.top  = pillY + 'px';
+        requestAnimationFrame(followCursor);
+      })();
+
+      document.querySelectorAll('.item__shots').forEach(el => {
+        const label = el.dataset.cursor || 'Under NDA';
+        el.addEventListener('mouseenter', () => {
+          pillLabel.textContent = label;
+          pill.classList.add('visible');
+        });
+        el.addEventListener('mouseleave', () => {
+          pill.classList.remove('visible');
+          pillX = mouseX; pillY = mouseY;
+        });
+      });
+
+      // ── Four-card shuffle ────────────────────────
+      const stack = document.getElementById('cardStack');
+
+      // cards[0]=front, cards[1]=mid, cards[2]=back, cards[3]=hidden
+      let cards = [
+        document.getElementById('cardA'),
+        document.getElementById('cardB'),
+        document.getElementById('cardC'),
+      ];
+
+      const glow      = () => getComputedStyle(document.documentElement).getPropertyValue('--card-glow').trim();
+      const glowHover = () => getComputedStyle(document.documentElement).getPropertyValue('--card-glow-hover').trim();
+      const SHADOW      = () => `0 0 40px 0px ${glow()}`;
+      const SHADOW_HOVER = () => `0 0 56px 4px ${glowHover()}`;
+      const POS = [
+        'translate(-50%, -50%) scale(1)',
+        'translate(calc(-50% - 20px), calc(-50% + 10px)) scale(0.897) rotate(-4deg)',
+        'translate(-50%, calc(-50% + 18px)) scale(0.803)',
+      ];
+      const TINT    = ['transparent', 'rgba(0,0,0,0.45)', 'rgba(0,0,0,0.65)'];
+      const OPACITY = ['1', '1', '1'];
+
+      let pending = [];
+      let hovering = false;
+
+      function setPos(card, i, shadow) {
+        card.style.transform = POS[i];
+        card.style.setProperty('--card-tint', TINT[i]);
+        card.style.boxShadow = shadow;
+        card.style.opacity   = OPACITY[i];
+      }
+
+      function updateFrontCard() {
+        const [front, mid, back] = cards;
+        front.style.cursor        = 'pointer';
+        front.style.pointerEvents = 'auto';
+        [mid, back].forEach(c => { c.style.cursor = 'default'; c.style.pointerEvents = 'none'; });
+      }
+      updateFrontCard();
+
+      // Hover lift on front card
+      stack.addEventListener('mouseover', e => {
+        if (!cards[0].contains(e.target) && e.target !== cards[0]) return;
+        if (hovering || pending.length) return;
+        hovering = true;
+        cards[0].style.transition = 'transform 0.2s cubic-bezier(.23,1,.32,1), box-shadow 0.2s ease';
+        cards[0].style.transform = POS[0].replace('scale(1)', 'scale(1.05)');
+        cards[0].style.boxShadow = SHADOW_HOVER();
+      });
+      stack.addEventListener('mouseout', e => {
+        if (!hovering) return;
+        const rel = e.relatedTarget;
+        if (rel && cards[0].contains(rel)) return;
+        hovering = false;
+        cards[0].style.transition = 'transform 0.3s cubic-bezier(.23,1,.32,1), box-shadow 0.3s ease';
+        cards[0].style.transform = POS[0];
+        cards[0].style.boxShadow = SHADOW();
+      });
+
+      function snapCards() {
+        const [front, mid, back] = cards;
+        pending.forEach(clearTimeout);
+        pending = [];
+        hovering = false;
+        [front, mid, back].forEach(c => { c.style.animation = 'none'; c.style.transition = 'none'; });
+        setPos(front, 2, 'none'); front.style.zIndex = '2';
+        setPos(mid,   0, SHADOW()); mid.style.zIndex  = '4';
+        setPos(back,  1, 'none'); back.style.zIndex   = '3';
+        cards = [mid, back, front];
+        updateFrontCard();
+        mid.style.transition = 'transform 0.2s cubic-bezier(.23,1,.32,1), box-shadow 0.2s ease, --card-tint 0.5s ease';
+      }
+
+      stack.addEventListener('click', e => {
+        const onFront = e.target === cards[0] || cards[0].contains(e.target);
+        const onMid   = pending.length && (e.target === cards[1] || cards[1].contains(e.target));
+        if (!onFront && !onMid) return;
+        if (pending.length) snapCards();
+
+        hovering = false;
+        const D = 1000;
+        const [front, mid, back] = cards;
+
+        [front, mid, back].forEach(c => c.style.transition = '--card-tint 0.5s ease');
+        front.style.zIndex        = '5';
+        front.style.boxShadow     = 'none';
+        front.style.pointerEvents = 'none';
+        front.style.cursor        = 'default';
+        mid.style.boxShadow       = SHADOW();
+        mid.style.pointerEvents   = 'auto';
+        mid.style.cursor          = 'pointer';
+        front.style.animation     = `shuffleFrontToBack ${D}ms cubic-bezier(.23,1,.32,1) forwards`;
+
+        pending.push(setTimeout(() => {
+          mid.style.animation = `shuffleToFront ${D}ms cubic-bezier(.23,1,.32,1) forwards`;
+        }, 60));
+        pending.push(setTimeout(() => {
+          back.style.animation = `shuffleToMiddle ${D}ms cubic-bezier(.23,1,.32,1) forwards`;
+        }, 100));
+
+        mid.style.setProperty('--card-tint', TINT[0]);
+        back.style.setProperty('--card-tint', TINT[1]);
+
+        pending.push(setTimeout(() => {
+          front.style.zIndex = '1';
+          mid.style.zIndex   = '4';
+          back.style.zIndex  = '3';
+        }, D * 0.38));
+
+        pending.push(setTimeout(() => {
+          [front, mid, back].forEach(c => { c.style.animation = 'none'; c.style.transition = 'none'; });
+          setPos(front, 2, 'none'); front.style.zIndex = '2';
+          setPos(mid,   0, SHADOW()); mid.style.zIndex  = '4';
+          setPos(back,  1, 'none'); back.style.zIndex   = '3';
+          [front, mid, back].forEach(c => c.style.transition = '');
+          cards = [mid, back, front];
+          pending = [];
+          updateFrontCard();
+          mid.style.transition = 'transform 0.2s cubic-bezier(.23,1,.32,1), box-shadow 0.2s ease, --card-tint 0.5s ease';
+        }, D + 120));
+      });
+    </script>
+  </Fragment>
+</Layout>

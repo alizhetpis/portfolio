@@ -1,0 +1,60 @@
+---
+// Shared skeleton for the 7 Career Path / Freelance case cards. Per-image
+// layout (sizes, absolute positions, rotation) is genuinely unique per
+// card and stays as the caller's own markup via the "shots" slot, not a
+// prop — abstracting that further would risk it drifting from the design.
+interface Props {
+  logoSrc: string;
+  logoDarkSrc?: string;
+  logoAlt: string;
+  name: string;
+  sub: string;
+  desc: string;
+  period: string;
+  role: string;
+  scope: string[];
+  cursorLabel?: string;
+  shotsClass?: string;
+}
+const { logoSrc, logoDarkSrc, logoAlt, name, sub, desc, period, role, scope, cursorLabel, shotsClass } = Astro.props;
+---
+<div class="item">
+  <div class="item__info">
+    <div class="item__top">
+      <div class="item__company-row">
+        <div class="item__logo">
+          {logoDarkSrc
+            ? <img src={logoSrc} data-light={logoSrc} data-dark={logoDarkSrc} alt={logoAlt} />
+            : <img src={logoSrc} alt={logoAlt} />}
+        </div>
+        <div class="item__company-text">
+          <span class="item__company-name">{name}</span>
+          <span class="item__company-sub">{sub}</span>
+        </div>
+      </div>
+      <p class="item__desc">{desc}</p>
+    </div>
+    <div class="item__meta">
+      <div class="item__meta-pair">
+        <div class="item__meta-row">
+          <span class="item__meta-label">Period</span>
+          <span class="item__meta-value">{period}</span>
+        </div>
+        <div class="item__meta-row">
+          <span class="item__meta-label">Role</span>
+          <span class="item__meta-value">{role}</span>
+        </div>
+      </div>
+      <div class="item__divider"></div>
+      <div class="item__meta-row item__meta-scope">
+        <span class="item__meta-label">Scope</span>
+        <div class="item__meta-value">
+          {scope.map((s, i) => <span>{s}{i < scope.length - 1 ? ',' : ''}</span>)}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class:list={['item__shots', shotsClass]} data-cursor={cursorLabel}>
+    <slot name="shots" />
+  </div>
+</div>

@@ -4,7 +4,7 @@ const { test, expect } = require('@playwright/test');
 test.describe('Deep performance', () => {
 
   test.beforeEach(async ({ page }) => {
-    await page.goto('file:///Users/oui/Desktop/portfolio/index.html');
+    await page.goto('file:///Users/oui/Documents/portfolio/dist/index.html');
     await page.waitForLoadState('domcontentloaded');
     await page.waitForTimeout(300);
   });

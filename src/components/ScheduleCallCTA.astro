@@ -1,0 +1,15 @@
+---
+interface Props {
+  location: string;
+  class?: string;
+}
+const { location, class: className } = Astro.props;
+---
+<a
+  href="https://cal.com/alizhetpis"
+  target="_blank"
+  rel="noopener"
+  class:list={['hero__cta', className]}
+  data-track="Schedule a Call"
+  data-track-props={JSON.stringify({ location })}
+>Schedule a Call</a>

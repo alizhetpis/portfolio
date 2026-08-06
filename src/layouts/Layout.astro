@@ -1,0 +1,144 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  homeHref: string;
+  workHref: string;
+  footer?: boolean;
+  cloudflareBeacon?: boolean;
+}
+const { title, homeHref, workHref, footer = true, cloudflareBeacon = false } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G3KZTJ0KKP"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G3KZTJ0KKP');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Mirrors --bg-light in style.css; the browser needs this literal
+       before any stylesheet/JS runs, so it can't reference the CSS var
+       directly, but every JS-driven update reads --bg-light/--bg-dark
+       instead of hardcoding this hex again (see the theme-toggle script
+       below and the FOUC script). -->
+  <meta name="theme-color" id="themeColorMeta" content="#fdfdfd" />
+  <title>{title}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/style.css" />
+  <slot name="head" />
+  <script is:inline>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+      const meta = document.getElementById('themeColorMeta');
+      const bgDark = getComputedStyle(document.documentElement).getPropertyValue('--bg-dark').trim();
+      meta.content = bgDark;
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.css" />
+</head>
+<body>
+<div class="page-wrap">
+
+  <Header homeHref={homeHref} workHref={workHref} />
+
+  <slot />
+
+  {footer && <Footer />}
+
+</div><!-- /page-wrap -->
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script is:inline>
+  // ── Theme toggle ──────────────────────────────
+  const html            = document.documentElement;
+  const toggle           = document.getElementById('themeToggle');
+  const themeColorMeta   = document.getElementById('themeColorMeta');
+  const bgLight = getComputedStyle(html).getPropertyValue('--bg-light').trim();
+  const bgDark  = getComputedStyle(html).getPropertyValue('--bg-dark').trim();
+
+  function applyTheme(dark) {
+    html.classList.toggle('dark', dark);
+    themeColorMeta.content = dark ? bgDark : bgLight;
+    document.querySelectorAll('[data-light]').forEach(img => {
+      img.src = dark ? img.dataset.dark : img.dataset.light;
+    });
+  }
+
+  // Restore saved preference
+  applyTheme(localStorage.getItem('theme') === 'dark');
+
+  toggle.addEventListener('click', () => {
+    const isDark = !html.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    html.classList.add('theme-switching');
+    applyTheme(isDark);
+    setTimeout(() => html.classList.remove('theme-switching'), 280);
+    track('Theme Toggle', { mode: isDark ? 'dark' : 'light' });
+  });
+
+  // ── Event tracking ────────────────────────────
+  function track(name, props) {
+    if (window.va) window.va('event', name, props);
+    if (window.gtag) window.gtag('event', name, props);
+  }
+  document.querySelectorAll('[data-track]').forEach(el => {
+    el.addEventListener('click', () => {
+      track(el.dataset.track, el.dataset.trackProps ? JSON.parse(el.dataset.trackProps) : undefined);
+    });
+  });
+
+  // ── Lenis smooth scroll ───────────────────────
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+  });
+  window.lenis = lenis;
+  function lenisRaf(time) { lenis.raf(time); requestAnimationFrame(lenisRaf); }
+  requestAnimationFrame(lenisRaf);
+
+  // ── Arrow key scroll ──────────────────────────
+  document.addEventListener('keydown', e => {
+    const ease = t => 1 - Math.pow(1 - t, 3);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   { e.preventDefault(); lenis.scrollTo(window.scrollY - 100, { duration: 0.8, easing: ease }); }
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); lenis.scrollTo(window.scrollY + 100, { duration: 0.8, easing: ease }); }
+  });
+
+  // ── Shared scroll-reveal (fade up) ────────────
+  // One mechanism for both pages: toggles the .page-reveal/.visible
+  // classes defined in style.css. `repeat:true` reproduces the
+  // homepage's original behavior (hides again scrolling back past,
+  // snapping instantly via a transient inline transition:none so only
+  // the reveal itself animates); `repeat:false` (the default) reveals
+  // once and stops observing, matching the case-study page's behavior.
+  window.observeReveal = function observeReveal(items, { repeat = false, threshold = 0.04, rootMargin = '0px' } = {}) {
+    items.forEach(el => el.classList.add('page-reveal'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.transition = '';
+          e.target.classList.add('visible');
+          if (!repeat) io.unobserve(e.target);
+        } else if (repeat) {
+          e.target.style.transition = 'none';
+          e.target.classList.remove('visible');
+        }
+      });
+    }, { threshold, rootMargin });
+    items.forEach(el => io.observe(el));
+    return io;
+  };
+</script>
+<slot name="scripts" />
+{cloudflareBeacon && <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a13051edef894d48903c400543f04f61"}' />}
+</body>
+</html>
