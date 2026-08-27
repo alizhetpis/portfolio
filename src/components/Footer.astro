@@ -1,5 +1,10 @@
 ---
 import ScheduleCallCTA from './ScheduleCallCTA.astro';
+
+interface Props {
+  workHref?: string;
+}
+const { workHref = '#work' } = Astro.props;
 ---
 <footer class="footer" id="contact">
   <div class="footer__body">
@@ -14,7 +19,7 @@ import ScheduleCallCTA from './ScheduleCallCTA.astro';
         </div>
         <div class="footer__links-col footer__links-col--nav">
           <a href="https://drive.google.com/file/d/1LUT8kHDPaCcX2PIO8jaxcorvybdGU61r/view?usp=sharing" target="_blank" rel="noopener" class="link-hover" data-track="View CV" data-track-props='{"location":"footer"}'>View CV</a>
-          <a href="#work" class="link-hover nav-work-link">Work</a>
+          <a href={workHref} class="link-hover nav-work-link">Work</a>
           <a href="#top" class="link-hover">To the Top</a>
         </div>
       </div>

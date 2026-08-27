@@ -8,8 +8,9 @@ interface Props {
   workHref: string;
   footer?: boolean;
   cloudflareBeacon?: boolean;
+  onePageMobile?: boolean;
 }
-const { title, homeHref, workHref, footer = true, cloudflareBeacon = false } = Astro.props;
+const { title, homeHref, workHref, footer = true, cloudflareBeacon = false, onePageMobile = false } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -45,14 +46,14 @@ const { title, homeHref, workHref, footer = true, cloudflareBeacon = false } = A
   </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.css" />
 </head>
-<body>
-<div class="page-wrap">
+<body class:list={{ 'one-page-mobile': onePageMobile }}>
+<Header homeHref={homeHref} workHref={workHref} />
 
-  <Header homeHref={homeHref} workHref={workHref} />
+<div class="page-wrap">
 
   <slot />
 
-  {footer && <Footer />}
+  {footer && <Footer workHref={workHref} />}
 
 </div><!-- /page-wrap -->
 
@@ -96,6 +97,36 @@ const { title, homeHref, workHref, footer = true, cloudflareBeacon = false } = A
     });
   });
 
+  // ── Page transition fade ──────────────────────
+  // No client-side routing here — every navigation is still a full page
+  // load — but fading the outgoing page out before it unloads, paired
+  // with the fade-in above on arrival, replaces the browser's default
+  // hard cut with a smooth crossfade between pages.
+  document.querySelectorAll('a[href]').forEach(a => {
+    a.addEventListener('click', e => {
+      if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      if (a.target && a.target !== '_self') return;
+      if (a.hasAttribute('download')) return;
+      let url;
+      try { url = new URL(a.href, location.href); } catch { return; }
+      if (url.origin !== location.origin || url.pathname === location.pathname) return;
+      e.preventDefault();
+      document.querySelector('.page-wrap').classList.add('page-leaving');
+
+      // The "Back" link means "return to where I was", not "go to this
+      // specific URL" — a fresh navigation to href would always land at
+      // the top of that page. Real history traversal instead lets the
+      // browser restore the exact scroll position it was at before, as
+      // long as that's actually where we came from.
+      if (a.classList.contains('cs-back') && window.history.length > 1 && document.referrer.startsWith(location.origin)) {
+        setTimeout(() => { window.history.back(); }, 600);
+        return;
+      }
+
+      setTimeout(() => { window.location.href = url.href; }, 600);
+    });
+  });
+
   // ── Lenis smooth scroll ───────────────────────
   const lenis = new Lenis({
     duration: 1.2,
@@ -111,6 +142,17 @@ const { title, homeHref, workHref, footer = true, cloudflareBeacon = false } = A
     const ease = t => 1 - Math.pow(1 - t, 3);
     if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   { e.preventDefault(); lenis.scrollTo(window.scrollY - 100, { duration: 0.8, easing: ease }); }
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); lenis.scrollTo(window.scrollY + 100, { duration: 0.8, easing: ease }); }
+  });
+
+  // ── Footer "To the Top" ───────────────────────
+  // Always scrolls this page's own hero back into view — shared here
+  // since the Footer component (and its #top link) is used by every
+  // page, regardless of what homeHref points to for that page's header.
+  document.querySelectorAll('a[href="#top"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      lenis.scrollTo(0, { duration: 1.6 });
+    });
   });
 
   // ── Shared scroll-reveal (fade up) ────────────
@@ -137,6 +179,29 @@ const { title, homeHref, workHref, footer = true, cloudflareBeacon = false } = A
     items.forEach(el => io.observe(el));
     return io;
   };
+
+  // ── Footer: Almaty local time + weather ───────
+  // Shared here (not per-page) since the Footer component itself is
+  // shared across pages.
+  if (document.getElementById('local-time')) {
+    function updateLocalTime() {
+      const t = new Date().toLocaleTimeString('en-GB', {
+        timeZone: 'Asia/Almaty', hour: '2-digit', minute: '2-digit', second: '2-digit'
+      });
+      document.getElementById('local-time').textContent = t;
+    }
+    updateLocalTime();
+    setInterval(updateLocalTime, 1000);
+  }
+  if (document.getElementById('local-temp')) {
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=43.2567&longitude=76.9286&current=temperature_2m,weather_code')
+      .then(r => r.json())
+      .then(({ current }) => {
+        const temp = Math.round(current.temperature_2m);
+        document.getElementById('local-temp').textContent = `${temp}°C`;
+      })
+      .catch(() => {});
+  }
 </script>
 <slot name="scripts" />
 {cloudflareBeacon && <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a13051edef894d48903c400543f04f61"}' />}

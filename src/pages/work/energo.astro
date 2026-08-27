@@ -1,0 +1,1147 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="EnerGo — Ali Zhetpis" homeHref="/" workHref="/#work">
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet" />
+  </Fragment>
+  <main class="cs-main">
+
+    <!-- ── Hero ── -->
+    <section class="cs-page">
+      <div style="display:flex; flex-direction:column; gap:80px; width:100%;">
+        <div class="cs-row">
+          <div class="cs-col-left">
+            <a href="/" class="cs-back">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4L12 20M12 4L6 10M12 4L18 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Back
+            </a>
+          </div>
+          <div class="cs-col-right">
+            <img src="/assets/energo/icon.svg" alt="EnerGo icon" class="cs-icon" />
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <p class="cs-heading">EnerGo</p>
+              <p class="cs-desc">A 0→1 charging app for a market where EVs arrived before good software did.<br>Researched, designed, written, and shipped in 3 months</p>
+            </div>
+            <div class="cs-meta">
+              <div class="cs-meta-row">
+                <span class="cs-meta-label">Period</span>
+                <span class="cs-meta-value">2025 · 3 months</span>
+              </div>
+              <div class="cs-meta-row">
+                <span class="cs-meta-label">Role</span>
+                <span class="cs-meta-value">Lead Product Designer</span>
+              </div>
+              <div class="cs-meta-row">
+                <span class="cs-meta-label">Scope</span>
+                <span class="cs-meta-value">Research, UI/UX, UX Writing, CJM, Design System, Prototyping</span>
+              </div>
+              <div class="cs-meta-row">
+                <span class="cs-meta-label">Platform</span>
+                <span class="cs-meta-value">iOS &amp; Android</span>
+              </div>
+              <div class="cs-meta-row">
+                <span class="cs-meta-label">Link</span>
+                <span class="cs-meta-value"><a href="https://energocharge.uz" target="_blank" rel="noopener" class="link-hover">energocharge.uz</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Photo / wordmark visual ── -->
+        <div class="cs-visual-row">
+          <div class="cs-visual-panel cs-visual-panel--product">
+            <div class="cs-visual-glow" aria-hidden="true"></div>
+            <img src="/assets/energo/v2/wordmark-icon.svg" alt="" class="cs-visual-wordmark-icon" />
+            <img src="/assets/energo/v2/wordmark-text.svg" alt="EnerGo" class="cs-visual-wordmark-text" />
+            <img src="/assets/energo/v2/charging-station.png" alt="EnerGo charging station" class="cs-visual-product" />
+          </div>
+          <div class="cs-visual-panel cs-visual-panel--phone">
+            <img src="/assets/energo/v2/phone-mockup.png" alt="EnerGo app icon on a phone home screen" class="cs-visual-phone" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Process timeline ── -->
+    <section class="cs-page">
+      <div class="cs-stack">
+        <p class="cs-section-heading">Process</p>
+        <div class="cs-process">
+          <div class="cs-process__weeks">
+            <span>week 1-2</span><span>week 3-4</span><span>week 5-6</span>
+            <span>week 7-8</span><span>week 9-10</span><span>week 11-12</span>
+          </div>
+          <div class="cs-process__track">
+            <div class="cs-process__col"></div><div class="cs-process__col"></div><div class="cs-process__col"></div>
+            <div class="cs-process__col"></div><div class="cs-process__col"></div><div class="cs-process__col"></div>
+            <span class="cs-process__pill" style="left:2%; top:5%; width:30%;"><b class="cs-process__num">1</b>Research</span>
+            <span class="cs-process__pill" style="left:20%; top:24%; width:28%;"><b class="cs-process__num">2</b>Ideation</span>
+            <span class="cs-process__pill" style="left:35%; top:43%; width:30%;"><b class="cs-process__num">3</b>Wireframes</span>
+            <span class="cs-process__pill" style="left:53%; top:62%; width:27%;"><b class="cs-process__num">4</b>Prototype &amp; Testing</span>
+            <span class="cs-process__pill" style="left:53%; top:81%; width:47%;"><b class="cs-process__num">5</b>UI Design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Jobs To Be Done ── -->
+    <section class="cs-jtbd">
+      <div class="cs-jtbd__inner">
+        <p class="cs-jtbd__heading">Jobs To Be Done</p>
+        <div class="cs-jtbd__grid">
+          <button type="button" class="cs-jtbd__card" aria-pressed="false">
+            <span class="cs-jtbd__card-inner">
+              <span class="cs-jtbd__card-face cs-jtbd__card-front">
+                <p class="cs-jtbd__label">job 1</p>
+                <p class="cs-jtbd__text">When running low on charge mid-shift, I want to find the nearest available station in real time, so I don't waste time driving to an occupied spot</p>
+                <img src="/assets/energo/v2/jtbd-quote.svg" alt="" class="cs-jtbd__quote" aria-hidden="true" />
+              </span>
+              <span class="cs-jtbd__card-face cs-jtbd__card-back">
+                <p class="cs-jtbd__label">WHY THIS MATTERS</p>
+                <p class="cs-jtbd__text">Drivers' #1 frustration: "free" stations that weren't. Solved with live connector status</p>
+              </span>
+            </span>
+          </button>
+          <button type="button" class="cs-jtbd__card" aria-pressed="false">
+            <span class="cs-jtbd__card-inner">
+              <span class="cs-jtbd__card-face cs-jtbd__card-front">
+                <p class="cs-jtbd__label">job 2</p>
+                <p class="cs-jtbd__text">When planning my route, I want to reserve a specific connector in advance, so I have a guaranteed charging spot when I arrive</p>
+                <img src="/assets/energo/v2/jtbd-quote.svg" alt="" class="cs-jtbd__quote" aria-hidden="true" />
+              </span>
+              <span class="cs-jtbd__card-face cs-jtbd__card-back">
+                <p class="cs-jtbd__label">WHY THIS MATTERS</p>
+                <p class="cs-jtbd__text">Only 3 of 8 competitor apps offered booking. Solved with a 10-minute hold</p>
+              </span>
+            </span>
+          </button>
+          <button type="button" class="cs-jtbd__card" aria-pressed="false">
+            <span class="cs-jtbd__card-inner">
+              <span class="cs-jtbd__card-face cs-jtbd__card-front">
+                <p class="cs-jtbd__label">job 3</p>
+                <p class="cs-jtbd__text">When starting a charge, I want to set custom limits by budget, percentage, or duration, so I stay in full control of my schedule and spending</p>
+                <img src="/assets/energo/v2/jtbd-quote.svg" alt="" class="cs-jtbd__quote" aria-hidden="true" />
+              </span>
+              <span class="cs-jtbd__card-face cs-jtbd__card-back">
+                <p class="cs-jtbd__label">WHY THIS MATTERS</p>
+                <p class="cs-jtbd__text">Drivers think in money, kWh, %, or minutes, never one unit. Solved with 4 limit modes</p>
+              </span>
+            </span>
+          </button>
+          <button type="button" class="cs-jtbd__card" aria-pressed="false">
+            <span class="cs-jtbd__card-inner">
+              <span class="cs-jtbd__card-face cs-jtbd__card-front">
+                <p class="cs-jtbd__label">job 4</p>
+                <p class="cs-jtbd__text">When selecting a location, I want transparent pricing and live station availability upfront, so I can choose the most cost-effective open slot</p>
+                <img src="/assets/energo/v2/jtbd-quote.svg" alt="" class="cs-jtbd__quote" aria-hidden="true" />
+              </span>
+              <span class="cs-jtbd__card-face cs-jtbd__card-back">
+                <p class="cs-jtbd__label">WHY THIS MATTERS</p>
+                <p class="cs-jtbd__text">Price and status were the first things drivers checked. Solved with both on every card</p>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Customer journey ── -->
+    <section class="cs-page">
+      <div class="cs-stack" style="gap:80px;">
+        <div class="cs-heading-pair">
+          <p class="cs-section-heading">Every pain answered</p>
+          <p class="cs-subheading">Customer journey</p>
+        </div>
+        <div class="cs-cjm">
+          <div class="cs-cjm__stage">
+            <p class="cs-cjm__tag">Low Battery</p>
+            <p class="cs-cjm__pain">Range anxiety</p>
+            <p class="cs-cjm__fix">→ Live map surfaces<br>the nearest options</p>
+          </div>
+          <div class="cs-cjm__stage">
+            <p class="cs-cjm__tag">Search</p>
+            <p class="cs-cjm__pain">Which one is free?</p>
+            <p class="cs-cjm__fix">→ Status is hidden or stale</p>
+          </div>
+          <div class="cs-cjm__stage">
+            <p class="cs-cjm__tag">Decide</p>
+            <p class="cs-cjm__pain">Fear of a taken spot</p>
+            <p class="cs-cjm__fix">→ Charge % shown<br>on busy connectors</p>
+          </div>
+          <div class="cs-cjm__stage">
+            <p class="cs-cjm__tag">Reserve</p>
+            <p class="cs-cjm__pain">No certainty</p>
+            <p class="cs-cjm__fix">→ Book a connector,<br>10-minute hold</p>
+          </div>
+          <div class="cs-cjm__stage">
+            <p class="cs-cjm__tag">Travel</p>
+            <p class="cs-cjm__pain">Getting there</p>
+            <p class="cs-cjm__fix">→ One-tap route<br>in your navigator</p>
+          </div>
+          <div class="cs-cjm__stage">
+            <p class="cs-cjm__tag">Connect</p>
+            <p class="cs-cjm__pain">Which connector?</p>
+            <p class="cs-cjm__fix">→ Guided in-flow</p>
+          </div>
+          <div class="cs-cjm__stage">
+            <p class="cs-cjm__tag">Charge</p>
+            <p class="cs-cjm__pain">How much, how long?</p>
+            <p class="cs-cjm__fix">→ Charge % shown<br>on busy connectors</p>
+          </div>
+          <div class="cs-cjm__stage">
+            <p class="cs-cjm__tag">Pay &amp; Leave</p>
+            <p class="cs-cjm__pain">Stuck balances</p>
+            <p class="cs-cjm__fix">→ Auto-pay + receipt</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── User flow ── -->
+    <section class="cs-page">
+      <div class="cs-flow-section">
+        <div class="cs-stack cs-flow-section__inner" style="gap:160px;">
+          <div class="cs-heading-pair">
+            <p class="cs-section-heading">The core path, end to end</p>
+            <p class="cs-subheading">User flow</p>
+          </div>
+          <div class="cs-flow">
+            <span class="cs-flow__step">Open app</span>
+            <span class="cs-flow__arrow">→</span>
+            <span class="cs-flow__step cs-flow__step--active">Map · online / free</span>
+            <span class="cs-flow__arrow">→</span>
+            <span class="cs-flow__step">Pick station</span>
+            <span class="cs-flow__arrow">→</span>
+            <span class="cs-flow__step cs-flow__step--active">Book connector</span>
+            <span class="cs-flow__arrow">→</span>
+            <span class="cs-flow__step">Route</span>
+            <span class="cs-flow__arrow">→</span>
+            <span class="cs-flow__step">Scan / select connector</span>
+            <span class="cs-flow__arrow">→</span>
+            <span class="cs-flow__step cs-flow__step--active">Set limit · money · kWh · % · time</span>
+            <span class="cs-flow__arrow">→</span>
+            <span class="cs-flow__step">Charge · live status</span>
+            <span class="cs-flow__arrow">→</span>
+            <span class="cs-flow__step cs-flow__step--active">Auto-pay from wallet</span>
+            <span class="cs-flow__arrow">→</span>
+            <span class="cs-flow__step">Receipt</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Wireframes ── -->
+    <section class="cs-page">
+      <div class="cs-stack" style="gap:80px;">
+        <div class="cs-heading-pair">
+          <p class="cs-section-heading">Structure before style</p>
+          <p class="cs-subheading">Wireframes</p>
+        </div>
+        <div class="cs-wireframes">
+          <div class="cs-wireframes__card">
+            <img src="/assets/energo/v2/wf-find-station.png" alt="Find a station wireframe" />
+            <p>Find a station</p>
+          </div>
+          <div class="cs-wireframes__card">
+            <img src="/assets/energo/v2/wf-pick-station.png" alt="Pick a station wireframe" />
+            <p>Pick a station</p>
+          </div>
+          <div class="cs-wireframes__card">
+            <img src="/assets/energo/v2/wf-pick-connector.png" alt="Pick a connector wireframe" />
+            <p>Pick a connector</p>
+          </div>
+          <div class="cs-wireframes__card">
+            <img src="/assets/energo/v2/wf-setup-charge.png" alt="Set up the charge wireframe" />
+            <p>Set up the charge</p>
+          </div>
+          <div class="cs-wireframes__card">
+            <img src="/assets/energo/v2/wf-connecting.png" alt="Connecting wireframe" />
+            <p>Connecting</p>
+          </div>
+          <div class="cs-wireframes__card">
+            <img src="/assets/energo/v2/wf-charging.png" alt="Charging wireframe" />
+            <p>Charging</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── From findings to screens ── -->
+    <section class="cs-page">
+      <div class="cs-stack" style="gap:80px;">
+        <div class="cs-heading-pair">
+          <p class="cs-section-heading">From findings to screens</p>
+          <p class="cs-subheading">Designing the flows</p>
+        </div>
+        <div class="cs-editorial">
+          <div class="cs-editorial__row">
+            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/onboarding.webm" autoplay muted loop playsinline aria-label="Onboarding screen recording"></video></div>
+            <div class="cs-editorial__text">
+              <p class="cs-editorial__tag">Onboarding</p>
+              <p class="cs-editorial__title">Phone number, and nothing else</p>
+              <p class="cs-editorial__desc">Just phone + OTP. No password, no PIN. Competitors stacked all three and lost users at the door</p>
+            </div>
+          </div>
+          <div class="cs-editorial__row cs-editorial__row--reverse">
+            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/home-map-list.webm" autoplay muted loop playsinline aria-label="Home map and list screen recording"></video></div>
+            <div class="cs-editorial__text">
+              <p class="cs-editorial__tag">Home · Map &amp; list</p>
+              <p class="cs-editorial__title">Availability is the product</p>
+              <p class="cs-editorial__desc">Map and list share the same live data, one swipe apart, because drivers split 50/50 on how they search. Filters ask only what matters: connector, power, online, free</p>
+            </div>
+          </div>
+          <div class="cs-editorial__row">
+            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/booking.webm" autoplay muted loop playsinline aria-label="Booking screen recording"></video></div>
+            <div class="cs-editorial__text">
+              <p class="cs-editorial__tag">Booking</p>
+              <p class="cs-editorial__title">Designed against the occupied station</p>
+              <p class="cs-editorial__desc">Reserve a connector, watch the countdown, arrive certain. Only 3 of 8 competitors offered this at all</p>
+            </div>
+          </div>
+          <div class="cs-editorial__row cs-editorial__row--reverse">
+            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/order.webm" autoplay muted loop playsinline aria-label="Order screen recording"></video></div>
+            <div class="cs-editorial__text">
+              <p class="cs-editorial__tag">Order</p>
+              <p class="cs-editorial__title">Four ways to say how much</p>
+              <p class="cs-editorial__desc">Drivers think in money, kWh, percent, or minutes. The screen speaks all four, plus one-tap "charge to 100%". One simple choice, not a settings panel</p>
+            </div>
+          </div>
+          <div class="cs-editorial__row">
+            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/wallet-payments.webm" autoplay muted loop playsinline aria-label="Wallet and payments screen recording"></video></div>
+            <div class="cs-editorial__text">
+              <p class="cs-editorial__tag">Wallet &amp; payments</p>
+              <p class="cs-editorial__title">A wallet that speaks the local rails</p>
+              <p class="cs-editorial__desc">Top up through Click, HUMO, or Uzcard, with no punishing minimums and the balance always visible. Every session settles cleanly, so drivers never wonder where their money went</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Typography & Colors ── -->
+    <section class="cs-page">
+      <div class="cs-stack" style="gap:80px;">
+        <p class="cs-section-heading">Typography &amp; Colors</p>
+        <div class="cs-stack" style="gap:20px;">
+          <div class="cs-tokens__row">
+            <div class="cs-tokens__ramp">
+              <div style="background:#f4fbf5;"></div>
+              <div style="background:#caedcd;"></div>
+              <div style="background:#a4e0a9;"></div>
+              <div style="background:#53c45d;"></div>
+              <div style="background:#2bb637;"></div>
+              <div style="background:#22922c;"></div>
+              <div style="background:#1a6d21;"></div>
+              <div style="background:#114916;"></div>
+            </div>
+            <div class="cs-tokens__type-card">
+              <div class="cs-tokens__weights">
+                <p>Medium</p><p>Semibold</p><p>Bold</p>
+              </div>
+              <p class="cs-tokens__specimen">Inter</p>
+            </div>
+            <div class="cs-tokens__sample">
+              AaBbCc<br />01234567<br />{`{(!@#$%&*?)}`}
+            </div>
+          </div>
+          <div class="cs-tokens__swatches">
+            <div style="background:#ffffff; color:#0f1012;"><span>#FFFFFF</span></div>
+            <div style="background:#f5f5f5; color:#0f1012;"><span>#F5F5F5</span></div>
+            <div style="background:#2bb637; color:#fff;"><span>#2BB637</span></div>
+            <div style="background:#4e81ef; color:#fff;"><span>#4E81EF</span></div>
+            <div style="background:#111827; color:#fff;"><span>#111827</span></div>
+            <div style="background:#0f1012; color:#f5f5f5;"><span>#0F1012</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Components ── -->
+    <section class="cs-page">
+      <div class="cs-stack" style="gap:80px;">
+        <p class="cs-section-heading">Core Components</p>
+        <div class="cs-components">
+          <div class="cs-components__col">
+            <div class="cs-components__card cs-components__card--tall">
+              <p class="cs-components__label">Connectors</p>
+              <img src="/assets/energo/v2/comp-recipe1-v2.png" alt="Select connector bottom sheet component" class="cs-components__recipe-img" />
+            </div>
+          </div>
+          <div class="cs-components__col">
+            <div class="cs-components__row">
+              <div class="cs-components__card">
+                <div class="cs-components__content">
+                  <img src="/assets/energo/v2/comp-charging-v3.png" alt="Live charging session gauge" class="cs-components__charging-img" />
+                </div>
+                <p class="cs-components__label">Live Session</p>
+              </div>
+              <div class="cs-components__card">
+                <div class="cs-components__content">
+                  <img src="/assets/energo/v2/comp-recipe2-v2.png" alt="Recipe component" class="cs-components__recipe-img2" />
+                </div>
+                <p class="cs-components__label">Invoice</p>
+              </div>
+              <div class="cs-components__card">
+                <div class="cs-components__content">
+                  <div class="cs-components__statuses">
+                    <img src="/assets/energo/v2/comp-status-available-img.png" alt="Available status badge" class="cs-components__status-badge" />
+                    <img src="/assets/energo/v2/comp-status-connected-img.png" alt="Connected status badge" class="cs-components__status-badge" />
+                    <img src="/assets/energo/v2/comp-status-reserved-img.png" alt="Reserved status badge" class="cs-components__status-badge" />
+                    <img src="/assets/energo/v2/comp-status-unavailable-img.png" alt="Unavailable status badge" class="cs-components__status-badge" />
+                  </div>
+                </div>
+                <p class="cs-components__label">Status Badges</p>
+              </div>
+            </div>
+            <div class="cs-components__row">
+              <div class="cs-components__card cs-components__card--short">
+                <div class="cs-components__content">
+                  <img src="/assets/energo/v2/comp-active-booking-v3.png" alt="Active booking station item" class="cs-components__booking-img" />
+                </div>
+                <p class="cs-components__label">Active Booking</p>
+              </div>
+              <div class="cs-components__card cs-components__card--short">
+                <div class="cs-components__content">
+                  <img src="/assets/energo/v2/comp-tabbar-v2.png" alt="Tab bar component" class="cs-components__tabbar-img" />
+                </div>
+                <p class="cs-components__label">Navigation Bar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Closing ── -->
+    <section class="cs-page cs-page--closing">
+      <div class="cs-closing">
+        <div class="cs-closing__spacer"></div>
+        <p class="cs-closing__text">Thanks</p>
+        <button type="button" class="cs-closing__heart-btn" aria-label="Send some love">
+          <img src="/assets/energo/v2/icon-heart-v3.svg" alt="" class="cs-closing__heart" />
+        </button>
+        <p class="cs-closing__text">for watching</p>
+      </div>
+    </section>
+
+  </main>
+
+  <Fragment slot="scripts">
+    <script is:inline>
+      // ── Section entrance: items fade up as they scroll into view ─
+      function getAnimItems(section) {
+        const items = [], seen = new Set();
+        function add(el) { if (el && !seen.has(el)) { seen.add(el); items.push(el); } }
+
+        section.querySelectorAll('.cs-row').forEach(row => {
+          Array.from(row.children).forEach(child => {
+            if (child.classList.contains('cs-col-left')) {
+              if (child.childElementCount > 0) add(child);
+            } else if (child.classList.contains('cs-col-right')) {
+              Array.from(child.children).forEach(add);
+            } else {
+              add(child);
+            }
+          });
+        });
+
+        section.querySelectorAll('.cs-visual-row, .cs-process, .cs-cjm, .cs-wireframes, .cs-editorial__row, .cs-tokens__row, .cs-tokens__swatches, .cs-components, .cs-closing').forEach(el => {
+          if (!el.closest('.cs-row')) add(el);
+        });
+
+        // The flow steps reveal one by one, left to right, rather than
+        // as a single block — see the --reveal-delay assignment below.
+        section.querySelectorAll('.cs-flow__step, .cs-flow__arrow').forEach(add);
+
+        return items;
+      }
+
+      const animItems = [];
+      [...document.querySelectorAll('.cs-page')].slice(1).forEach(section => {
+        animItems.push(...getAnimItems(section));
+      });
+      // Jobs To Be Done lives in its own full-bleed section (not .cs-page,
+      // since it's a different background/layout), so its cards are
+      // gathered separately.
+      animItems.push(...document.querySelectorAll('.cs-jtbd__heading, .cs-jtbd__card'));
+
+      document.querySelectorAll('.cs-flow').forEach(flow => {
+        [...flow.children].forEach((el, i) => el.style.setProperty('--reveal-delay', `${i * 40}ms`));
+      });
+
+      observeReveal(animItems, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+      // The shared Footer component ships with its own opacity:0 base
+      // style (style.css) meant to be cleared by observeReveal — the
+      // homepage does this itself, so this page must too.
+      const footerEl = document.querySelector('.footer');
+      if (footerEl) observeReveal([footerEl], { threshold: 0.04 });
+
+      // ── Parallax on hero visual images ────────────
+      // The EnerGo wordmark overlay stays put; only the product photo and
+      // phone-mockup images shift as you scroll past the panel. The
+      // editorial screen recordings get the same scroll parallax, but
+      // start from a centering transform (they're absolutely centered
+      // in their frame) that has to be preserved alongside it.
+      const parallaxEls = [
+        ...[...document.querySelectorAll('.cs-visual-product, .cs-visual-phone')]
+          .map(el => ({ el, panel: el.closest('.cs-visual-panel'), amount: 50, center: false })),
+        ...[...document.querySelectorAll('.cs-editorial__frame img, .cs-editorial__frame video')]
+          .map(el => ({ el, panel: el.closest('.cs-editorial__frame'), amount: 30, center: true })),
+      ];
+
+      function updateVisualParallax() {
+        const vh = window.innerHeight;
+        parallaxEls.forEach(({ el, panel, amount, center }) => {
+          const rect = panel.getBoundingClientRect();
+          const progress = (rect.top + rect.height / 2 - vh / 2) / vh;
+          const base = center ? 'translate(-50%, -50%) ' : '';
+          el.style.transform = `${base}translateY(${progress * amount}px) scale(var(--hover-scale, 1))`;
+        });
+      }
+      window.lenis.on('scroll', updateVisualParallax);
+      updateVisualParallax();
+
+      // ── JTBD card flip ─────────────────────────────
+      document.querySelectorAll('.cs-jtbd__card').forEach(card => {
+        card.addEventListener('click', () => {
+          card.setAttribute('aria-pressed', card.getAttribute('aria-pressed') !== 'true');
+        });
+        card.addEventListener('mouseleave', () => {
+          card.setAttribute('aria-pressed', 'false');
+        });
+      });
+
+      // ── Closing heart burst ────────────────────────
+      const heartBtn = document.querySelector('.cs-closing__heart-btn');
+      if (heartBtn) {
+        heartBtn.addEventListener('click', () => {
+          const count = 8;
+          for (let i = 0; i < count; i++) {
+            const particle = document.createElement('span');
+            particle.className = 'cs-closing__particle';
+            const angle = (Math.PI * 2 * i) / count + (Math.random() * 0.4 - 0.2);
+            const distance = 60 + Math.random() * 40;
+            particle.style.setProperty('--dx', `${Math.cos(angle) * distance}px`);
+            particle.style.setProperty('--dy', `${Math.sin(angle) * distance - 20}px`);
+            particle.style.animationDelay = `${Math.random() * 80}ms`;
+            heartBtn.appendChild(particle);
+            particle.addEventListener('animationend', () => particle.remove());
+          }
+        });
+      }
+    </script>
+  </Fragment>
+</Layout>
+
+<style>
+  /* Overrides a shared element rendered by Layout/Header, not anything
+     in this page's own template — Astro's automatic style scoping can't
+     reach it, so it's marked :global() deliberately. */
+  :global(.header) {
+    position: fixed;
+    left: 0; right: 0;
+    will-change: auto;
+  }
+
+  .cs-main { display: block; }
+
+  .cs-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 140px var(--pad) 100px;
+    box-sizing: border-box;
+  }
+
+  .cs-page > * { width: 100%; }
+
+  .cs-stack { display: flex; flex-direction: column; gap: 40px; width: 100%; }
+
+  .cs-heading-pair { display: flex; flex-direction: column; gap: 8px; }
+
+  .cs-row {
+    display: flex;
+    gap: var(--gap);
+    align-items: flex-start;
+  }
+
+  .cs-col-left {
+    width: var(--col-left);
+    flex-shrink: 0;
+  }
+
+  .cs-col-right {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .cs-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    line-height: 1.6;
+    text-transform: uppercase;
+    color: var(--dark);
+    text-decoration: none;
+    transition: opacity .2s;
+  }
+
+  .cs-back:hover { opacity: 0.55; }
+
+  .cs-back svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    transform: rotate(-90deg);
+    transition: transform .25s cubic-bezier(.23,1,.32,1);
+  }
+  .cs-back:hover svg { transform: rotate(-90deg) translateY(-4px); }
+
+  .cs-icon { width: 60px; height: 60px; object-fit: contain; display: block; }
+
+  .cs-heading { font-size: 32px; line-height: 1.2; color: var(--dark); }
+  .cs-subheading { font-size: 24px; line-height: 1.2; color: var(--muted); text-wrap: balance; }
+  .cs-desc { font-size: 18px; line-height: 1.6; color: var(--dark); text-wrap: pretty; }
+  .cs-section-heading { font-size: 32px; line-height: 1.2; color: var(--dark); text-wrap: balance; }
+
+  .cs-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 670px;
+  }
+
+  .cs-meta-row {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    line-height: 1.2;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+  .cs-meta-row:last-child { border-bottom: none; }
+
+  .cs-meta-label {
+    width: 95px;
+    flex-shrink: 0;
+    color: var(--muted);
+  }
+
+  .cs-meta-value {
+    color: var(--dark);
+    flex-wrap: wrap;
+    display: flex;
+    gap: 4px 12px;
+  }
+
+  /* ── Photo / wordmark visual ── */
+  .cs-visual-row { display: flex; gap: 20px; }
+  .cs-visual-panel {
+    flex: 1;
+    min-width: 0;
+    height: 600px;
+    background: var(--item-bg);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cs-visual-panel--product { display: flex; align-items: flex-start; justify-content: center; }
+  .cs-visual-glow {
+    position: absolute;
+    left: 50%; top: 60%;
+    width: 320px; height: 320px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, var(--energo-green) 0%, transparent 70%);
+    opacity: 0.25;
+    filter: blur(40px);
+  }
+  .cs-visual-wordmark-icon {
+    position: absolute; left: 32px; top: 30px;
+    width: 120px; height: 120px;
+    z-index: 1;
+  }
+  .cs-visual-wordmark-text {
+    position: absolute; left: 176px; top: 38px;
+    height: 100px; width: auto;
+    z-index: 1;
+  }
+  .cs-visual-product {
+    position: relative;
+    margin-top: 140px;
+    height: 115%;
+    width: auto;
+    object-fit: contain;
+    will-change: transform;
+    transition: transform .4s cubic-bezier(.25,1,.5,1);
+  }
+  .cs-visual-panel--product:hover .cs-visual-product { --hover-scale: 1.06; }
+  .cs-visual-panel--phone { position: relative; }
+  .cs-visual-phone {
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 1179px; height: 2044px;
+    object-fit: cover;
+    will-change: transform;
+    transition: transform .4s cubic-bezier(.25,1,.5,1);
+  }
+  .cs-visual-panel--phone:hover .cs-visual-phone { --hover-scale: 1.03; }
+
+  /* ── Process timeline ── */
+  .cs-process {
+    background: var(--item-bg);
+    border-radius: 16px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .cs-process__weeks {
+    display: flex;
+    gap: 40px;
+    font-size: 24px;
+    color: var(--muted);
+    text-align: center;
+  }
+  .cs-process__weeks span { flex: 1; }
+  .cs-process__track {
+    position: relative;
+    display: flex;
+    gap: 40px;
+    height: 425px;
+  }
+  .cs-process__col { flex: 1; position: relative; }
+  .cs-process__col::after {
+    content: '';
+    position: absolute;
+    left: 50%; top: 0; bottom: 0;
+    width: 1px;
+    background: repeating-linear-gradient(to bottom, var(--divider) 0 4px, transparent 4px 10px);
+  }
+  .cs-process__pill {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg);
+    color: var(--dark);
+    border: 1px solid var(--divider);
+    border-radius: 40px;
+    padding: 12px 24px 12px 12px;
+    font-size: 24px;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  .cs-process__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    margin-right: 12px;
+    border-radius: 50%;
+    background: var(--energo-green);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* ── Jobs To Be Done ── */
+  .cs-jtbd {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+  .cs-jtbd__inner {
+    width: 100%;
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 140px 40px 120px;
+    position: relative;
+    z-index: 1;
+  }
+  .cs-jtbd__heading {
+    position: relative;
+    font-size: 32px;
+    color: #222222;
+    margin-bottom: 100px;
+    text-wrap: balance;
+  }
+  .cs-jtbd__grid {
+    position: relative;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .cs-jtbd__card {
+    flex: 1;
+    min-width: 300px;
+    border: none;
+    background: none;
+    padding: 0;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    perspective: 1400px;
+  }
+  .cs-jtbd__card:nth-child(1) { transition-delay: 0s; }
+  .cs-jtbd__card:nth-child(2) { transition-delay: .1s; }
+  .cs-jtbd__card:nth-child(3) { transition-delay: .2s; }
+  .cs-jtbd__card:nth-child(4) { transition-delay: .3s; }
+  .cs-jtbd__card-inner {
+    position: relative;
+    display: grid;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform .45s cubic-bezier(.65, 0, .35, 1);
+  }
+  .cs-jtbd__card[aria-pressed="true"] .cs-jtbd__card-inner {
+    transform: rotateY(180deg);
+  }
+  .cs-jtbd__card-face {
+    grid-area: 1 / 1;
+    background: var(--bg-light);
+    border: 1px solid var(--divider);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform .35s cubic-bezier(.25, 1, .5, 1), border-color .35s ease;
+  }
+  .cs-jtbd__card-back {
+    transform: rotateY(180deg);
+  }
+  .cs-jtbd__card:hover .cs-jtbd__card-front {
+    transform: translateY(-6px) scale(1.015);
+    border-color: var(--energo-green);
+  }
+  .cs-jtbd__card:hover .cs-jtbd__card-back {
+    transform: rotateY(180deg) translateY(-6px) scale(1.015);
+    border-color: var(--energo-green);
+  }
+  .cs-jtbd__quote {
+    position: absolute;
+    top: 20px; right: -9px;
+    width: 100px; height: 90.625px;
+    pointer-events: none;
+  }
+  .cs-jtbd__label { font-size: 16px; color: #2bb637; text-transform: uppercase; letter-spacing: .02em; }
+  .cs-jtbd__text { font-size: 24px; color: #222; line-height: 1.2; text-wrap: pretty; }
+
+  /* ── Customer journey grid ── */
+  .cs-cjm {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .cs-cjm__stage {
+    padding: 40px 40px;
+    border-right: 1px solid var(--divider);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .cs-cjm__stage:nth-child(-n+4) {
+    border-bottom: 1px solid var(--divider);
+  }
+  .cs-cjm__stage:nth-child(4n) { border-right: none; }
+  .cs-cjm__stage:nth-child(4n+1) { padding-left: 0; }
+  .cs-cjm__stage:nth-child(4n) { padding-right: 0; }
+  .cs-cjm__tag {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #2bb637;
+  }
+  .cs-cjm__pain { font-size: 24px; color: var(--dark); text-wrap: balance; }
+  .cs-cjm__fix {
+    font-size: 18px;
+    color: var(--dark);
+    text-wrap: pretty;
+  }
+
+  /* ── User flow ── */
+  .cs-flow { display: flex; flex-wrap: wrap; gap: 40px 16px; align-items: center; position: relative; }
+  .cs-flow .page-reveal { transition-delay: var(--reveal-delay, 0s); }
+  .cs-flow__step {
+    background: var(--item-bg);
+    border: 1px solid var(--divider);
+    border-radius: 100px;
+    padding: 16px 28px;
+    font-size: 24px;
+    color: var(--dark);
+  }
+  .cs-flow__step--active {
+    background: #e4f7e7;
+    border-color: #2bb637;
+    color: #2bb637;
+  }
+  html.dark .cs-flow__step--active {
+    background: color-mix(in srgb, #2bb637 18%, transparent);
+  }
+  .cs-flow__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--item-bg);
+    border: 1px solid var(--divider);
+    font-size: 15px;
+    color: var(--muted);
+  }
+
+  /* ── Wireframes grid ── */
+  .cs-wireframes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .cs-wireframes__card {
+    background: var(--item-bg);
+    border: 1px solid var(--divider);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .cs-wireframes__card img { height: 400px; width: 192px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); }
+  .cs-wireframes__card p { font-size: 24px; color: var(--muted); }
+
+  /* ── Editorial screen+text rows ── */
+  .cs-editorial { display: flex; flex-direction: column; gap: 40px; width: 100%; }
+  .cs-editorial__row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  .cs-editorial__row--reverse { flex-direction: row-reverse; }
+  .cs-editorial__frame {
+    flex: 1;
+    height: 600px;
+    background: var(--item-bg);
+    border: 1px solid var(--divider);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  .cs-editorial__frame img,
+  .cs-editorial__frame video {
+    position: absolute;
+    top: 50%; left: 50%;
+    height: 520px;
+    width: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    will-change: transform;
+    transition: transform .4s cubic-bezier(.25,1,.5,1);
+  }
+  .cs-editorial__frame:hover img,
+  .cs-editorial__frame:hover video {
+    --hover-scale: 1.06;
+  }
+  .cs-editorial__text {
+    flex-shrink: 0;
+    width: 427px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cs-editorial__tag { font-size: 24px; color: var(--energo-green); }
+  .cs-editorial__title { font-size: 32px; color: var(--dark); text-wrap: balance; }
+  .cs-editorial__desc { font-size: 24px; color: var(--muted); text-wrap: pretty; }
+
+  /* ── Typography & Colors ── */
+  .cs-tokens__row { display: flex; gap: 20px; }
+  .cs-tokens__ramp {
+    width: 325px;
+    border: 1px solid var(--divider);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .cs-tokens__ramp div { flex: 1; }
+  .cs-tokens__type-card {
+    width: 440px;
+    height: 400px;
+    background: var(--item-bg);
+    border: 1px solid var(--divider);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cs-tokens__weights { display: flex; flex-direction: column; gap: 8px; font-size: 24px; color: var(--muted); }
+  .cs-tokens__specimen { font-size: 64px; color: var(--dark); }
+  .cs-tokens__sample {
+    flex: 1;
+    background: #2bb637;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    font-family: 'Inter', var(--font);
+    font-weight: 500;
+    font-size: 64px;
+    padding: 40px;
+  }
+  .cs-tokens__swatches {
+    display: flex;
+    height: 400px;
+    border: 1px solid var(--divider);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .cs-tokens__swatches div {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+  }
+  .cs-tokens__swatches span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 160px;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    font-size: 28px;
+  }
+
+  /* ── Components showcase ── */
+  .cs-components { display: flex; gap: 20px; height: 800px; }
+  .cs-components__col { display: flex; flex-direction: column; gap: 20px; flex: 1; }
+  .cs-components__col:first-child { flex: 0 0 440px; }
+  .cs-components__row { display: flex; gap: 20px; flex: 1; }
+  .cs-components__card {
+    background: var(--item-bg);
+    border: 1px solid var(--divider);
+    border-radius: 20px;
+    padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    min-width: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cs-components__card--tall { height: 100%; justify-content: flex-start; }
+  .cs-components__card--short { padding: 40px 20px; }
+  .cs-components__label { position: relative; font-size: 24px; color: var(--muted); text-wrap: balance; }
+  .cs-components__content {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    transition: transform .35s cubic-bezier(.25, 1, .5, 1);
+  }
+  .cs-components__card:hover .cs-components__content { transform: scale(1.06); }
+  .cs-components__recipe-img {
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: auto;
+    box-shadow: 0 0 20px 2px rgba(0,0,0,0.05);
+    border-radius: 24px 24px 0 0;
+    transition: transform .35s cubic-bezier(.25, 1, .5, 1);
+  }
+  .cs-components__card:hover .cs-components__recipe-img { transform: translateX(-50%) scale(1.05); }
+  .cs-components__recipe-img2 { position: relative; width: 207px; height: auto; filter: drop-shadow(0 0 14px rgba(0,0,0,0.05)); }
+  .cs-components__charging-img { position: relative; width: 196px; height: 196px; object-fit: contain; filter: drop-shadow(0 0 40px rgba(0,0,0,0.05)); }
+  .cs-components__tabbar-img { position: relative; width: 390px; max-width: 100%; height: auto; border-radius: 20px; box-shadow: 0 0 10px 0 rgba(0,0,0,0.025); }
+
+  .cs-components__statuses { position: relative; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .cs-components__status-badge { height: 32px; width: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.04)); }
+  .cs-components__booking-img { width: 378px; max-width: 100%; height: auto; border-radius: 16px; }
+
+  /* ── Closing ── */
+  .cs-page--closing { min-height: 100vh; align-items: center; }
+  .cs-closing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    width: 100%;
+    padding: 100px 0 60px;
+  }
+  .cs-closing__spacer { flex-shrink: 0; width: var(--col-left); }
+  .cs-closing__text { font-size: 32px; color: var(--dark); }
+  .cs-closing__heart-btn {
+    position: relative;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+    line-height: 0;
+  }
+  .cs-closing__heart { width: 40px; height: 40px; transition: transform .15s ease; }
+  .cs-closing__heart-btn:hover .cs-closing__heart { transform: scale(1.08); }
+  .cs-closing__heart-btn:active .cs-closing__heart { transform: scale(0.88); }
+  :global(.cs-closing__particle) {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 16px; height: 16px;
+    margin: -8px 0 0 -8px;
+    background: url('/assets/energo/v2/icon-heart-v3.svg') center / contain no-repeat;
+    pointer-events: none;
+    opacity: 0;
+    animation: cs-heart-float 900ms ease-out forwards;
+  }
+  @keyframes cs-heart-float {
+    0% { transform: translate(0, 0) scale(0.4); opacity: 1; }
+    100% { transform: translate(var(--dx), var(--dy)) scale(1); opacity: 0; }
+  }
+
+  @media (max-width: 768px) {
+    .cs-page { padding: 72px 20px 24px; }
+    .cs-closing__spacer { display: none; }
+    .cs-row { flex-direction: column; gap: 24px; }
+    .cs-col-left { width: 100%; }
+    .cs-heading { font-size: 24px; }
+    .cs-subheading { font-size: 20px; }
+    .cs-desc { font-size: 18px; }
+    .cs-section-heading { font-size: 24px; }
+    .cs-visual-row { flex-direction: column; }
+    .cs-process__weeks, .cs-process__pill { font-size: 16px; }
+    .cs-cjm { grid-template-columns: 1fr; }
+    .cs-cjm__stage { padding-left: 0; padding-right: 0; border-right: none; }
+    .cs-wireframes { grid-template-columns: 1fr; }
+    .cs-editorial__row, .cs-editorial__row--reverse { flex-direction: column; }
+    .cs-editorial__text { width: 100%; }
+    .cs-components { flex-direction: column; height: auto; }
+    .cs-components__row { flex-direction: column; }
+  }
+</style>

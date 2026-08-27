@@ -10,7 +10,7 @@ const skillChips = [
   'Prompt Engineering', 'Vibe Coding',
 ];
 ---
-<Layout title="Ali Zhetpis — Product Designer" homeHref="#top" workHref="#work" cloudflareBeacon>
+<Layout title="Ali Zhetpis — Product Designer" homeHref="#top" workHref="#work" cloudflareBeacon onePageMobile>
   <Fragment slot="head">
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="preload" href="/assets/photos/photo1.png" as="image" />
@@ -155,7 +155,8 @@ const skillChips = [
         period="2025 · 3 month"
         role="Product Designer"
         scope={["Market Research", "CJM", "UI/UX", "Design System", "Prototyping"]}
-        cursorLabel="Drop Soon"
+        cursorLabel="See Case"
+        href="/work/energo"
       >
         <div class="shots-wrap" slot="shots">
           <img src="/assets/energo-4.webp" style="width:220px;height:476px;left:76px;top:72px;" />
@@ -239,26 +240,6 @@ const skillChips = [
       new IntersectionObserver((entries) => {
         footerVisible = entries[0].isIntersecting; updateHeaderCta();
       }, { threshold: 0.1 }).observe(footerSection);
-
-      // ── Astana time ───────────────────────────────
-      function updateTime() {
-        const t = new Date().toLocaleTimeString('en-GB', {
-          timeZone: 'Asia/Almaty', hour: '2-digit', minute: '2-digit', second: '2-digit'
-        });
-        const el = document.getElementById('local-time');
-        if (el) el.textContent = t;
-      }
-      updateTime();
-      setInterval(updateTime, 1000);
-
-      // ── Almaty weather ────────────────────────────
-      fetch('https://api.open-meteo.com/v1/forecast?latitude=43.2567&longitude=76.9286&current=temperature_2m,weather_code')
-        .then(r => r.json())
-        .then(({ current }) => {
-          const temp = Math.round(current.temperature_2m);
-          document.getElementById('local-temp').textContent = `${temp}°C`;
-        })
-        .catch(() => {});
 
       document.getElementById('homeLink').addEventListener('click', e => {
         e.preventDefault();

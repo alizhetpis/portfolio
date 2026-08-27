@@ -1,6 +1,23 @@
 /* Reset */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Several full-bleed sections use 100vw breakouts, which overhang by
+   the scrollbar's width; decorative elements (blur swooshes, phone
+   mockups) also intentionally bleed past their containers. None of
+   that should ever produce a horizontal scrollbar.
+   Only html gets this (not body too): setting overflow-x without an
+   explicit overflow-y implicitly promotes overflow-y to auto (CSS
+   Overflow spec), and doing that on BOTH html and body creates two
+   competing scroll containers — which breaks position:sticky on any
+   descendant of body (e.g. the header), since it can't tell which
+   ancestor it's supposed to stick relative to. */
+html { overflow-x: hidden; }
+
+body {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 :root {
   /* Theme-invariant aliases: always resolve to the same value regardless
      of html.dark, so JS (e.g. the theme-color <meta> writer) can read
@@ -21,7 +38,7 @@
   --card-back: #dbdbdb;
   --card-glow:       rgba(255,132,230,0.04);
   --card-glow-hover: rgba(255,132,230,0.09);
-  --energo-green: #2AB674;
+  --energo-green: #2bb637;
 
   --font: 'PP Neue Montreal', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
@@ -59,8 +76,30 @@ body {
   font-weight: 500;
   color: var(--dark);
   -webkit-font-smoothing: antialiased;
-  user-select: none;
-  -webkit-user-select: none;
+}
+
+/* The fade/blur/scale transition targets .page-wrap rather than body,
+   so the header (a sibling of .page-wrap, not a descendant) stays put
+   and fully visible while the rest of the page transitions — it reads
+   as a fixed, stable piece of chrome rather than fading with everything
+   else. Toggled just before navigating away (see Layout.astro's click
+   interceptor); the animation below plays the same easing in reverse
+   on arrival. */
+.page-wrap {
+  animation: page-fade-in .9s cubic-bezier(.16,1,.3,1);
+}
+.page-wrap.page-leaving {
+  opacity: 0;
+  transform: scale(.98);
+  filter: blur(8px);
+  transition: opacity .6s cubic-bezier(.65,0,.35,1),
+              transform .6s cubic-bezier(.65,0,.35,1),
+              filter .6s cubic-bezier(.65,0,.35,1);
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0; transform: scale(1.02); filter: blur(8px); }
+  to   { opacity: 1; transform: scale(1); filter: blur(0); }
 }
 
 /* ── Page sections — start hidden, JS animates in ── */
@@ -96,13 +135,18 @@ img { display: block; }
 /* ── Header ─────────────────────────────────── */
 .header {
   position: sticky; top: 0; z-index: 100;
-  display: flex; gap: var(--gap); align-items: center;
-  padding: 20px var(--pad);
   background: color-mix(in srgb, var(--bg) 92%, transparent);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   transition: background .3s;
   will-change: transform;
+}
+
+.header__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex; gap: var(--gap); align-items: center;
+  padding: 20px var(--pad);
 }
 
 .header__title {
@@ -288,6 +332,8 @@ html.dark .theme-icon--moon { transform: rotate(0deg) scale(1); opacity: 1; }
   line-height: var(--line-t);
   color: var(--dark);
 }
+.hero__text p { text-wrap: balance; }
+.hero__subtext-desktop, .hero__subtext-mobile { text-wrap: pretty; }
 
 .hero__cta {
   display: inline-flex; align-items: center; justify-content: center;
@@ -361,6 +407,7 @@ html.dark .hero__cta:hover { background: rgba(50,83,50,0.65); }
   line-height: var(--line-t);
   color: var(--dark);
   font-weight: 500;
+  text-wrap: balance;
 }
 
 /* Items list */
@@ -412,6 +459,7 @@ html.dark .hero__cta:hover { background: rgba(50,83,50,0.65); }
   font-size: var(--text-sm);
   color: var(--dark);
   line-height: var(--line-t);
+  text-wrap: pretty;
 }
 
 /* Meta rows at bottom */
@@ -532,6 +580,7 @@ html.dark .item__shots:hover::after {
   color: var(--dark);
   line-height: 1.2;
   z-index: 11;
+  text-wrap: pretty;
 }
 html.dark .sber-also-covering {
   background: rgba(255,255,255,0.08);
@@ -613,6 +662,7 @@ html.dark .sber-also-covering {
 
 .footer__contact {
   flex: 1;
+  min-width: 0;
   display: flex; flex-direction: column;
   justify-content: flex-start;
   gap: 120px;
@@ -624,19 +674,20 @@ html.dark .sber-also-covering {
   line-height: 1.5;
   width: 900px;
   max-width: 100%;
+  text-wrap: balance;
 }
 
 .footer__cta { display: inline-flex; vertical-align: middle; margin-left: 12px; }
 
 .footer__links-grid {
-  display: flex; gap: 20px;
+  display: flex; gap: 200px;
   font-size: var(--text-sm);
   line-height: var(--line-n);
   white-space: nowrap;
 }
 
 .footer__links-col {
-  flex: 1;
+  flex: 0 0 auto;
   display: flex; flex-direction: column; gap: 8px; align-items: flex-start;
 }
 .footer__links-col a { width: fit-content; }
@@ -712,7 +763,7 @@ html.dark .sber-also-covering {
   }
 
   /* ── Header ── */
-  .header { padding: 16px var(--pad); gap: 12px; }
+  .header__inner { padding: 16px var(--pad); gap: 12px; }
   .header__title { width: auto; flex: 1; gap: 12px; }
   .header__info { display: none; }
   .header__name { white-space: nowrap; }
@@ -753,11 +804,14 @@ html.dark .sber-also-covering {
     line-height: 1.2;
   }
 
-  /* ── Hide all sections below hero on mobile — one-page design ── */
+  /* ── Hide all sections below hero on mobile — one-page design ──
+     Scoped to .one-page-mobile (the homepage only): .footer is a
+     shared component also used by other pages, which still want it
+     visible on mobile. */
   .section--career { display: none; }
   .section { display: none; }
   .skills { display: none; }
-  .footer { display: none; }
+  .one-page-mobile .footer { display: none; }
 
   /* ── Work sections ── */
   .section__items { gap: 80px; }
@@ -798,6 +852,7 @@ html.dark .sber-also-covering {
   .skills__chips { gap: 8px; padding: 0; }
 
   /* ── Footer ── */
+  .footer__spacer { display: none; }
   .footer__contact { height: auto; gap: 28px; }
   .footer__heading { width: 100%; font-size: var(--text-lg); }
   .footer__links-grid { flex-direction: row; flex-wrap: wrap; gap: 8px 16px; }

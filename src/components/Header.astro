@@ -8,6 +8,7 @@ interface Props {
 const { homeHref, workHref } = Astro.props;
 ---
 <header class="header">
+ <div class="header__inner">
   <div class="header__title">
     <a href={homeHref} class="header__name" id="homeLink">Ali Zhetpis</a>
     <div class="header__info">
@@ -29,4 +30,5 @@ const { homeHref, workHref } = Astro.props;
     </div>
   </nav>
   <ScheduleCallCTA location="header" class="header__cta" />
+ </div>
 </header>

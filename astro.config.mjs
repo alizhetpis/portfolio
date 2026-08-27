@@ -5,8 +5,8 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
-  // Match the existing static file layout (index.html, energo.html) so
-  // vercel.json's cleanUrls:true continues to serve /energo without a
+  // Match the existing static file layout (index.html, work/energo.html)
+  // so vercel.json's cleanUrls:true continues to serve routes without a
   // trailing slash, exactly as it does today.
   build: {
     format: 'file',

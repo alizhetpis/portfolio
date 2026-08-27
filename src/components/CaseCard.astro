@@ -15,8 +15,10 @@ interface Props {
   scope: string[];
   cursorLabel?: string;
   shotsClass?: string;
+  href?: string;
 }
-const { logoSrc, logoDarkSrc, logoAlt, name, sub, desc, period, role, scope, cursorLabel, shotsClass } = Astro.props;
+const { logoSrc, logoDarkSrc, logoAlt, name, sub, desc, period, role, scope, cursorLabel, shotsClass, href } = Astro.props;
+const ShotsTag = href ? 'a' : 'div';
 ---
 <div class="item">
   <div class="item__info">
@@ -54,7 +56,7 @@ const { logoSrc, logoDarkSrc, logoAlt, name, sub, desc, period, role, scope, cur
       </div>
     </div>
   </div>
-  <div class:list={['item__shots', shotsClass]} data-cursor={cursorLabel}>
+  <ShotsTag class:list={['item__shots', shotsClass]} data-cursor={cursorLabel} href={href}>
     <slot name="shots" />
-  </div>
+  </ShotsTag>
 </div>
