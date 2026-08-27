@@ -10,7 +10,7 @@ import Layout from '../../layouts/Layout.astro';
   <main class="cs-main">
 
     <!-- ── Hero ── -->
-    <section class="cs-page">
+    <section class="cs-page" id="top">
       <div style="display:flex; flex-direction:column; gap:80px; width:100%;">
         <div class="cs-row">
           <div class="cs-col-left">
@@ -56,10 +56,10 @@ import Layout from '../../layouts/Layout.astro';
             <div class="cs-visual-glow" aria-hidden="true"></div>
             <img src="/assets/energo/v2/wordmark-icon.svg" alt="" class="cs-visual-wordmark-icon" />
             <img src="/assets/energo/v2/wordmark-text.svg" alt="EnerGo" class="cs-visual-wordmark-text" />
-            <img src="/assets/energo/v2/charging-station.png" alt="EnerGo charging station" class="cs-visual-product" />
+            <img src="/assets/energo/v2/charging-station.webp" alt="EnerGo charging station" class="cs-visual-product" />
           </div>
           <div class="cs-visual-panel cs-visual-panel--phone">
-            <img src="/assets/energo/v2/phone-mockup.png" alt="EnerGo app icon on a phone home screen" class="cs-visual-phone" />
+            <img src="/assets/energo/v2/phone-mockup.webp" alt="EnerGo app icon on a phone home screen" class="cs-visual-phone" />
           </div>
         </div>
       </div>
@@ -504,6 +504,19 @@ import Layout from '../../layouts/Layout.astro';
       }
       window.lenis.on('scroll', updateVisualParallax);
       updateVisualParallax();
+
+      // "To the Top" (Layout.astro) jumps the scroll position instantly,
+      // which recalculates this parallax transform too — but these
+      // elements have their own .4s hover-zoom transition, so that jump
+      // would visibly animate on its own, uncoordinated with the hero's
+      // fade-in. Suppress it just for that one jump so only the hero
+      // animation is visible, then restore it for normal hover/scroll use.
+      document.addEventListener('lenis:top', () => {
+        parallaxEls.forEach(({ el }) => { el.style.transition = 'none'; });
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          parallaxEls.forEach(({ el }) => { el.style.transition = ''; });
+        }));
+      });
 
       // ── JTBD card flip ─────────────────────────────
       document.querySelectorAll('.cs-jtbd__card').forEach(card => {
@@ -1085,7 +1098,7 @@ import Layout from '../../layouts/Layout.astro';
   .cs-components__booking-img { width: 378px; max-width: 100%; height: auto; border-radius: 16px; }
 
   /* ── Closing ── */
-  .cs-page--closing { min-height: 100vh; align-items: center; }
+  .cs-page--closing { min-height: 0; align-items: center; padding-top: 60px; padding-bottom: 40px; }
   .cs-closing {
     display: flex;
     flex-direction: row;
@@ -1094,7 +1107,7 @@ import Layout from '../../layouts/Layout.astro';
     justify-content: flex-start;
     gap: 40px;
     width: 100%;
-    padding: 100px 0 60px;
+    padding: 20px 0;
   }
   .cs-closing__spacer { flex-shrink: 0; width: var(--col-left); }
   .cs-closing__text { font-size: 32px; color: var(--dark); }

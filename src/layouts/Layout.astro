@@ -145,13 +145,24 @@ const { title, homeHref, workHref, footer = true, cloudflareBeacon = false, oneP
   });
 
   // ── Footer "To the Top" ───────────────────────
-  // Always scrolls this page's own hero back into view — shared here
+  // Jumps this page's own hero back into view instantly (no scroll
+  // travel), then plays a brief fade/reveal on the hero itself so
+  // landing there still feels soft rather than a hard cut. Shared here
   // since the Footer component (and its #top link) is used by every
   // page, regardless of what homeHref points to for that page's header.
-  document.querySelectorAll('a[href="#top"]').forEach(a => {
+  // #homeLink is excluded: on the homepage it shares this same href but
+  // already has its own dedicated smooth-scroll handler.
+  document.querySelectorAll('a[href="#top"]:not(#homeLink)').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
-      lenis.scrollTo(0, { duration: 1.6 });
+      document.dispatchEvent(new Event('lenis:top'));
+      lenis.scrollTo(0, { immediate: true });
+      const hero = document.getElementById('top');
+      if (hero) {
+        hero.classList.remove('hero-flash');
+        void hero.offsetWidth;
+        hero.classList.add('hero-flash');
+      }
     });
   });
 

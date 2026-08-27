@@ -287,16 +287,14 @@ const skillChips = [
       });
 
       // ── Smooth scroll (via Lenis) ─────────────────
-      document.querySelectorAll('a[href^="#"]').forEach(a => {
+      // #top is handled globally in Layout.astro (shared with every
+      // page's footer link); #homeLink has its own dedicated handler
+      // above. Both are excluded here so they don't also get this
+      // generic handler and end up with two competing scrollTo calls.
+      document.querySelectorAll('a[href^="#"]:not([href="#top"]):not(#homeLink)').forEach(a => {
         a.addEventListener('click', e => {
           e.preventDefault();
           const href = a.getAttribute('href');
-          if (href === '#top') {
-            lenis.scrollTo(0, {
-              duration: 1.6,
-            });
-            return;
-          }
           const target = document.querySelector(href);
           if (!target) return;
           lenis.scrollTo(target, { duration: 1.6 });
