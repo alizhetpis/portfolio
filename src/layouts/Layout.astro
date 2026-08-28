@@ -59,6 +59,20 @@ const { title, homeHref, workHref, footer = true, cloudflareBeacon = false, oneP
 
 <script is:inline src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script is:inline>
+  // ── Back/forward cache restore ────────────────
+  // Leaving a page adds .page-leaving to fade it out before the real
+  // navigation (see the click interceptor below). If the browser
+  // restores that same page from bfcache on back/forward instead of
+  // reloading it, the DOM comes back frozen mid-fade — still
+  // opacity:0 — with no reload to ever clear it. `pageshow` with
+  // event.persisted fires specifically on a bfcache restore, so clear
+  // the class there.
+  window.addEventListener('pageshow', e => {
+    if (e.persisted) {
+      document.querySelector('.page-wrap')?.classList.remove('page-leaving');
+    }
+  });
+
   // ── Theme toggle ──────────────────────────────
   const html            = document.documentElement;
   const toggle           = document.getElementById('themeToggle');
