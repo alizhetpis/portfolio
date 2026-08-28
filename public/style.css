@@ -87,14 +87,18 @@ body {
    on arrival. */
 .page-wrap {
   animation: page-fade-in .9s cubic-bezier(.16,1,.3,1);
+  /* Kept on the base rule (not just .page-leaving) so it also covers
+     the reverse transition — e.g. a bfcache restore clearing
+     .page-leaving (see Layout.astro's pageshow handler) fades back in
+     smoothly instead of snapping instantly to its default state. */
+  transition: opacity .6s cubic-bezier(.65,0,.35,1),
+              transform .6s cubic-bezier(.65,0,.35,1),
+              filter .6s cubic-bezier(.65,0,.35,1);
 }
 .page-wrap.page-leaving {
   opacity: 0;
   transform: scale(.98);
   filter: blur(8px);
-  transition: opacity .6s cubic-bezier(.65,0,.35,1),
-              transform .6s cubic-bezier(.65,0,.35,1),
-              filter .6s cubic-bezier(.65,0,.35,1);
 }
 
 @keyframes page-fade-in {
