@@ -791,7 +791,7 @@ import Layout from '../../layouts/Layout.astro';
   .cs-jtbd__heading {
     position: relative;
     font-size: 32px;
-    color: #222222;
+    color: var(--dark);
     margin-bottom: 100px;
     text-wrap: balance;
   }
@@ -828,7 +828,7 @@ import Layout from '../../layouts/Layout.astro';
   }
   .cs-jtbd__card-face {
     grid-area: 1 / 1;
-    background: var(--bg-light);
+    background: var(--item-bg);
     border: 1px solid var(--divider);
     border-radius: 16px;
     padding: 20px;
@@ -859,7 +859,8 @@ import Layout from '../../layouts/Layout.astro';
     pointer-events: none;
   }
   .cs-jtbd__label { font-size: 16px; color: #2bb637; text-transform: uppercase; letter-spacing: .02em; }
-  .cs-jtbd__text { font-size: 24px; color: #222; line-height: 1.2; text-wrap: pretty; }
+  .cs-jtbd__text { font-size: 24px; color: var(--dark); line-height: 1.2; text-wrap: pretty; }
+  html.dark .cs-jtbd__quote { filter: invert(1); }
 
   /* ── Customer journey grid ── */
   .cs-cjm {
