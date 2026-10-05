@@ -63,6 +63,7 @@ const skillChips = [
     <div class="section__items">
 
       <CaseCard
+        id="aci"
         logoSrc="/assets/logo-aci.svg"
         logoAlt="Alatau City Invest"
         name="Alatau City Invest"
@@ -71,6 +72,7 @@ const skillChips = [
         period="apr 2025 - jun 2026"
         role="Senior Product Designer"
         scope={["Product Strategy", "CX/UX Research", "Metrics", "UI/UX", "Prototyping"]}
+        cursorLabel="Sorry, NDA"
       >
         <div class="shots-wrap" slot="shots">
           <img src="/assets/aci-1.webp" style="width:220px;height:496px;left:76px;top:-84px;" />
@@ -80,6 +82,7 @@ const skillChips = [
       </CaseCard>
 
       <CaseCard
+        id="citix"
         logoSrc="/assets/logo-citix.svg"
         logoDarkSrc="/assets/logo-citix-dark.svg"
         logoAlt="Citix"
@@ -89,6 +92,7 @@ const skillChips = [
         period="apr 2024 - mar 2025"
         role="Senior UX/UI Designer"
         scope={["UI/UX", "Prototyping", "Graphic Design"]}
+        cursorLabel="Drop Soon"
       >
         <div class="shots-wrap" slot="shots">
           <img src="/assets/citix-1.webp" style="width:693px;height:493px;left:50%;top:50%;transform:translateX(-50%) translateY(-50%);border-radius:0;" />
@@ -96,6 +100,7 @@ const skillChips = [
       </CaseCard>
 
       <CaseCard
+        id="bereke"
         logoSrc="/assets/logo-bereke.svg"
         logoAlt="Bereke Bank"
         name="Bereke Bank"
@@ -104,7 +109,7 @@ const skillChips = [
         period="sep 2022 - may 2024"
         role="Middle Product Designer"
         scope={["Product Strategy", "CX/UX Research", "Metrics", "UI/UX", "Prototyping"]}
-        cursorLabel="Under NDA"
+        cursorLabel="Drop Soon"
       >
         <div class="shots-wrap" slot="shots">
           <img src="/assets/bereke-2.webp" style="width:220px;height:476px;left:76px;top:-75px;" />
@@ -114,6 +119,7 @@ const skillChips = [
       </CaseCard>
 
       <CaseCard
+        id="sberbank"
         logoSrc="/assets/sberbank.svg"
         logoAlt="Sberbank"
         name="Sberbank"
@@ -122,7 +128,7 @@ const skillChips = [
         period="sep 2022 - may 2024"
         role="Junior Product Designer"
         scope={["Product Strategy", "UI/UX", "Prototyping", "API integration"]}
-        cursorLabel="Under NDA"
+        cursorLabel="Sorry, NDA"
         shotsClass="sber-shots"
       >
         <Fragment slot="shots">
@@ -184,6 +190,7 @@ const skillChips = [
       </CaseCard>
 
       <CaseCard
+        id="aipark"
         logoSrc="/assets/logo-aipark.svg"
         logoAlt="AI Parking"
         name="AI Parking"
@@ -223,10 +230,28 @@ const skillChips = [
     </div>
   </div>
 
-  <div class="cursor-pill" id="cursorPill"><span id="cursorLabel">Under NDA</span></div>
+  <div class="cursor-pill" id="cursorPill"><span id="cursorLabel">Sorry, NDA</span></div>
 
   <Fragment slot="scripts">
     <script is:inline>
+      // ── Center a deep-linked project card ─────────
+      // Teaser cards on the case study pages link back here as
+      // /#<project-id> (e.g. /#citix). The browser's own anchor jump
+      // only offsets from the top (via scroll-margin-top), so re-center
+      // the target card vertically in the viewport once the page loads.
+      if (location.hash) {
+        const targetCard = document.querySelector(location.hash);
+        if (targetCard && targetCard.classList.contains('item')) {
+          requestAnimationFrame(() => {
+            targetCard.scrollIntoView({ block: 'center', behavior: 'auto' });
+            if (window.lenis) {
+              window.lenis.isScrolling = false;
+              window.lenis.animatedScroll = window.lenis.targetScroll = window.scrollY;
+            }
+          });
+        }
+      }
+
       // ── Hide header CTA when hero is visible ──────
       const headerCta   = document.querySelector('.header__cta');
       const heroSection = document.querySelector('.hero');
@@ -318,7 +343,7 @@ const skillChips = [
       })();
 
       document.querySelectorAll('.item__shots').forEach(el => {
-        const label = el.dataset.cursor || 'Under NDA';
+        const label = el.dataset.cursor || 'Sorry, NDA';
         el.addEventListener('mouseenter', () => {
           pillLabel.textContent = label;
           pill.classList.add('visible');

@@ -70,6 +70,16 @@ const { title, homeHref, workHref, footer = true, cloudflareBeacon = false, oneP
   window.addEventListener('pageshow', e => {
     if (e.persisted) {
       document.querySelector('.page-wrap')?.classList.remove('page-leaving');
+      // Lenis may have been mid-animation (isScrolling !== false/"native")
+      // when the page was frozen for bfcache, in which case its RAF loop
+      // resumes on restore and keeps lerping toward that stale target —
+      // visible as the page drifting further down right after a back
+      // navigation. Force its internal state back in sync with the
+      // scroll position the browser actually restored.
+      if (window.lenis) {
+        window.lenis.isScrolling = false;
+        window.lenis.animatedScroll = window.lenis.targetScroll = window.scrollY;
+      }
     }
   });
 

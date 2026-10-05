@@ -16,11 +16,12 @@ interface Props {
   cursorLabel?: string;
   shotsClass?: string;
   href?: string;
+  id?: string;
 }
-const { logoSrc, logoDarkSrc, logoAlt, name, sub, desc, period, role, scope, cursorLabel, shotsClass, href } = Astro.props;
+const { logoSrc, logoDarkSrc, logoAlt, name, sub, desc, period, role, scope, cursorLabel, shotsClass, href, id } = Astro.props;
 const ShotsTag = href ? 'a' : 'div';
 ---
-<div class="item">
+<div class="item" id={id}>
   <div class="item__info">
     <div class="item__top">
       <div class="item__company-row">

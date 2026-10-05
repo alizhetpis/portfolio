@@ -432,7 +432,7 @@ import Layout from '../../layouts/Layout.astro';
           <p class="cs-closing-cta__text">See what else I've built</p>
         </div>
 
-        <div class="cs-portfolio-teaser" data-lenis-prevent>
+        <div class="cs-portfolio-teaser">
           <a href="/work/alphior" class="cs-portfolio-teaser__card" style="background:#35A8E0;" data-cursor="See Case">
             <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-alphior.svg" alt="" /></div>
             <div class="cs-portfolio-teaser__title">
@@ -440,35 +440,35 @@ import Layout from '../../layouts/Layout.astro';
               <p class="cs-portfolio-teaser__sub">B2B · HR Tech · SaaS</p>
             </div>
           </a>
-          <a href="/#work" class="cs-portfolio-teaser__card" style="background:#007395;" data-cursor="Sorry, NDA">
+          <a href="/#aci" class="cs-portfolio-teaser__card" style="background:#007395;" data-cursor="Sorry, NDA">
             <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-aci.svg" alt="" /></div>
             <div class="cs-portfolio-teaser__title">
               <p class="cs-portfolio-teaser__name">Alatau City Invest</p>
               <p class="cs-portfolio-teaser__sub">B2C/B2B · Fintech · Investments</p>
             </div>
           </a>
-          <a href="/#work" class="cs-portfolio-teaser__card" style="background:#D10D35;" data-cursor="Sorry, NDA">
+          <a href="/#citix" class="cs-portfolio-teaser__card" style="background:#D10D35;" data-cursor="Drop Soon">
             <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-citix-mark.svg" alt="" /></div>
             <div class="cs-portfolio-teaser__title">
               <p class="cs-portfolio-teaser__name">Citix</p>
               <p class="cs-portfolio-teaser__sub">B2B · Adtech · SaaS</p>
             </div>
           </a>
-          <a href="/#work" class="cs-portfolio-teaser__card" style="background:#023DFF;" data-cursor="Sorry, NDA">
+          <a href="/#bereke" class="cs-portfolio-teaser__card" style="background:#023DFF;" data-cursor="Drop Soon">
             <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-bereke.svg" alt="" /></div>
             <div class="cs-portfolio-teaser__title">
               <p class="cs-portfolio-teaser__name">Bereke Bank</p>
               <p class="cs-portfolio-teaser__sub">B2C/B2B · Fintech · Transfers &amp; Payments</p>
             </div>
           </a>
-          <a href="/#work" class="cs-portfolio-teaser__card" style="background:#21A038;" data-cursor="Sorry, NDA">
+          <a href="/#sberbank" class="cs-portfolio-teaser__card" style="background:#21A038;" data-cursor="Sorry, NDA">
             <div class="cs-portfolio-teaser__watermark"><img src="/assets/sberbank.svg" alt="" /></div>
             <div class="cs-portfolio-teaser__title">
               <p class="cs-portfolio-teaser__name">Sberbank</p>
               <p class="cs-portfolio-teaser__sub">B2C · Fintech · Non-banking services</p>
             </div>
           </a>
-          <a href="/#work" class="cs-portfolio-teaser__card" style="background:#045B2C;" data-cursor="Sorry, NDA">
+          <a href="/#aipark" class="cs-portfolio-teaser__card" style="background:#045B2C;" data-cursor="Drop Soon">
             <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-aipark.svg" alt="" /></div>
             <div class="cs-portfolio-teaser__title">
               <p class="cs-portfolio-teaser__name">AI Parking</p>
@@ -626,6 +626,41 @@ import Layout from '../../layouts/Layout.astro';
           });
         });
       }
+
+      // ── Portfolio teaser: only hijack genuinely horizontal
+      // wheel gestures, so vertical page scroll stays smooth
+      // and uninterrupted (no Lenis/native handoff stutter).
+      const csTeaserRow = document.querySelector('.cs-portfolio-teaser');
+      if (csTeaserRow) {
+        csTeaserRow.addEventListener('wheel', (e) => {
+          if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+            e.preventDefault();
+            e.stopPropagation();
+            csTeaserRow.scrollLeft += e.deltaX;
+          }
+        }, { passive: false });
+      }
+
+      // ── Re-center Thanks/cards on bfcache return ────
+      // Clicking a teaser card navigates away from right here; when the
+      // user comes back (bfcache restore), re-center this block in the
+      // viewport instead of leaving it wherever it happened to land.
+      window.addEventListener('pageshow', (e) => {
+        if (!e.persisted) return;
+        const closingBlock = document.querySelector('.cs-closing-wrap');
+        if (!closingBlock) return;
+        const rect = closingBlock.getBoundingClientRect();
+        const wasInView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (wasInView) {
+          requestAnimationFrame(() => {
+            closingBlock.scrollIntoView({ block: 'center', behavior: 'auto' });
+            if (window.lenis) {
+              window.lenis.isScrolling = false;
+              window.lenis.animatedScroll = window.lenis.targetScroll = window.scrollY;
+            }
+          });
+        }
+      });
     </script>
   </Fragment>
 </Layout>
@@ -1225,7 +1260,7 @@ import Layout from '../../layouts/Layout.astro';
     100% { transform: translate(var(--dx), var(--dy)) scale(1); opacity: 0; }
   }
 
-  .cs-closing-wrap { display: flex; flex-direction: column; gap: 40px; width: 100%; }
+  .cs-closing-wrap { display: flex; flex-direction: column; gap: 16px; width: 100%; }
   :global(.footer) { margin-top: 160px; }
   .cs-closing-cta { display: flex; align-items: center; gap: 40px; width: 100%; }
   .cs-closing-cta__text { font-size: 32px; color: var(--dark); white-space: nowrap; }
@@ -1236,6 +1271,7 @@ import Layout from '../../layouts/Layout.astro';
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
+    margin-top: 24px;
     padding: 0 var(--pad) 4px var(--pad);
     overflow-x: auto;
     overflow-y: hidden;
