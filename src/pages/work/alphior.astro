@@ -1,0 +1,968 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Alphior — Ali Zhetpis" homeHref="/" workHref="/#work">
+  <main class="cs-main">
+
+    <!-- ── Hero ── -->
+    <section class="cs-page" id="top">
+      <div style="display:flex; flex-direction:column; gap:80px; width:100%;">
+        <div class="cs-row">
+          <div class="cs-col-left">
+            <a href="/" class="cs-back">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4L12 20M12 4L6 10M12 4L18 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Back
+            </a>
+          </div>
+          <div class="cs-col-right">
+            <img src="/assets/logo-alphior.svg" data-light="/assets/logo-alphior.svg" data-dark="/assets/logo-alphior-dark.svg" alt="Alphior icon" class="cs-icon" />
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <p class="cs-heading">Alphior</p>
+              <p class="cs-desc">B2B web platform for HR electronic document management: payslips, leave requests, and multi-step approvals for outsourcing clients across Central Asia</p>
+            </div>
+            <div class="cs-meta">
+              <div class="cs-meta-row">
+                <span class="cs-meta-label">Period</span>
+                <span class="cs-meta-value">2025 · 3 months</span>
+              </div>
+              <div class="cs-meta-row">
+                <span class="cs-meta-label">Role</span>
+                <span class="cs-meta-value">Product Designer</span>
+              </div>
+              <div class="cs-meta-row">
+                <span class="cs-meta-label">Scope</span>
+                <span class="cs-meta-value">Research, UI/UX, UX Writing, CJM, Design System, Prototyping</span>
+              </div>
+              <div class="cs-meta-row">
+                <span class="cs-meta-label">Type</span>
+                <span class="cs-meta-value">Web SaaS · B2B</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="al-hero-visual al-reveal">
+          <div class="al-hero-visual__logo">
+            <img src="/assets/alphior/wordmark.svg" alt="Alphior — Business Partners" />
+          </div>
+          <div class="al-hero-visual__shot">
+            <img src="/assets/alphior/hero-macbook.webp" alt="Alphior admin platform on a MacBook" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Context ── -->
+    <section class="cs-page">
+      <div class="cs-stack">
+        <p class="cs-section-heading al-reveal">Context</p>
+        <div class="al-facts al-reveal">
+          <div><p class="al-facts__text">Every leave request routed through corporate email</p><p class="al-facts__label">Manual</p></div>
+          <div><p class="al-facts__text">Orders generated and chased inside 1C</p><p class="al-facts__label">1C-bound</p></div>
+          <div><p class="al-facts__text">Routes set up by hand for each new client</p><p class="al-facts__label">Multi-client</p></div>
+          <div><p class="al-facts__text">Employees, managers, admins, all in one system</p><p class="al-facts__label">Multi-role</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Problem statement ── -->
+    <section class="cs-page al-block-blue al-block-blue--photo">
+      <div class="al-statement al-reveal">
+        <p class="al-statement__label">Problem statement</p>
+        <div class="al-statement__body">
+          <p class="al-statement__title">HR teams lose time routing documents by hand</p>
+          <p class="al-statement__desc">Leave requests, approvals, and payslips moved through email and 1C, needing manual setup for every route and client, so simple tasks stalled across departments</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Jobs To Be Done ── -->
+    <section class="cs-page al-jt-section">
+      <div class="cs-stack al-jt-stack">
+        <img class="al-jt-quote" src="/assets/alphior/jtbd-quote.svg" alt="" />
+        <p class="cs-section-heading al-reveal">Jobs To Be Done</p>
+        <div class="al-jt al-reveal">
+          <div><p class="al-jt__role">EMPLOYEE</p><p class="al-jt__text">When I need my payslip or want to request leave, I want to do it in a couple of clicks, so I don't wait on HR or email.</p></div>
+          <div><p class="al-jt__role">MANAGER</p><p class="al-jt__text">When a request reaches me, I want to see my team's hierarchy and approve in place, so approvals don't stall.</p></div>
+          <div><p class="al-jt__role">ADMIN</p><p class="al-jt__text">When client data changes, I want to fix it and reroute approvals myself, so the system runs without email.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Permissions were the architecture (Roles) ── -->
+    <section class="cs-page">
+      <div class="cs-stack">
+        <p class="cs-section-heading al-reveal">Permissions were the architecture</p>
+        <div class="al-roles al-reveal">
+          <div class="al-role-card">
+            <div class="al-dots"><i class="al-on"></i><i></i><i></i><i></i></div>
+            <div class="al-role-card__text">
+              <p class="al-role-card__name">Employee</p>
+              <p class="al-role-card__desc">Own profile: payslips, data, leave</p>
+            </div>
+          </div>
+          <div class="al-role-card">
+            <div class="al-dots"><i class="al-on"></i><i class="al-on"></i><i></i><i></i></div>
+            <div class="al-role-card__text">
+              <p class="al-role-card__name">Manager</p>
+              <p class="al-role-card__desc">Approves and delegates across their team tree</p>
+            </div>
+          </div>
+          <div class="al-role-card">
+            <div class="al-dots"><i class="al-on"></i><i class="al-on"></i><i class="al-on"></i><i></i></div>
+            <div class="al-role-card__text">
+              <p class="al-role-card__name">Admin</p>
+              <p class="al-role-card__desc">Edits anyone, reroutes approvals, runs the portal</p>
+            </div>
+          </div>
+          <div class="al-role-card">
+            <div class="al-dots"><i class="al-on"></i><i class="al-on"></i><i class="al-on"></i><i class="al-on"></i></div>
+            <div class="al-role-card__text">
+              <p class="al-role-card__name">Super-admin</p>
+              <p class="al-role-card__desc">Full control across all portals</p>
+            </div>
+          </div>
+          <div class="al-role-card">
+            <img class="al-star" src="/assets/alphior/icon-north-star.svg" alt="" />
+            <div class="al-role-card__text">
+              <p class="al-role-card__name">Specialist</p>
+              <p class="al-role-card__desc">Separate desk for client requests and tickets</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Competitive teardown ── -->
+    <section class="cs-page">
+      <div class="cs-stack">
+        <p class="cs-section-heading al-reveal">Competitive teardown</p>
+        <div class="al-comp al-reveal">
+          <div>
+            <div class="al-comp__text">
+              <p class="al-comp__title">Direct · EDM / HR</p>
+              <p class="al-comp__desc">Strong reach, but recurring pains. No mass signing, rigid approval routes, dated interfaces, hard navigation.</p>
+            </div>
+            <span class="al-pill">5 competitors</span>
+          </div>
+          <div class="al-comp__divider"></div>
+          <div>
+            <div class="al-comp__text">
+              <p class="al-comp__title">Indirect</p>
+              <p class="al-comp__desc">Clean UIs, but each solves one slice: time, accounting, or talent, not the payroll-to-approval loop.</p>
+            </div>
+            <span class="al-pill">4 competitors</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Pull quote ── -->
+    <section class="cs-page">
+      <p class="al-pullquote al-reveal">The gap. No one made document routing and approvals feel effortless. That became <span class="al-pullquote__highlight">the bet.</span></p>
+    </section>
+
+    <!-- ── Scope (flip cards) ── -->
+    <section class="cs-page">
+      <div class="cs-stack">
+        <p class="cs-section-heading al-reveal">Scope</p>
+        <div class="al-phases al-reveal">
+          <button type="button" class="al-phase" aria-pressed="false">
+            <span class="al-phase__inner">
+              <span class="al-phase__face al-phase__front">
+                <span class="al-phase__tag">Phase 1 · MVP</span>
+                <span class="al-phase__word">Access</span>
+              </span>
+              <span class="al-phase__face al-phase__back">
+                <img class="al-phase__num" src="/assets/alphior/phase-num-1.svg" alt="" style="right:-10px; bottom:-20px; height:80%; width:auto;" />
+                <ul><li>Login and 2FA</li><li>Payslip access</li><li>24-month history</li><li>Export / share</li></ul>
+              </span>
+            </span>
+          </button>
+          <button type="button" class="al-phase" aria-pressed="false">
+            <span class="al-phase__inner">
+              <span class="al-phase__face al-phase__front">
+                <span class="al-phase__tag">Phase 2</span>
+                <span class="al-phase__word">Approvals</span>
+              </span>
+              <span class="al-phase__face al-phase__back">
+                <img class="al-phase__num" src="/assets/alphior/phase-num-2.svg" alt="" style="right:-10px; bottom:-20px; height:80%; width:auto;" />
+                <ul><li>Document routing</li><li>Multi-step approvals</li><li>Roles and permissions</li><li>Specialist tickets</li></ul>
+              </span>
+            </span>
+          </button>
+          <button type="button" class="al-phase" aria-pressed="false">
+            <span class="al-phase__inner">
+              <span class="al-phase__face al-phase__front">
+                <span class="al-phase__tag">Phase 3</span>
+                <span class="al-phase__word">Lifecycle</span>
+              </span>
+              <span class="al-phase__face al-phase__back">
+                <img class="al-phase__num" src="/assets/alphior/phase-num-3.svg" alt="" style="right:-10px; bottom:-20px; height:80%; width:auto;" />
+                <ul><li>Full hire-to-exit</li><li>Candidate offer</li><li>Onboarding</li><li>Termination</li></ul>
+              </span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Screens ── -->
+    <section class="cs-page al-screens-section">
+      <div class="al-screens-layout">
+        <div class="al-screens-heading-col">
+          <div class="al-screens-heading-sticky">
+            <p class="cs-section-heading al-reveal al-screens-heading">Screens</p>
+          </div>
+        </div>
+        <div class="al-screens-list">
+          <div class="al-screen al-reveal" data-caption="One line in, you're in">
+            <img class="al-screen__img" src="/assets/alphior/screen-authorization.webp" alt="Alphior login screen" />
+          </div>
+          <div class="al-screen al-reveal" data-caption="Everything about you, one glance">
+            <img class="al-screen__img" src="/assets/alphior/screen-personal-cabinet-1.webp" alt="Alphior personal cabinet screen" />
+          </div>
+          <div class="al-screen al-reveal" data-caption="Paperwork that finds you first">
+            <img class="al-screen__img" src="/assets/alphior/screen-personal-cabinet-2.webp" alt="Alphior employment documents screen" />
+          </div>
+          <div class="al-screen al-reveal" data-caption="Approvals, out in the open">
+            <img class="al-screen__img" src="/assets/alphior/screen-requests.webp" alt="Alphior requests board screen" />
+          </div>
+          <div class="al-screen al-reveal" data-caption="Requests, starting with Hiring">
+            <img class="al-screen__img" src="/assets/alphior/screen-hiring.webp" alt="Alphior create hiring request screen" />
+          </div>
+          <div class="al-screen al-reveal" data-caption="Every client, one table">
+            <img class="al-screen__img" src="/assets/alphior/screen-companies.webp" alt="Alphior companies table screen" />
+          </div>
+          <div class="al-screen al-reveal" data-caption="Every status change, on the record">
+            <img class="al-screen__img" src="/assets/alphior/screen-approval-history.webp" alt="Alphior application approval history screen" />
+          </div>
+          <div class="al-screen al-reveal" data-caption="All their paperwork, one download">
+            <img class="al-screen__img" src="/assets/alphior/screen-employee-documents.webp" alt="Alphior employee documents screen" />
+          </div>
+        </div>
+      </div>
+      <p class="al-screens-caption is-text-visible" id="al-screens-caption">One line in, you're in</p>
+    </section>
+
+    <!-- ── Design principle ── -->
+    <section class="cs-page al-block-blue">
+      <div class="al-statement al-reveal">
+        <p class="al-statement__label">Design principle</p>
+        <div class="al-statement__body">
+          <p class="al-statement__title">Minimize clicks. Maximize clarity</p>
+          <p class="al-statement__desc">Every flow was measured by one rule: the fewest clicks from intent to done.<br>A payslip is one click. Leave is a request, not a thread.<br>Approvals happen where the manager already is</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Typography ── -->
+    <section class="cs-page">
+      <div class="cs-stack">
+        <p class="cs-section-heading al-reveal">Typography</p>
+        <div class="al-type-row al-reveal">
+          <div class="al-type-card">
+            <div class="al-type-card__weights"><span>Regular</span><span>Medium</span><span>Semibold</span><span>Bold</span></div>
+            <p class="al-type-card__specimen">Inter</p>
+          </div>
+          <div class="al-type-card al-type-card--dark">
+            <p class="al-type-card__sample">AaBbCc<br />01234567<br />{`{(!@#$%&*?)}`}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Colors ── -->
+    <section class="cs-page">
+      <div class="cs-stack">
+        <p class="cs-section-heading al-reveal">Colors</p>
+        <div class="al-swatches al-reveal">
+          <div style="background:#ffffff; color:#222;"><span>#FFFFFF</span></div>
+          <div style="background:#f8fafc; color:#222;"><span>#F8FAFC</span></div>
+          <div style="background:#2563eb; color:#fff;"><span>#2563EB</span></div>
+          <div style="background:#14b8a6; color:#fff;"><span>#14B8A6</span></div>
+          <div style="background:#6b7280; color:#fff;"><span>#6B7280</span></div>
+          <div style="background:#17253f; color:#fff;"><span>#17253F</span></div>
+          <div style="background:#1f2937; color:#fff;"><span>#1F2937</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Reflection ── -->
+    <section class="cs-page">
+      <div class="cs-stack">
+        <p class="cs-section-heading al-reveal">Reflection</p>
+        <div class="al-refl al-reveal">
+          <div><p class="al-refl__title">Model the roles first</p><p class="al-refl__desc">Permissions weren't a detail, they were the architecture. Getting the role model right made every screen simpler.</p></div>
+          <div><p class="al-refl__title">Benchmark for gaps</p><p class="al-refl__desc">The market had reach and dated UX. Fixing the approval loop, not adding modules, was the opening.</p></div>
+          <div><p class="al-refl__title">Phase ruthlessly</p><p class="al-refl__desc">Payslips first gave clients value fast; approvals and lifecycle could follow without blocking launch.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Closing ── -->
+    <section class="cs-page cs-page--closing">
+      <div class="al-closing-wrap">
+        <div class="al-closing al-reveal">
+          <div class="al-closing__spacer"></div>
+          <p class="al-closing__text">Thanks</p>
+          <button type="button" class="al-closing__heart-btn" aria-label="Send some love">
+            <img src="/assets/energo/v2/icon-heart-v3.svg" alt="" class="al-closing__heart" />
+          </button>
+          <p class="al-closing__text">for watching</p>
+        </div>
+
+        <div class="al-closing-cta al-reveal">
+          <div class="al-closing__spacer"></div>
+          <p class="al-closing-cta__text">See what else I've built</p>
+        </div>
+
+        <div class="al-portfolio-teaser al-reveal">
+          <a href="/#work" class="al-portfolio-teaser__card">
+            <div class="shots-wrap">
+              <img src="/assets/aci-1.webp" style="width:220px;height:496px;left:76px;top:-84px;" alt="" />
+              <img src="/assets/aci-2.webp" style="width:220px;height:496px;left:336px;top:72px;" alt="" />
+              <img src="/assets/aci-3.webp" style="width:220px;height:496px;left:596px;top:228px;" alt="" />
+            </div>
+          </a>
+          <a href="/#work" class="al-portfolio-teaser__card">
+            <div class="shots-wrap">
+              <img src="/assets/citix-1.webp" style="width:693px;height:493px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:0;" alt="" />
+            </div>
+          </a>
+          <a href="/#work" class="al-portfolio-teaser__card">
+            <div class="shots-wrap">
+              <img src="/assets/bereke-2.webp" style="width:220px;height:476px;left:76px;top:-75px;" alt="" />
+              <img src="/assets/bereke-1.webp" style="width:220px;height:476px;left:336px;top:81px;" alt="" />
+              <img src="/assets/bereke-3.webp" style="width:220px;height:477px;left:596px;top:237px;" alt="" />
+            </div>
+          </a>
+          <a href="/#work" class="al-portfolio-teaser__card">
+            <div class="shots-wrap">
+              <img class="sber-shot sber-shot--1" src="/assets/sber-1.webp" alt="" />
+              <img class="sber-shot sber-shot--2" src="/assets/sber-2.webp" alt="" />
+              <img class="sber-shot sber-shot--3" src="/assets/sber-3.webp" alt="" />
+            </div>
+          </a>
+          <a href="/work/energo" class="al-portfolio-teaser__card">
+            <div class="shots-wrap">
+              <img src="/assets/energo-4.webp" style="width:220px;height:476px;left:76px;top:72px;" alt="" />
+              <img src="/assets/energo-3.webp" style="width:220px;height:476px;left:336px;top:232px;" alt="" />
+              <img src="/assets/energo-2.webp" style="width:220px;height:476px;left:596px;top:-68px;" alt="" />
+            </div>
+          </a>
+          <a href="/#work" class="al-portfolio-teaser__card">
+            <div class="shots-wrap">
+              <img src="/assets/aipark-1.webp" style="width:220px;height:496px;left:76px;top:-84px;" alt="" />
+              <img src="/assets/aipark-2.webp" style="width:220px;height:496px;left:336px;top:72px;" alt="" />
+              <img src="/assets/aipark-3.webp" style="width:220px;height:496px;left:596px;top:228px;" alt="" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Fragment slot="scripts">
+    <script is:inline>
+      // ── Pull quote word-by-word reveal ─────────────
+      const pullquote = document.querySelector('.al-pullquote');
+      if (pullquote) {
+        // Astro's scoped-style attribute (data-astro-cid-*) is only
+        // stamped onto elements present at build time — spans created
+        // here at runtime need it copied over manually, or the scoped
+        // .al-pullquote__word rules below silently never match them.
+        const cidAttr = pullquote.getAttributeNames().find(a => a.startsWith('data-astro-cid'));
+        let wi = 0;
+        const wrapWords = (container) => {
+          [...container.childNodes].forEach(node => {
+            if (node.nodeType === Node.TEXT_NODE) {
+              const frag = document.createDocumentFragment();
+              node.textContent.split(/(\s+)/).forEach(part => {
+                if (part.trim() === '') {
+                  frag.appendChild(document.createTextNode(part));
+                } else {
+                  const span = document.createElement('span');
+                  span.className = 'al-pullquote__word';
+                  if (cidAttr) span.setAttribute(cidAttr, '');
+                  span.style.setProperty('--i', wi++);
+                  span.textContent = part;
+                  frag.appendChild(span);
+                }
+              });
+              node.replaceWith(frag);
+            } else if (node.nodeType === Node.ELEMENT_NODE) {
+              // e.g. the "the bet." highlight span — split its own text
+              // into words too, so it animates in step with the rest
+              // instead of landing as one fixed chunk.
+              wrapWords(node);
+            }
+          });
+        };
+        wrapWords(pullquote);
+      }
+
+      observeReveal([...document.querySelectorAll('.al-reveal')], { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+
+      // The shared Footer component ships with its own opacity:0 base
+      // style (style.css) meant to be cleared by observeReveal — every
+      // page using the Footer must trigger this itself.
+      const footerEl = document.querySelector('.footer');
+      if (footerEl) observeReveal([footerEl], { threshold: 0.04 });
+
+      // ── Scope card flip ────────────────────────────
+      document.querySelectorAll('.al-phase').forEach(card => {
+        card.addEventListener('click', () => {
+          card.setAttribute('aria-pressed', card.getAttribute('aria-pressed') !== 'true');
+        });
+        card.addEventListener('mouseleave', () => {
+          card.setAttribute('aria-pressed', 'false');
+        });
+      });
+
+      // ── Hero shot parallax ──────────────────────────
+      const heroShotImg = document.querySelector('.al-hero-visual__shot img');
+      const heroShotPanel = document.querySelector('.al-hero-visual__shot');
+      if (heroShotImg && heroShotPanel) {
+        const amount = 40;
+        const updateHeroParallax = () => {
+          const vh = window.innerHeight;
+          const rect = heroShotPanel.getBoundingClientRect();
+          const progress = (rect.top + rect.height / 2 - vh / 2) / vh;
+          heroShotImg.style.transform = `translateY(${progress * amount}px)`;
+        };
+        window.lenis.on('scroll', updateHeroParallax);
+        updateHeroParallax();
+      }
+
+      // ── Screens fixed caption (scroll-synced) ───────
+      const screenEls = document.querySelectorAll('.al-screen');
+      const captionEl = document.getElementById('al-screens-caption');
+      const screensLayoutEl = document.querySelector('.al-screens-layout');
+      if (screenEls.length && captionEl && screensLayoutEl) {
+        let currentCaption = captionEl.textContent;
+        const activeScreens = new Set();
+        const setCaption = (text) => {
+          if (text === currentCaption) return;
+          currentCaption = text;
+          captionEl.textContent = text;
+        };
+        const screenObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              activeScreens.add(entry.target);
+              setCaption(entry.target.dataset.caption);
+            } else {
+              activeScreens.delete(entry.target);
+            }
+          });
+          captionEl.classList.toggle('has-active-screen', activeScreens.size > 0);
+        }, { rootMargin: '-50% 0px -50% 0px', threshold: 0 });
+        screenEls.forEach(el => screenObserver.observe(el));
+
+        // Shows only while the actual content row (heading + frames, not
+        // the section's own padding) spans the caption's vertical position
+        // — symmetric for both scroll directions, so it fades in/out
+        // cleanly right as real content appears/leaves, not before/after.
+        const firstCaption = screenEls[0].dataset.caption;
+        let lastScrollY = window.scrollY;
+        let wasInSection = false;
+        const onScroll = () => {
+          const rect = screensLayoutEl.getBoundingClientRect();
+          const centerLine = window.innerHeight / 2;
+          const inSection = rect.top <= centerLine && rect.bottom >= centerLine;
+          const scrollingUp = window.scrollY < lastScrollY;
+
+          // Exiting upward (back toward the section's start) while still
+          // showing the very first caption should cut instantly, not fade
+          // — the fade reads as lag right as the page leaves the section.
+          if (wasInSection && !inSection && scrollingUp && currentCaption === firstCaption) {
+            captionEl.classList.add('is-cutting');
+            captionEl.classList.remove('is-in-section');
+            requestAnimationFrame(() => captionEl.classList.remove('is-cutting'));
+          } else {
+            captionEl.classList.toggle('is-in-section', inSection);
+          }
+
+          wasInSection = inSection;
+          lastScrollY = window.scrollY;
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+
+      // ── Closing heart burst ────────────────────────
+      const heartBtn = document.querySelector('.al-closing__heart-btn');
+      if (heartBtn) {
+        heartBtn.addEventListener('click', () => {
+          const count = 8;
+          for (let i = 0; i < count; i++) {
+            const particle = document.createElement('span');
+            particle.className = 'al-closing__particle';
+            const angle = (Math.PI * 2 * i) / count + (Math.random() * 0.4 - 0.2);
+            const distance = 60 + Math.random() * 40;
+            particle.style.setProperty('--dx', `${Math.cos(angle) * distance}px`);
+            particle.style.setProperty('--dy', `${Math.sin(angle) * distance - 20}px`);
+            particle.style.animationDelay = `${Math.random() * 80}ms`;
+            heartBtn.appendChild(particle);
+            particle.addEventListener('animationend', () => particle.remove());
+          }
+        });
+      }
+    </script>
+  </Fragment>
+</Layout>
+
+<style>
+  .cs-main { display: block; }
+
+  .cs-page {
+    --al-blue: #2563eb;
+    --al-teal: #14b8a6;
+    --al-navy: #17253f;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 140px var(--pad) 100px;
+    box-sizing: border-box;
+  }
+  .cs-page > * { width: 100%; }
+  .cs-page--closing { min-height: 0; align-items: center; padding-top: 60px; padding-bottom: 120px; }
+
+  .cs-stack { display: flex; flex-direction: column; gap: 40px; width: 100%; }
+
+  .cs-row { display: flex; gap: var(--gap); align-items: flex-start; }
+  .cs-col-left { width: var(--col-left); flex-shrink: 0; }
+  .cs-col-right { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+
+  .cs-back {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 18px; line-height: 1.6; text-transform: uppercase;
+    color: var(--dark); text-decoration: none; transition: opacity .2s;
+    white-space: nowrap;
+  }
+  .cs-back:hover { opacity: 0.55; }
+  .cs-back svg {
+    width: 24px; height: 24px; flex-shrink: 0;
+    transform: rotate(-90deg);
+    transition: transform .25s cubic-bezier(.23,1,.32,1);
+  }
+  .cs-back:hover svg { transform: rotate(-90deg) translateY(-4px); }
+
+  .cs-icon { width: 60px; height: 60px; object-fit: contain; display: block; }
+  .cs-heading { font-size: 32px; line-height: 1.2; color: var(--dark); text-wrap: balance; }
+  .cs-desc { font-size: 18px; line-height: 1.6; color: var(--dark); text-wrap: pretty; max-width: 600px; }
+  .cs-section-heading { font-size: 32px; line-height: 1.2; color: var(--dark); text-wrap: balance; }
+
+  .cs-meta { display: flex; flex-direction: column; gap: 0; max-width: 670px; }
+  .cs-meta-row {
+    display: flex; gap: 20px; font-size: 18px; line-height: 1.2;
+    align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--divider);
+  }
+  .cs-meta-row:last-child { border-bottom: none; }
+  .cs-meta-label { width: 95px; flex-shrink: 0; color: var(--muted); white-space: nowrap; }
+  .cs-meta-value { color: var(--dark); flex-wrap: wrap; display: flex; gap: 4px 12px; text-wrap: pretty; }
+
+  /* ── Hero visual ── */
+  .al-hero-visual {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    gap: 20px;
+  }
+  .al-hero-visual__logo {
+    flex: 1 0 0;
+    background: var(--al-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .al-hero-visual__logo img { width: 60%; height: auto; }
+  .al-hero-visual__shot {
+    flex: 1 0 0;
+    min-width: 0;
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .al-hero-visual__shot img { width: 100%; height: 124%; object-fit: cover; object-position: center; will-change: transform; }
+
+  /* ── Context facts ── */
+  .al-facts { display: flex; gap: 24px; }
+  .al-facts > div {
+    flex: 1;
+    display: flex; flex-direction: column; gap: 16px;
+    border-left: 1px solid var(--divider);
+    padding-left: 24px;
+  }
+  .al-facts > div:first-child { border-left: none; padding-left: 0; }
+  .al-facts__text { font-size: 24px; color: var(--dark); text-wrap: pretty; }
+  .al-facts__label { font-size: 24px; color: var(--muted); white-space: nowrap; }
+
+  /* ── Blue statement blocks (Problem statement / Design principle) ── */
+  .al-block-blue {
+    background: var(--al-blue);
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+  .al-block-blue--photo { background: #2563eb; }
+  .al-statement { text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 40px; }
+  .al-statement__label { font-size: 24px; color: rgba(255,255,255,.75); white-space: nowrap; text-transform: uppercase; letter-spacing: .02em; }
+  .al-statement__body { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .al-statement__title { font-size: 32px; color: #fff; text-wrap: balance; }
+  .al-statement__desc { font-size: 20px; color: rgba(255,255,255,.85); text-wrap: pretty; line-height: 1.5; max-width: 720px; margin: 0 auto; }
+
+  /* ── JTBD ── */
+  .al-jt-stack { position: relative; }
+  .al-jt-section .al-jt-quote { position: absolute; top: -24px; right: -20px; width: 196px; height: auto; pointer-events: none; z-index: 0; }
+  .al-jt { display: flex; gap: 24px; position: relative; z-index: 1; }
+  .al-jt > div { flex: 1; background: var(--item-bg); padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+  .al-jt__role { font-size: 24px; color: var(--al-blue); white-space: nowrap; }
+  .al-jt__text { font-size: 24px; color: var(--dark); line-height: 1.3; text-wrap: pretty; }
+
+  /* ── Roles cards ── */
+  .al-roles { display: flex; gap: 20px; }
+  .al-role-card {
+    flex: 1;
+    background: var(--item-bg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .al-star { width: 16px; height: 16px; animation: al-star-spin 2.4s cubic-bezier(.65,0,.35,1) infinite; }
+  @keyframes al-star-spin {
+    0%   { transform: rotate(0deg); }
+    40%  { transform: rotate(180deg); }
+    50%  { transform: rotate(180deg); }
+    90%  { transform: rotate(360deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) { .al-star { animation: none; } }
+  .al-dots { display: flex; gap: 8px; }
+  .al-dots i { width: 16px; height: 16px; border-radius: 50%; background: color-mix(in srgb, var(--al-blue) 10%, transparent); }
+  .al-dots i.al-on { background: var(--al-blue); }
+  .al-role-card__text { display: flex; flex-direction: column; gap: 8px; }
+  .al-role-card__name { font-size: 24px; color: var(--dark); text-wrap: balance; }
+  .al-role-card__desc { font-size: 24px; color: var(--muted); text-wrap: pretty; }
+
+  /* ── Competitive ── */
+  .al-comp { display: flex; gap: 40px; }
+  .al-comp > div:not(.al-comp__divider) { flex: 1; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+  .al-comp__divider { width: 1px; background: var(--divider); align-self: stretch; }
+  .al-comp__text { display: flex; flex-direction: column; gap: 8px; }
+  .al-comp__title { font-size: 24px; color: var(--dark); text-wrap: balance; }
+  .al-comp__desc { font-size: 24px; color: var(--muted); text-wrap: pretty; }
+  .al-pill {
+    display: inline-flex; align-items: center;
+    background: color-mix(in srgb, var(--al-blue) 10%, transparent);
+    color: var(--al-blue);
+    border-radius: 100px;
+    padding: 8px 24px;
+    font-size: 24px;
+    white-space: nowrap;
+  }
+
+  /* ── Pull quote ── */
+  .al-pullquote { font-size: 40px; line-height: 1.2; color: var(--dark); text-wrap: balance; max-width: 900px; }
+  .al-pullquote__highlight { color: var(--al-blue); }
+  .al-pullquote.page-reveal { opacity: 1; transform: none; transition: none; }
+  .al-pullquote__word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .5s cubic-bezier(.25,1,.5,1), transform .5s cubic-bezier(.25,1,.5,1);
+    transition-delay: calc(var(--i, 0) * 70ms);
+  }
+  .al-pullquote.visible .al-pullquote__word { opacity: 1; transform: translateY(0); }
+
+  /* ── Scope flip cards ── */
+  .al-phases { display: flex; gap: 20px; }
+  .al-phase {
+    flex: 1;
+    height: 240px;
+    border: none;
+    background: none;
+    padding: 0;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    perspective: 1400px;
+    transition: filter .3s ease;
+  }
+  .al-phase:hover { filter: drop-shadow(0 16px 32px rgba(0,0,0,0.35)); }
+  html.dark .al-phase:hover { filter: drop-shadow(0 16px 32px rgba(255,255,255,0.15)); }
+  .al-phase__inner {
+    position: relative;
+    display: grid;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform .65s cubic-bezier(.65,0,.35,1);
+  }
+  .al-phase[aria-pressed="true"] .al-phase__inner { transform: rotateY(180deg); }
+  .al-phase__face {
+    grid-area: 1 / 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .al-phase__front { background: var(--al-navy); }
+  .al-phase__tag { font-size: 24px; color: #f7f7f7; white-space: nowrap; }
+  .al-phase__word { font-size: 64px; color: #fdfdfd; text-wrap: balance; }
+  .al-phase__back {
+    background: var(--item-bg);
+    transform: rotateY(180deg);
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+  }
+  .al-phase__back ul { list-style: none; display: grid; gap: 4px; position: relative; z-index: 1; }
+  .al-phase__back li {
+    font-size: 24px;
+    color: var(--dark);
+    text-wrap: pretty;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .6s ease, transform .6s cubic-bezier(.25,1,.5,1);
+  }
+  .al-phase[aria-pressed="true"] .al-phase__back li { opacity: 1; transform: translateY(0); }
+  .al-phase__back li:nth-child(1) { transition-delay: .28s; }
+  .al-phase__back li:nth-child(2) { transition-delay: .36s; }
+  .al-phase__back li:nth-child(3) { transition-delay: .44s; }
+  .al-phase__back li:nth-child(4) { transition-delay: .52s; }
+  .al-phase__num { position: absolute; height: auto; pointer-events: none; z-index: 0; }
+  html.dark .al-phase__num { filter: invert(1); }
+
+  /* ── Screens ── */
+  .al-screens-section {
+    position: relative;
+    background: var(--item-bg);
+    box-shadow: 0 0 0 100vmax var(--item-bg);
+    clip-path: inset(0 -100vmax);
+    padding-bottom: 100px;
+  }
+  .al-screens-layout { display: flex; gap: 60px; align-items: stretch; width: 100%; }
+  .al-screens-heading-col { flex: 0 0 260px; padding-bottom: 400px; }
+  .al-screens-heading-sticky {
+    position: sticky;
+    top: 118px;
+  }
+  .al-screens-heading { margin: 0; }
+  .al-screens-list { display: flex; flex-direction: column; align-items: flex-end; gap: 40px; flex: 1; min-width: 0; }
+  .al-screen {
+    position: relative;
+    width: 100%;
+  }
+  .al-screen__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .al-screens-caption {
+    position: fixed;
+    /* .page-wrap centers the page content at max-width: var(--max-w);
+       position:fixed escapes that container and positions against the
+       raw viewport, so a plain `left: var(--pad)` only lines up with
+       the content edge below --max-w. This mirrors .page-wrap's own
+       margin:auto math to stay aligned at any width. */
+    left: calc(max(0px, (100vw - var(--max-w)) / 2) + var(--pad));
+    top: 50%;
+    transform: translateY(calc(-50% + 8px));
+    z-index: 5;
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.3;
+    color: #fff;
+    mix-blend-mode: difference;
+    text-transform: lowercase;
+    opacity: 0;
+    transition: opacity .3s ease, transform .3s ease;
+    pointer-events: none;
+  }
+  .al-screens-caption.is-text-visible.is-in-section.has-active-screen { opacity: 1; transform: translateY(-50%); }
+  .al-screens-caption.is-cutting { transition: none; }
+
+  /* ── Typography ── */
+  .al-type-row { display: flex; gap: 20px; }
+  .al-type-card {
+    flex: 1;
+    height: 400px;
+    background: var(--item-bg);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .al-type-card--dark { background: var(--al-blue); align-items: center; justify-content: center; }
+  .al-type-card__weights { display: flex; gap: 16px; font-size: 20px; color: var(--muted); }
+  .al-type-card__weights span { white-space: nowrap; }
+  .al-type-card__specimen { font-size: 120px; color: var(--dark); line-height: 1; white-space: nowrap; }
+  .al-type-card__sample { font-family: 'Inter', var(--font); font-weight: 500; font-size: 56px; color: #fff; text-align: center; line-height: 1.3; }
+
+  /* ── Colors ── */
+  .al-swatches { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px; }
+  .al-swatches > div {
+    width: 160px; height: 160px;
+    border: 1px solid var(--divider);
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px;
+    font-size: 18px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: filter .2s ease, width .3s cubic-bezier(.25,1,.5,1), height .3s cubic-bezier(.25,1,.5,1), margin .3s cubic-bezier(.25,1,.5,1);
+  }
+  .al-swatches > div:hover {
+    filter: brightness(0.92);
+    width: 180px;
+    height: 180px;
+    margin-bottom: -20px;
+  }
+  .al-swatches > div::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0);
+    transition: background .2s ease;
+  }
+  .al-swatches > div:hover::after { background: rgba(0,0,0,0.06); }
+  .al-swatches > div span {
+    position: relative;
+    z-index: 1;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity .5s ease;
+  }
+  .al-swatches > div:hover span { opacity: 1; transition: opacity .3s ease; }
+
+  /* ── Reflection ── */
+  .al-refl { display: flex; gap: 24px; }
+  .al-refl > div { flex: 1; background: var(--item-bg); padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+  .al-refl__title { font-size: 24px; color: var(--al-blue); text-wrap: balance; }
+  .al-refl__desc { font-size: 24px; color: var(--dark); text-wrap: pretty; }
+
+  /* ── Closing ── */
+  .al-closing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    width: 100%;
+    padding: 20px 0;
+  }
+  .al-closing__spacer { flex-shrink: 0; width: var(--col-left); }
+  .al-closing__text { font-size: 32px; color: var(--dark); white-space: nowrap; }
+  .al-closing__heart-btn {
+    position: relative;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
+    line-height: 0;
+  }
+  .al-closing__heart { width: 40px; height: 40px; transition: transform .15s ease; }
+  .al-closing__heart-btn:hover .al-closing__heart { transform: scale(1.08); }
+  .al-closing__heart-btn:active .al-closing__heart { transform: scale(0.88); }
+  :global(.al-closing__particle) {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 16px; height: 16px;
+    margin: -8px 0 0 -8px;
+    background: url('/assets/energo/v2/icon-heart-v3.svg') center / contain no-repeat;
+    pointer-events: none;
+    opacity: 0;
+    animation: al-heart-float 900ms ease-out forwards;
+  }
+  @keyframes al-heart-float {
+    0% { transform: translate(0, 0) scale(0.4); opacity: 1; }
+    100% { transform: translate(var(--dx), var(--dy)) scale(1); opacity: 0; }
+  }
+
+  .al-closing-wrap { display: flex; flex-direction: column; gap: 40px; width: 100%; }
+  /* The shared Footer component sits right after this page's own closing
+     content — without its own top border it can read as one continuous
+     block with the portfolio teaser above it. */
+  :global(.footer) { margin-top: 160px; }
+  .al-closing-cta { display: flex; align-items: center; gap: 40px; width: 100%; }
+  .al-closing-cta__text { font-size: 32px; color: var(--dark); white-space: nowrap; }
+
+  .al-portfolio-teaser {
+    display: flex;
+    gap: 20px;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0 var(--pad) 4px var(--pad);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .al-portfolio-teaser::-webkit-scrollbar { display: none; }
+  .al-portfolio-teaser__card {
+    flex: 0 0 420px;
+    height: 300px;
+    background: var(--item-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+  }
+  .al-portfolio-teaser__card .shots-wrap {
+    transform: scale(0.46);
+    transform-origin: top left;
+    transition: transform .5s cubic-bezier(.23,1,.32,1);
+  }
+  .al-portfolio-teaser__card:hover .shots-wrap { transform: scale(0.48); }
+  .al-portfolio-teaser__card img {
+    position: absolute;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 800px) {
+    .cs-page { padding: 72px 20px 24px; }
+    .al-closing__spacer { display: none; }
+    .al-portfolio-teaser__card { flex: 0 0 280px; height: 220px; }
+    .al-hero-visual { flex-direction: column; height: auto; }
+    .al-hero-visual__logo { flex: none; padding: 32px; }
+    .al-hero-visual__logo img { width: 60%; max-width: 220px; }
+    .al-hero-visual__shot { flex: none; height: 320px; }
+    .cs-row { flex-direction: column; gap: 24px; }
+    .cs-col-left { width: 100%; }
+    .cs-heading { font-size: 24px; }
+    .cs-desc { font-size: 18px; }
+    .cs-section-heading { font-size: 24px; }
+    .al-facts { flex-direction: column; gap: 20px; }
+    .al-facts > div { border-left: none; padding-left: 0; border-top: 1px solid var(--divider); padding-top: 20px; }
+    .al-facts > div:first-child { border-top: none; padding-top: 0; }
+    .al-jt { flex-direction: column; }
+    .al-roles { flex-direction: column; }
+    .al-comp { flex-direction: column; }
+    .al-comp__divider { display: none; }
+    .al-pullquote { font-size: 28px; }
+    .al-phases { flex-direction: column; }
+    .al-phase { height: 200px; }
+    .al-type-row { flex-direction: column; }
+    .al-type-card__specimen { font-size: 64px; }
+    .al-refl { flex-direction: column; }
+    .al-buttons { flex-wrap: wrap; row-gap: 20px; }
+    .al-statement__title { font-size: 24px; }
+    .al-screens-layout { flex-direction: column; gap: 24px; }
+    .al-screens-heading-col { flex: none; padding-bottom: 0; }
+    .al-screens-heading-sticky { position: static; height: auto; }
+    .al-screens-caption { display: none; }
+  }
+</style>
