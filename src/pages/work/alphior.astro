@@ -317,45 +317,47 @@ import Layout from '../../layouts/Layout.astro';
           <p class="al-closing-cta__text">See what else I've built</p>
         </div>
 
-        <div class="al-portfolio-teaser al-reveal">
-          <a href="/#work" class="al-portfolio-teaser__card">
-            <div class="shots-wrap">
-              <img src="/assets/aci-1.webp" style="width:220px;height:496px;left:76px;top:-84px;" alt="" />
-              <img src="/assets/aci-2.webp" style="width:220px;height:496px;left:336px;top:72px;" alt="" />
-              <img src="/assets/aci-3.webp" style="width:220px;height:496px;left:596px;top:228px;" alt="" />
+        <div class="al-portfolio-teaser al-reveal" data-lenis-prevent>
+          <a href="/work/energo" class="al-portfolio-teaser__card" style="background:var(--energo-green);" data-cursor="See Case">
+            <div class="al-portfolio-teaser__watermark"><img src="/assets/logo-energo.svg" alt="" /></div>
+            <div class="al-portfolio-teaser__title">
+              <p class="al-portfolio-teaser__name">EnerGo</p>
+              <p class="al-portfolio-teaser__sub">B2C · EV · Mobile</p>
             </div>
           </a>
-          <a href="/#work" class="al-portfolio-teaser__card">
-            <div class="shots-wrap">
-              <img src="/assets/citix-1.webp" style="width:693px;height:493px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:0;" alt="" />
+          <a href="/#work" class="al-portfolio-teaser__card" style="background:#007395;" data-cursor="Sorry, NDA">
+            <div class="al-portfolio-teaser__watermark"><img src="/assets/logo-aci.svg" alt="" /></div>
+            <div class="al-portfolio-teaser__title">
+              <p class="al-portfolio-teaser__name">Alatau City Invest</p>
+              <p class="al-portfolio-teaser__sub">B2C/B2B · Fintech · Investments</p>
             </div>
           </a>
-          <a href="/#work" class="al-portfolio-teaser__card">
-            <div class="shots-wrap">
-              <img src="/assets/bereke-2.webp" style="width:220px;height:476px;left:76px;top:-75px;" alt="" />
-              <img src="/assets/bereke-1.webp" style="width:220px;height:476px;left:336px;top:81px;" alt="" />
-              <img src="/assets/bereke-3.webp" style="width:220px;height:477px;left:596px;top:237px;" alt="" />
+          <a href="/#work" class="al-portfolio-teaser__card" style="background:#D10D35;" data-cursor="Sorry, NDA">
+            <div class="al-portfolio-teaser__watermark"><img src="/assets/logo-citix-mark.svg" alt="" /></div>
+            <div class="al-portfolio-teaser__title">
+              <p class="al-portfolio-teaser__name">Citix</p>
+              <p class="al-portfolio-teaser__sub">B2B · Adtech · SaaS</p>
             </div>
           </a>
-          <a href="/#work" class="al-portfolio-teaser__card">
-            <div class="shots-wrap">
-              <img class="sber-shot sber-shot--1" src="/assets/sber-1.webp" alt="" />
-              <img class="sber-shot sber-shot--2" src="/assets/sber-2.webp" alt="" />
-              <img class="sber-shot sber-shot--3" src="/assets/sber-3.webp" alt="" />
+          <a href="/#work" class="al-portfolio-teaser__card" style="background:#023DFF;" data-cursor="Sorry, NDA">
+            <div class="al-portfolio-teaser__watermark"><img src="/assets/logo-bereke.svg" alt="" /></div>
+            <div class="al-portfolio-teaser__title">
+              <p class="al-portfolio-teaser__name">Bereke Bank</p>
+              <p class="al-portfolio-teaser__sub">B2C/B2B · Fintech · Transfers &amp; Payments</p>
             </div>
           </a>
-          <a href="/work/energo" class="al-portfolio-teaser__card">
-            <div class="shots-wrap">
-              <img src="/assets/energo-4.webp" style="width:220px;height:476px;left:76px;top:72px;" alt="" />
-              <img src="/assets/energo-3.webp" style="width:220px;height:476px;left:336px;top:232px;" alt="" />
-              <img src="/assets/energo-2.webp" style="width:220px;height:476px;left:596px;top:-68px;" alt="" />
+          <a href="/#work" class="al-portfolio-teaser__card" style="background:#21A038;" data-cursor="Sorry, NDA">
+            <div class="al-portfolio-teaser__watermark"><img src="/assets/sberbank.svg" alt="" /></div>
+            <div class="al-portfolio-teaser__title">
+              <p class="al-portfolio-teaser__name">Sberbank</p>
+              <p class="al-portfolio-teaser__sub">B2C · Fintech · Non-banking services</p>
             </div>
           </a>
-          <a href="/#work" class="al-portfolio-teaser__card">
-            <div class="shots-wrap">
-              <img src="/assets/aipark-1.webp" style="width:220px;height:496px;left:76px;top:-84px;" alt="" />
-              <img src="/assets/aipark-2.webp" style="width:220px;height:496px;left:336px;top:72px;" alt="" />
-              <img src="/assets/aipark-3.webp" style="width:220px;height:496px;left:596px;top:228px;" alt="" />
+          <a href="/#work" class="al-portfolio-teaser__card" style="background:#045B2C;" data-cursor="Sorry, NDA">
+            <div class="al-portfolio-teaser__watermark"><img src="/assets/logo-aipark.svg" alt="" /></div>
+            <div class="al-portfolio-teaser__title">
+              <p class="al-portfolio-teaser__name">AI Parking</p>
+              <p class="al-portfolio-teaser__sub">B2C · Parking · Mobile</p>
             </div>
           </a>
         </div>
@@ -363,6 +365,8 @@ import Layout from '../../layouts/Layout.astro';
     </section>
 
   </main>
+
+  <div class="cursor-pill" id="alCursorPill"><span id="alCursorLabel">See Case</span></div>
 
   <Fragment slot="scripts">
     <script is:inline>
@@ -508,6 +512,32 @@ import Layout from '../../layouts/Layout.astro';
             heartBtn.appendChild(particle);
             particle.addEventListener('animationend', () => particle.remove());
           }
+        });
+      }
+
+      // ── Portfolio teaser: custom cursor pill ────────
+      const alPill      = document.getElementById('alCursorPill');
+      const alPillLabel = document.getElementById('alCursorLabel');
+      if (alPill && alPillLabel) {
+        let alPillX = 0, alPillY = 0, alMouseX = 0, alMouseY = 0;
+        document.addEventListener('mousemove', e => { alMouseX = e.clientX; alMouseY = e.clientY; });
+        (function followAlCursor() {
+          alPillX += (alMouseX - alPillX) * 0.18;
+          alPillY += (alMouseY - alPillY) * 0.18;
+          alPill.style.left = alPillX + 'px';
+          alPill.style.top  = alPillY + 'px';
+          requestAnimationFrame(followAlCursor);
+        })();
+        document.querySelectorAll('.al-portfolio-teaser__card').forEach(el => {
+          const label = el.dataset.cursor || 'Sorry, NDA';
+          el.addEventListener('mouseenter', () => {
+            alPillLabel.textContent = label;
+            alPill.classList.add('visible');
+          });
+          el.addEventListener('mouseleave', () => {
+            alPill.classList.remove('visible');
+            alPillX = alMouseX; alPillY = alMouseY;
+          });
         });
       }
     </script>
@@ -906,36 +936,61 @@ import Layout from '../../layouts/Layout.astro';
     margin-right: calc(50% - 50vw);
     padding: 0 var(--pad) 4px var(--pad);
     overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
     scrollbar-width: none;
   }
   .al-portfolio-teaser::-webkit-scrollbar { display: none; }
   .al-portfolio-teaser__card {
-    flex: 0 0 420px;
-    height: 300px;
-    background: var(--item-bg);
+    flex: 0 0 520px;
+    height: 380px;
     border-radius: 8px;
     overflow: hidden;
     position: relative;
-    display: block;
+    display: flex;
+    align-items: flex-end;
+    padding: 28px;
+    cursor: none;
   }
-  .al-portfolio-teaser__card .shots-wrap {
-    transform: scale(0.46);
-    transform-origin: top left;
-    transition: transform .5s cubic-bezier(.23,1,.32,1);
-  }
-  .al-portfolio-teaser__card:hover .shots-wrap { transform: scale(0.48); }
-  .al-portfolio-teaser__card img {
+  .al-portfolio-teaser__watermark {
     position: absolute;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    object-fit: cover;
+    top: -6%;
+    left: 27%;
+    width: 86%;
+    height: 115%;
+    opacity: 0.1;
+    transition: transform .5s cubic-bezier(.23,1,.32,1), opacity .5s cubic-bezier(.23,1,.32,1);
+  }
+  .al-portfolio-teaser__card:hover .al-portfolio-teaser__watermark { transform: scale(1.04); opacity: 0.16; }
+  .al-portfolio-teaser__watermark img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
+    filter: brightness(0) invert(1);
+  }
+  .al-portfolio-teaser__title { position: relative; z-index: 1; }
+  .al-portfolio-teaser__name {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: #fdfdfd;
+    margin: 0;
+  }
+  .al-portfolio-teaser__sub {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fdfdfd;
+    opacity: 0.9;
+    margin: 8px 0 0;
   }
 
   @media (max-width: 800px) {
     .cs-page { padding: 72px 20px 24px; }
     .al-closing__spacer { display: none; }
-    .al-portfolio-teaser__card { flex: 0 0 280px; height: 220px; }
+    .al-portfolio-teaser__card { flex: 0 0 340px; height: 250px; padding: 20px; }
+    .al-portfolio-teaser__name { font-size: 26px; }
+    .al-portfolio-teaser__sub { font-size: 13px; margin-top: 6px; }
     .al-hero-visual { flex-direction: column; height: auto; }
     .al-hero-visual__logo { flex: none; padding: 32px; }
     .al-hero-visual__logo img { width: 60%; max-width: 220px; }

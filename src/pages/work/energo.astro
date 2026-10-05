@@ -417,17 +417,71 @@ import Layout from '../../layouts/Layout.astro';
 
     <!-- ── Closing ── -->
     <section class="cs-page cs-page--closing">
-      <div class="cs-closing">
-        <div class="cs-closing__spacer"></div>
-        <p class="cs-closing__text">Thanks</p>
-        <button type="button" class="cs-closing__heart-btn" aria-label="Send some love">
-          <img src="/assets/energo/v2/icon-heart-v3.svg" alt="" class="cs-closing__heart" />
-        </button>
-        <p class="cs-closing__text">for watching</p>
+      <div class="cs-closing-wrap">
+        <div class="cs-closing">
+          <div class="cs-closing__spacer"></div>
+          <p class="cs-closing__text">Thanks</p>
+          <button type="button" class="cs-closing__heart-btn" aria-label="Send some love">
+            <img src="/assets/energo/v2/icon-heart-v3.svg" alt="" class="cs-closing__heart" />
+          </button>
+          <p class="cs-closing__text">for watching</p>
+        </div>
+
+        <div class="cs-closing-cta">
+          <div class="cs-closing__spacer"></div>
+          <p class="cs-closing-cta__text">See what else I've built</p>
+        </div>
+
+        <div class="cs-portfolio-teaser" data-lenis-prevent>
+          <a href="/work/alphior" class="cs-portfolio-teaser__card" style="background:#35A8E0;" data-cursor="See Case">
+            <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-alphior.svg" alt="" /></div>
+            <div class="cs-portfolio-teaser__title">
+              <p class="cs-portfolio-teaser__name">Alphior</p>
+              <p class="cs-portfolio-teaser__sub">B2B · HR Tech · SaaS</p>
+            </div>
+          </a>
+          <a href="/#work" class="cs-portfolio-teaser__card" style="background:#007395;" data-cursor="Sorry, NDA">
+            <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-aci.svg" alt="" /></div>
+            <div class="cs-portfolio-teaser__title">
+              <p class="cs-portfolio-teaser__name">Alatau City Invest</p>
+              <p class="cs-portfolio-teaser__sub">B2C/B2B · Fintech · Investments</p>
+            </div>
+          </a>
+          <a href="/#work" class="cs-portfolio-teaser__card" style="background:#D10D35;" data-cursor="Sorry, NDA">
+            <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-citix-mark.svg" alt="" /></div>
+            <div class="cs-portfolio-teaser__title">
+              <p class="cs-portfolio-teaser__name">Citix</p>
+              <p class="cs-portfolio-teaser__sub">B2B · Adtech · SaaS</p>
+            </div>
+          </a>
+          <a href="/#work" class="cs-portfolio-teaser__card" style="background:#023DFF;" data-cursor="Sorry, NDA">
+            <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-bereke.svg" alt="" /></div>
+            <div class="cs-portfolio-teaser__title">
+              <p class="cs-portfolio-teaser__name">Bereke Bank</p>
+              <p class="cs-portfolio-teaser__sub">B2C/B2B · Fintech · Transfers &amp; Payments</p>
+            </div>
+          </a>
+          <a href="/#work" class="cs-portfolio-teaser__card" style="background:#21A038;" data-cursor="Sorry, NDA">
+            <div class="cs-portfolio-teaser__watermark"><img src="/assets/sberbank.svg" alt="" /></div>
+            <div class="cs-portfolio-teaser__title">
+              <p class="cs-portfolio-teaser__name">Sberbank</p>
+              <p class="cs-portfolio-teaser__sub">B2C · Fintech · Non-banking services</p>
+            </div>
+          </a>
+          <a href="/#work" class="cs-portfolio-teaser__card" style="background:#045B2C;" data-cursor="Sorry, NDA">
+            <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-aipark.svg" alt="" /></div>
+            <div class="cs-portfolio-teaser__title">
+              <p class="cs-portfolio-teaser__name">AI Parking</p>
+              <p class="cs-portfolio-teaser__sub">B2C · Parking · Mobile</p>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
   </main>
+
+  <div class="cursor-pill" id="csCursorPill"><span id="csCursorLabel">See Case</span></div>
 
   <Fragment slot="scripts">
     <script is:inline>
@@ -448,7 +502,7 @@ import Layout from '../../layouts/Layout.astro';
           });
         });
 
-        section.querySelectorAll('.cs-visual-row, .cs-process, .cs-cjm, .cs-wireframes, .cs-editorial__row, .cs-tokens__row, .cs-tokens__swatches, .cs-components, .cs-closing').forEach(el => {
+        section.querySelectorAll('.cs-visual-row, .cs-process, .cs-cjm, .cs-wireframes, .cs-editorial__row, .cs-tokens__row, .cs-tokens__swatches, .cs-components, .cs-closing, .cs-closing-cta, .cs-portfolio-teaser').forEach(el => {
           if (!el.closest('.cs-row')) add(el);
         });
 
@@ -546,6 +600,32 @@ import Layout from '../../layouts/Layout.astro';
           }
         });
       }
+
+      // ── Portfolio teaser: custom cursor pill ────────
+      const csPill      = document.getElementById('csCursorPill');
+      const csPillLabel = document.getElementById('csCursorLabel');
+      if (csPill && csPillLabel) {
+        let csPillX = 0, csPillY = 0, csMouseX = 0, csMouseY = 0;
+        document.addEventListener('mousemove', e => { csMouseX = e.clientX; csMouseY = e.clientY; });
+        (function followCsCursor() {
+          csPillX += (csMouseX - csPillX) * 0.18;
+          csPillY += (csMouseY - csPillY) * 0.18;
+          csPill.style.left = csPillX + 'px';
+          csPill.style.top  = csPillY + 'px';
+          requestAnimationFrame(followCsCursor);
+        })();
+        document.querySelectorAll('.cs-portfolio-teaser__card').forEach(el => {
+          const label = el.dataset.cursor || 'Sorry, NDA';
+          el.addEventListener('mouseenter', () => {
+            csPillLabel.textContent = label;
+            csPill.classList.add('visible');
+          });
+          el.addEventListener('mouseleave', () => {
+            csPill.classList.remove('visible');
+            csPillX = csMouseX; csPillY = csMouseY;
+          });
+        });
+      }
     </script>
   </Fragment>
 </Layout>
@@ -605,6 +685,7 @@ import Layout from '../../layouts/Layout.astro';
     color: var(--dark);
     text-decoration: none;
     transition: opacity .2s;
+    white-space: nowrap;
   }
 
   .cs-back:hover { opacity: 0.55; }
@@ -620,7 +701,7 @@ import Layout from '../../layouts/Layout.astro';
 
   .cs-icon { width: 60px; height: 60px; object-fit: contain; display: block; }
 
-  .cs-heading { font-size: 32px; line-height: 1.2; color: var(--dark); }
+  .cs-heading { font-size: 32px; line-height: 1.2; color: var(--dark); text-wrap: balance; }
   .cs-subheading { font-size: 24px; line-height: 1.2; color: var(--muted); text-wrap: balance; }
   .cs-desc { font-size: 18px; line-height: 1.6; color: var(--dark); text-wrap: pretty; }
   .cs-section-heading { font-size: 32px; line-height: 1.2; color: var(--dark); text-wrap: balance; }
@@ -647,6 +728,7 @@ import Layout from '../../layouts/Layout.astro';
     width: 95px;
     flex-shrink: 0;
     color: var(--muted);
+    white-space: nowrap;
   }
 
   .cs-meta-value {
@@ -654,6 +736,7 @@ import Layout from '../../layouts/Layout.astro';
     flex-wrap: wrap;
     display: flex;
     gap: 4px 12px;
+    text-wrap: pretty;
   }
 
   /* ── Photo / wordmark visual ── */
@@ -724,7 +807,7 @@ import Layout from '../../layouts/Layout.astro';
     color: var(--muted);
     text-align: center;
   }
-  .cs-process__weeks span { flex: 1; }
+  .cs-process__weeks span { flex: 1; white-space: nowrap; }
   .cs-process__track {
     position: relative;
     display: flex;
@@ -858,7 +941,7 @@ import Layout from '../../layouts/Layout.astro';
     width: 100px; height: 90.625px;
     pointer-events: none;
   }
-  .cs-jtbd__label { font-size: 16px; color: #2bb637; text-transform: uppercase; letter-spacing: .02em; }
+  .cs-jtbd__label { font-size: 16px; color: #2bb637; text-transform: uppercase; letter-spacing: .02em; white-space: nowrap; }
   .cs-jtbd__text { font-size: 24px; color: var(--dark); line-height: 1.2; text-wrap: pretty; }
   html.dark .cs-jtbd__quote { filter: invert(1); }
 
@@ -884,6 +967,7 @@ import Layout from '../../layouts/Layout.astro';
     font-size: 16px;
     text-transform: uppercase;
     color: #2bb637;
+    white-space: nowrap;
   }
   .cs-cjm__pain { font-size: 24px; color: var(--dark); text-wrap: balance; }
   .cs-cjm__fix {
@@ -902,6 +986,7 @@ import Layout from '../../layouts/Layout.astro';
     padding: 16px 28px;
     font-size: 24px;
     color: var(--dark);
+    white-space: nowrap;
   }
   .cs-flow__step--active {
     background: #e4f7e7;
@@ -980,7 +1065,7 @@ import Layout from '../../layouts/Layout.astro';
     flex-direction: column;
     gap: 8px;
   }
-  .cs-editorial__tag { font-size: 24px; color: var(--energo-green); }
+  .cs-editorial__tag { font-size: 24px; color: var(--energo-green); white-space: nowrap; }
   .cs-editorial__title { font-size: 32px; color: var(--dark); text-wrap: balance; }
   .cs-editorial__desc { font-size: 24px; color: var(--muted); text-wrap: pretty; }
 
@@ -1007,7 +1092,8 @@ import Layout from '../../layouts/Layout.astro';
     justify-content: space-between;
   }
   .cs-tokens__weights { display: flex; flex-direction: column; gap: 8px; font-size: 24px; color: var(--muted); }
-  .cs-tokens__specimen { font-size: 64px; color: var(--dark); }
+  .cs-tokens__weights span { white-space: nowrap; }
+  .cs-tokens__specimen { font-size: 64px; color: var(--dark); white-space: nowrap; }
   .cs-tokens__sample {
     flex: 1;
     background: #2bb637;
@@ -1111,7 +1197,7 @@ import Layout from '../../layouts/Layout.astro';
     padding: 20px 0;
   }
   .cs-closing__spacer { flex-shrink: 0; width: var(--col-left); }
-  .cs-closing__text { font-size: 32px; color: var(--dark); }
+  .cs-closing__text { font-size: 32px; color: var(--dark); white-space: nowrap; }
   .cs-closing__heart-btn {
     position: relative;
     border: none;
@@ -1139,9 +1225,74 @@ import Layout from '../../layouts/Layout.astro';
     100% { transform: translate(var(--dx), var(--dy)) scale(1); opacity: 0; }
   }
 
+  .cs-closing-wrap { display: flex; flex-direction: column; gap: 40px; width: 100%; }
+  :global(.footer) { margin-top: 160px; }
+  .cs-closing-cta { display: flex; align-items: center; gap: 40px; width: 100%; }
+  .cs-closing-cta__text { font-size: 32px; color: var(--dark); white-space: nowrap; }
+
+  .cs-portfolio-teaser {
+    display: flex;
+    gap: 20px;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0 var(--pad) 4px var(--pad);
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+  }
+  .cs-portfolio-teaser::-webkit-scrollbar { display: none; }
+  .cs-portfolio-teaser__card {
+    flex: 0 0 520px;
+    height: 380px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 28px;
+    cursor: none;
+  }
+  .cs-portfolio-teaser__watermark {
+    position: absolute;
+    top: -6%;
+    left: 27%;
+    width: 86%;
+    height: 115%;
+    opacity: 0.1;
+    transition: transform .5s cubic-bezier(.23,1,.32,1), opacity .5s cubic-bezier(.23,1,.32,1);
+  }
+  .cs-portfolio-teaser__card:hover .cs-portfolio-teaser__watermark { transform: scale(1.04); opacity: 0.16; }
+  .cs-portfolio-teaser__watermark img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
+  .cs-portfolio-teaser__title { position: relative; z-index: 1; }
+  .cs-portfolio-teaser__name {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: #fdfdfd;
+    margin: 0;
+  }
+  .cs-portfolio-teaser__sub {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fdfdfd;
+    opacity: 0.9;
+    margin: 8px 0 0;
+  }
+
   @media (max-width: 768px) {
     .cs-page { padding: 72px 20px 24px; }
     .cs-closing__spacer { display: none; }
+    .cs-portfolio-teaser__card { flex: 0 0 340px; height: 250px; padding: 20px; }
+    .cs-portfolio-teaser__name { font-size: 26px; }
+    .cs-portfolio-teaser__sub { font-size: 13px; margin-top: 6px; }
     .cs-row { flex-direction: column; gap: 24px; }
     .cs-col-left { width: 100%; }
     .cs-heading { font-size: 24px; }
@@ -1150,6 +1301,9 @@ import Layout from '../../layouts/Layout.astro';
     .cs-section-heading { font-size: 24px; }
     .cs-visual-row { flex-direction: column; }
     .cs-process__weeks, .cs-process__pill { font-size: 16px; }
+    .cs-process__weeks, .cs-process__track { gap: 8px; }
+    .cs-tokens__row { flex-direction: column; }
+    .cs-tokens__ramp, .cs-tokens__type-card { width: 100%; }
     .cs-cjm { grid-template-columns: 1fr; }
     .cs-cjm__stage { padding-left: 0; padding-right: 0; border-right: none; }
     .cs-wireframes { grid-template-columns: 1fr; }
