@@ -33,6 +33,16 @@ const { title, homeHref, workHref, footer = true, cloudflareBeacon = false, oneP
        below and the FOUC script). -->
   <meta name="theme-color" id="themeColorMeta" content="#fdfdfd" />
   <title>{title}</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content="Ali Zhetpis, Product Designer based in Almaty." />
+  <meta property="og:image" content="https://alizhetpis.com/assets/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://alizhetpis.com/assets/og-card.png" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content="Ali Zhetpis, Product Designer based in Almaty." />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="/style.css" />
   <slot name="head" />
