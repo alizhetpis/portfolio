@@ -415,6 +415,31 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
 
+    <!-- ── Design Team ── -->
+    <section class="cs-page">
+      <div class="cs-row">
+        <div class="cs-col-left">
+          <p class="cs-section-heading">Design Team</p>
+        </div>
+        <div class="cs-col-right cs-team-col">
+          <div class="cs-team">
+            <div class="cs-team__member">
+              <div class="cs-team__card">
+                <img src="/assets/energo/v2/team-head-me.png" alt="Me" class="cs-team__head cs-team__head--me" />
+              </div>
+              <p class="cs-team__name">Me</p>
+            </div>
+            <div class="cs-team__member">
+              <div class="cs-team__card">
+                <img src="/assets/energo/v2/team-head-maxim.png" alt="Maxim Sudorgin" class="cs-team__head cs-team__head--maxim" />
+              </div>
+              <p class="cs-team__name">Maxim Sudorgin</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ── Closing ── -->
     <section class="cs-page cs-page--closing">
       <div class="cs-closing-wrap">
@@ -1219,6 +1244,37 @@ import Layout from '../../layouts/Layout.astro';
   .cs-components__status-badge { height: 32px; width: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.04)); }
   .cs-components__booking-img { width: 378px; max-width: 100%; height: auto; border-radius: 16px; }
 
+  /* ── Design team ── */
+  .cs-team-col { width: 100%; }
+  .cs-team { display: flex; gap: 20px; align-items: flex-start; width: 100%; }
+  .cs-team__member { display: flex; flex-direction: column; align-items: center; gap: 20px; flex-shrink: 0; width: 320px; }
+  .cs-team__card {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    overflow: hidden;
+  }
+  .cs-team__head {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: none;
+  }
+  .cs-team__head--me { width: 65.6%; height: 82.74%; transform: translate(-50%, -50%) rotate(-15.18deg); }
+  .cs-team__head--maxim { width: 57.75%; height: 71.4%; transform: translate(-50%, -50%) rotate(30deg); }
+  .cs-team__name {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--muted);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+  .cs-team__member:hover .cs-team__name { opacity: 1; }
+  @media (hover: none) { .cs-team__name { opacity: 1; } }
+
   /* ── Closing ── */
   .cs-page--closing { min-height: 0; align-items: center; padding-top: 100px; padding-bottom: 120px; }
   .cs-closing {
@@ -1335,6 +1391,10 @@ import Layout from '../../layouts/Layout.astro';
     .cs-subheading { font-size: 20px; }
     .cs-desc { font-size: 18px; }
     .cs-section-heading { font-size: 24px; }
+    .cs-team { flex-wrap: wrap; }
+    .cs-team__member { width: calc(50% - 10px); }
+    .cs-team__card { width: 100%; height: auto; aspect-ratio: 1; }
+    .cs-team__name { font-size: 18px; }
     .cs-visual-row { flex-direction: column; }
     .cs-process__weeks, .cs-process__pill { font-size: 16px; }
     .cs-process__weeks, .cs-process__track { gap: 8px; }
