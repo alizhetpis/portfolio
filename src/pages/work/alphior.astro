@@ -300,6 +300,31 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
 
+    <!-- ── Design Team ── -->
+    <section class="cs-page">
+      <div class="cs-row">
+        <div class="cs-col-left">
+          <p class="cs-section-heading al-reveal">Designed By</p>
+        </div>
+        <div class="cs-col-right al-team-col">
+          <div class="al-team al-reveal">
+            <div class="al-team__member">
+              <div class="al-team__card">
+                <img src="/assets/alphior/team/team-head-me.png" alt="Me" class="al-team__head al-team__head--me" />
+              </div>
+              <p class="al-team__name">Me</p>
+            </div>
+            <div class="al-team__member">
+              <div class="al-team__card">
+                <img src="/assets/alphior/team/team-head-alikhan.png" alt="Alikhan Mynbayev" class="al-team__head al-team__head--alikhan" />
+              </div>
+              <p class="al-team__name">Alikhan Mynbayev</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ── Closing ── -->
     <section class="cs-page cs-page--closing">
       <div class="al-closing-wrap">
@@ -915,6 +940,35 @@ import Layout from '../../layouts/Layout.astro';
   .al-refl__title { font-size: 24px; color: var(--al-blue); text-wrap: balance; }
   .al-refl__desc { font-size: 24px; color: var(--dark); text-wrap: pretty; }
 
+  /* ── Design team ── */
+  .al-team-col { width: 100%; }
+  .al-team { display: flex; gap: 20px; align-items: flex-start; width: 100%; }
+  .al-team__member { display: flex; flex-direction: column; align-items: center; gap: 20px; flex-shrink: 0; width: 320px; }
+  .al-team__card { position: relative; width: 320px; height: 320px; overflow: hidden; }
+  .al-team__head {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: none;
+    filter: drop-shadow(0 0 0 rgba(0,0,0,0));
+    transition: filter .3s ease;
+  }
+  .al-team__card:hover .al-team__head { filter: drop-shadow(0 10px 24px rgba(0,0,0,0.28)); }
+  .al-team__head--me { width: 51.02%; height: 93.84%; top: calc(50% - 6.8%); transform: translate(-50%, -50%) rotate(-10.87deg); }
+  .al-team__head--alikhan { width: 57.5%; height: 78.44%; transform: translate(-50%, -50%) rotate(-9.43deg); }
+  .al-team__name {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--muted);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+  .al-team__member:hover .al-team__name { opacity: 1; }
+  @media (hover: none) { .al-team__name { opacity: 1; } }
+
   /* ── Closing ── */
   .al-closing {
     display: flex;
@@ -1027,6 +1081,10 @@ import Layout from '../../layouts/Layout.astro';
     .al-portfolio-teaser__card { flex: 0 0 340px; height: 250px; padding: 20px; }
     .al-portfolio-teaser__name { font-size: 26px; }
     .al-portfolio-teaser__sub { font-size: 13px; margin-top: 6px; }
+    .al-team { flex-wrap: wrap; }
+    .al-team__member { width: calc(50% - 10px); }
+    .al-team__card { width: 100%; height: auto; aspect-ratio: 1; }
+    .al-team__name { font-size: 18px; }
     .al-hero-visual { flex-direction: column; height: auto; }
     .al-hero-visual__logo { flex: none; padding: 32px; }
     .al-hero-visual__logo img { width: 60%; max-width: 220px; }

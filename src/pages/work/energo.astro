@@ -419,7 +419,7 @@ import Layout from '../../layouts/Layout.astro';
     <section class="cs-page">
       <div class="cs-row">
         <div class="cs-col-left">
-          <p class="cs-section-heading">Design Team</p>
+          <p class="cs-section-heading">Designed By</p>
         </div>
         <div class="cs-col-right cs-team-col">
           <div class="cs-team">
@@ -1260,7 +1260,10 @@ import Layout from '../../layouts/Layout.astro';
     top: 50%;
     transform: translate(-50%, -50%);
     max-width: none;
+    filter: drop-shadow(0 0 0 rgba(0,0,0,0));
+    transition: filter .3s ease;
   }
+  .cs-team__card:hover .cs-team__head { filter: drop-shadow(0 10px 24px rgba(0,0,0,0.28)); }
   .cs-team__head--me { width: 65.6%; height: 82.74%; transform: translate(-50%, -50%) rotate(-15.18deg); }
   .cs-team__head--maxim { width: 57.75%; height: 71.4%; transform: translate(-50%, -50%) rotate(30deg); }
   .cs-team__name {
