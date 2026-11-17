@@ -23,12 +23,12 @@ import Layout from '../../layouts/Layout.astro';
             <img src="/assets/energo/icon.svg" alt="EnerGo icon" class="cs-icon" />
             <div style="display:flex; flex-direction:column; gap:8px;">
               <p class="cs-heading">EnerGo</p>
-              <p class="cs-desc">A 0→1 charging app for a market where EVs arrived before good software did.<br>Researched, designed, written, and shipped in 3 months</p>
+              <p class="cs-desc">A 0→1 charging app for a market where EVs arrived before good software did.<br>Researched, designed, written, and shipped in 5 months</p>
             </div>
             <div class="cs-meta">
               <div class="cs-meta-row">
                 <span class="cs-meta-label">Period</span>
-                <span class="cs-meta-value">2025 · 3 months</span>
+                <span class="cs-meta-value">2025 · 5 months</span>
               </div>
               <div class="cs-meta-row">
                 <span class="cs-meta-label">Role</span>
@@ -417,7 +417,7 @@ import Layout from '../../layouts/Layout.astro';
 
     <!-- ── Design Team ── -->
     <section class="cs-page">
-      <div class="cs-row">
+      <div class="cs-row cs-team-row">
         <div class="cs-col-left">
           <p class="cs-section-heading">Designed By</p>
         </div>
@@ -483,21 +483,7 @@ import Layout from '../../layouts/Layout.astro';
             <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-bereke.svg" alt="" /></div>
             <div class="cs-portfolio-teaser__title">
               <p class="cs-portfolio-teaser__name">Bereke Bank</p>
-              <p class="cs-portfolio-teaser__sub">B2C/B2B · Fintech · Transfers &amp; Payments</p>
-            </div>
-          </a>
-          <a href="/#sberbank" class="cs-portfolio-teaser__card" style="background:#21A038;" data-cursor="Sorry, NDA">
-            <div class="cs-portfolio-teaser__watermark"><img src="/assets/sberbank.svg" alt="" /></div>
-            <div class="cs-portfolio-teaser__title">
-              <p class="cs-portfolio-teaser__name">Sberbank</p>
-              <p class="cs-portfolio-teaser__sub">B2C · Fintech · Non-banking services</p>
-            </div>
-          </a>
-          <a href="/#aipark" class="cs-portfolio-teaser__card" style="background:#045B2C;" data-cursor="Drop Soon">
-            <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-aipark.svg" alt="" /></div>
-            <div class="cs-portfolio-teaser__title">
-              <p class="cs-portfolio-teaser__name">AI Parking</p>
-              <p class="cs-portfolio-teaser__sub">B2C · Parking · Mobile</p>
+              <p class="cs-portfolio-teaser__sub">B2C · Fintech · ex-Sberbank Kazakhstan</p>
             </div>
           </a>
         </div>
@@ -1245,6 +1231,7 @@ import Layout from '../../layouts/Layout.astro';
   .cs-components__booking-img { width: 378px; max-width: 100%; height: auto; border-radius: 16px; }
 
   /* ── Design team ── */
+  .cs-team-row { align-items: center; }
   .cs-team-col { width: 100%; }
   .cs-team { display: flex; gap: 20px; align-items: flex-start; width: 100%; }
   .cs-team__member { display: flex; flex-direction: column; align-items: center; gap: 20px; flex-shrink: 0; width: 320px; }

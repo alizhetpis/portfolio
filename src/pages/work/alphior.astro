@@ -23,7 +23,7 @@ import Layout from '../../layouts/Layout.astro';
             <div class="cs-meta">
               <div class="cs-meta-row">
                 <span class="cs-meta-label">Period</span>
-                <span class="cs-meta-value">2025 · 3 months</span>
+                <span class="cs-meta-value">2024 · 4 months</span>
               </div>
               <div class="cs-meta-row">
                 <span class="cs-meta-label">Role</span>
@@ -302,7 +302,7 @@ import Layout from '../../layouts/Layout.astro';
 
     <!-- ── Design Team ── -->
     <section class="cs-page">
-      <div class="cs-row">
+      <div class="cs-row al-team-row">
         <div class="cs-col-left">
           <p class="cs-section-heading al-reveal">Designed By</p>
         </div>
@@ -368,21 +368,7 @@ import Layout from '../../layouts/Layout.astro';
             <div class="al-portfolio-teaser__watermark"><img src="/assets/logo-bereke.svg" alt="" /></div>
             <div class="al-portfolio-teaser__title">
               <p class="al-portfolio-teaser__name">Bereke Bank</p>
-              <p class="al-portfolio-teaser__sub">B2C/B2B · Fintech · Transfers &amp; Payments</p>
-            </div>
-          </a>
-          <a href="/#sberbank" class="al-portfolio-teaser__card" style="background:#21A038;" data-cursor="Sorry, NDA">
-            <div class="al-portfolio-teaser__watermark"><img src="/assets/sberbank.svg" alt="" /></div>
-            <div class="al-portfolio-teaser__title">
-              <p class="al-portfolio-teaser__name">Sberbank</p>
-              <p class="al-portfolio-teaser__sub">B2C · Fintech · Non-banking services</p>
-            </div>
-          </a>
-          <a href="/#aipark" class="al-portfolio-teaser__card" style="background:#045B2C;" data-cursor="Drop Soon">
-            <div class="al-portfolio-teaser__watermark"><img src="/assets/logo-aipark.svg" alt="" /></div>
-            <div class="al-portfolio-teaser__title">
-              <p class="al-portfolio-teaser__name">AI Parking</p>
-              <p class="al-portfolio-teaser__sub">B2C · Parking · Mobile</p>
+              <p class="al-portfolio-teaser__sub">B2C · Fintech · ex-Sberbank Kazakhstan</p>
             </div>
           </a>
         </div>
@@ -941,6 +927,7 @@ import Layout from '../../layouts/Layout.astro';
   .al-refl__desc { font-size: 24px; color: var(--dark); text-wrap: pretty; }
 
   /* ── Design team ── */
+  .al-team-row { align-items: center; }
   .al-team-col { width: 100%; }
   .al-team { display: flex; gap: 20px; align-items: flex-start; width: 100%; }
   .al-team__member { display: flex; flex-direction: column; align-items: center; gap: 20px; flex-shrink: 0; width: 320px; }

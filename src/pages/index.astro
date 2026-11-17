@@ -4,10 +4,10 @@ import CaseCard from '../components/CaseCard.astro';
 import Chip from '../components/Chip.astro';
 
 const skillChips = [
-  'Product Strategy', 'UX/UI', 'Design Systems', 'User Research',
-  'Usability Testing', 'Prototyping', 'Interaction Design',
-  'Cross-functional Collaboration', 'Metrics', 'Accessibility',
-  'Prompt Engineering', 'Vibe Coding',
+  'Product Discovery', 'UX/UI', 'User Research', 'Usability Testing',
+  'CJM', 'JTBD', 'Prototyping', 'Interaction Design',
+  'Information Architecture', 'UX Writing', 'Design Systems',
+  'Data-heavy Interfaces', 'Cross-functional Collaboration',
 ];
 ---
 <Layout title="Ali Zhetpis — Product Designer" homeHref="#top" workHref="#work" cloudflareBeacon onePageMobile>
@@ -33,9 +33,7 @@ const skillChips = [
     </div>
     <div class="hero__content">
       <div class="hero__text">
-        <p>Hi 👋 I'm Product Designer<br>who's spent a few years making<br>Fintech apps feel a bit more human</p>
-        <p class="hero__subtext-desktop">Ex Product Designer at Alatau City Invest.<br>Currently: open to work</p>
-        <p class="hero__subtext-mobile">Ex Product Designer at Alatau City Invest. Currently: open to work</p>
+        <p>Hi 👋 I'm Ali,<br>a Product Designer<br>Now at Freedom Bank Kazakhstan</p>
       </div>
       <div class="hero__links">
         <a href="https://cal.com/alizhetpis" target="_blank" rel="noopener" class="hero__cta hero__cta--inline" data-track="Schedule a Call" data-track-props='{"location":"hero"}'>Schedule a Call</a>
@@ -68,7 +66,7 @@ const skillChips = [
         logoAlt="Alatau City Invest"
         name="Alatau City Invest"
         sub="B2C/B2B · Fintech · Investments"
-        desc="Managed the parallel launch of the web platform and native mobile app. Completely redesigned the web ecosystem and built the native MVP from scratch. Established a brand-new visual system, product structure, and design voice. Left behind a robust, highly scalable infrastructure that actually scales."
+        desc="Designed the broker's new standalone iOS and Android app from scratch while supporting the web platform and the version inside the bank's super app. Rebuilt onboarding after in-depth interviews, simplified trading for first-time investors, turned Ideas into a “What to buy” page that lifted purchase conversion, and launched a News tab."
         period="apr 2025 - jun 2026"
         role="Senior Product Designer"
         scope={["Product Strategy", "CX/UX Research", "Metrics", "UI/UX", "Prototyping"]}
@@ -88,8 +86,8 @@ const skillChips = [
         logoAlt="Citix"
         name="Citix"
         sub="B2B · Adtech · SaaS"
-        desc="Two platforms, one ultimate goal: keep the ad machine moving without friction. Built a high-velocity campaign creator for sales teams and translated massive data into actionable dashboards for managers. Overhauled the workflows from top to bottom. Fewer steps, faster selling."
-        period="apr 2024 - mar 2025"
+        desc="Joined two live B2B platforms and evolved them: the campaign launch tool for account managers who also ran sales, and the analytics dashboard where advertisers and agencies track results. Designed the full campaign setup flow for the Shark launch and the UX of Jerry interactive screens at Marmaray stations in Istanbul."
+        period="may 2024 - apr 2025"
         role="Senior UX/UI Designer"
         scope={["UI/UX", "Prototyping", "Graphic Design"]}
         cursorLabel="Drop Soon"
@@ -104,10 +102,10 @@ const skillChips = [
         logoSrc="/assets/logo-bereke.svg"
         logoAlt="Bereke Bank"
         name="Bereke Bank"
-        sub="B2C/B2B · Fintech · Transfers & Payments"
-        desc="When sanctions hit, we didn't just adapt — we rebuilt. Re-launched Sberbank Kazakhstan into Bereke Bank under an entirely new identity and strategy. I hit the ground running to ship core transfers and payments from scratch. Backed every design decision with rapid usability testing to dominate the market fast."
-        period="sep 2022 - may 2024"
-        role="Middle Product Designer"
+        sub="B2C · Fintech · ex-Sberbank Kazakhstan"
+        desc="Started at Sberbank Kazakhstan on non-banking services integrated via API, from cinema and travel tickets to SberPrime, aimed at retention. After the 2022 relaunch as Bereke Bank, redesigned transfers, payments and FX from scratch, ran research before and after each release and usability tests with the CX team, and brought the new identity into the app."
+        period="nov 2021 - may 2024"
+        role="Product Designer (promoted from Junior)"
         scope={["Product Strategy", "CX/UX Research", "Metrics", "UI/UX", "Prototyping"]}
         cursorLabel="Drop Soon"
       >
@@ -118,25 +116,6 @@ const skillChips = [
         </div>
       </CaseCard>
 
-      <CaseCard
-        id="sberbank"
-        logoSrc="/assets/sberbank.svg"
-        logoAlt="Sberbank"
-        name="Sberbank"
-        sub="B2С · Fintech · Non-banking services"
-        desc="Joined as a junior and quickly stepped up to handle complex product challenges. Designed non-banking ecosystem services where user loyalty and retention were our primary goals. Conducted continuous UX research and usability testing to eliminate interface friction and improve return rates."
-        period="sep 2022 - may 2024"
-        role="Junior Product Designer"
-        scope={["Product Strategy", "UI/UX", "Prototyping", "API integration"]}
-        cursorLabel="Sorry, NDA"
-        shotsClass="sber-shots"
-      >
-        <Fragment slot="shots">
-          <img class="sber-shot sber-shot--1" src="/assets/sber-1.webp" alt="" />
-          <img class="sber-shot sber-shot--2" src="/assets/sber-2.webp" alt="" />
-          <img class="sber-shot sber-shot--3" src="/assets/sber-3.webp" alt="" />
-        </Fragment>
-      </CaseCard>
 
     </div><!-- /section__items career -->
   </div>
@@ -157,9 +136,9 @@ const skillChips = [
         logoAlt="EnerGo"
         name="EnerGo"
         sub="B2C · EV · Mobile"
-        desc="Led the end-to-end product design for the EnerGo mobile app in Uzbekistan, driving the project from initial market research and CJM to shipping the final iOS and Android apps. Benchmarked global EV platforms, adapted best practices for the local market, and established a scalable visual system while guiding a junior designer through the process."
-        period="2025 · 3 month"
-        role="Product Designer"
+        desc="Led design of an EV charging app for Uzbekistan from market research and CJM to the shipped iOS and Android apps, mentoring a junior designer on his first project. Benchmarked 8 charging apps and built the product around connector booking with a 10-minute hold, live connector status, flexible charging limits and local payments."
+        period="2025 · 5 months"
+        role="Lead Product Designer"
         scope={["Market Research", "CJM", "UI/UX", "Design System", "Prototyping"]}
         cursorLabel="See Case"
         href="/work/energo"
@@ -177,8 +156,8 @@ const skillChips = [
         logoAlt="Alphior"
         name="Alphior"
         sub="B2B · HR Tech · SaaS"
-        desc="Designed an internal CRM and admin platform from scratch to automate complex HR workflows. Transformed a fragmented maze of manual approvals into a streamlined, few-click system, making document processing faster and frictionless. Developed a scalable component library to optimize future product iterations."
-        period="2024 · 4 month"
+        desc="Designed a B2B HR document platform for outsourcing clients in Central Asia together with a second designer: an admin console and an employee portal that replaced approvals over email and 1C. Built the role and permission model, benchmarked 9 HR and EDM products, and phased scope from payslips to approvals to the full hire-to-exit cycle."
+        period="2024 · 4 months"
         role="Product Designer"
         scope={["Market Research", "CJM", "UI/UX", "Design System", "Prototyping"]}
         cursorLabel="See Case"
@@ -189,24 +168,6 @@ const skillChips = [
         </div>
       </CaseCard>
 
-      <CaseCard
-        id="aipark"
-        logoSrc="/assets/logo-aipark.svg"
-        logoAlt="AI Parking"
-        name="AI Parking"
-        sub="B2C · Parking · Mobile"
-        desc="Managed the end-to-end design strategy for a complex IoT parking ecosystem. Spearheaded user research and customer development to translate technical hardware constraints into seamless digital scenarios. Ran iterative usability tests to transform complex data into a clean, shipped product that feels entirely effortless."
-        period="2023 · 4 month"
-        role="Product Designer"
-        scope={["Market Research", "CJM", "UI/UX", "Design System", "Prototyping"]}
-        cursorLabel="Drop Soon"
-      >
-        <div class="shots-wrap" slot="shots">
-          <img src="/assets/aipark-1.webp" style="width:220px;height:496px;left:76px;top:-84px;" />
-          <img src="/assets/aipark-2.webp" style="width:220px;height:496px;left:336px;top:72px;" />
-          <img src="/assets/aipark-3.webp" style="width:220px;height:496px;left:596px;top:228px;" />
-        </div>
-      </CaseCard>
 
     </div><!-- /section__items side -->
   </div>
