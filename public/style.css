@@ -243,15 +243,20 @@ html.dark .theme-icon--moon { transform: rotate(0deg) scale(1); opacity: 1; }
   box-sizing: border-box;
 }
 
+/* Two rows: headline beside the card stack, links below the headline.
+   .hero__content uses display:contents so its children land in this grid
+   directly; the frame then stretches to just the headline row, which
+   centers the (absolutely positioned) cards on the text, not the links. */
 .hero__body {
-  display: flex; gap: var(--gap); align-items: flex-start;
+  display: grid; grid-template-columns: var(--col-left) 1fr;
+  gap: var(--gap); align-items: start;
 }
 
-/* Profile frame: sized to the visible card stack */
+/* Profile frame: height follows the headline row (see .hero__body) */
 .profile-frame {
-  flex-shrink: 0;
+  grid-row: 1;
+  align-self: stretch;
   width: var(--col-left);
-  height: 183px;
   border-radius: 16px;
   overflow: visible;
   position: relative;
@@ -337,11 +342,8 @@ html.dark .theme-icon--moon { transform: rotate(0deg) scale(1); opacity: 1; }
 #cardC { transform: translate(-50%, calc(-50% + 18px)) scale(0.803); z-index: 2; --card-tint: rgba(0,0,0,0.65); }
 
 /* Hero content */
-.hero__content {
-  flex: 1;
-  display: flex; flex-direction: column; gap: var(--gap);
-  min-width: 0;
-}
+.hero__content { display: contents; }
+.hero__text, .hero__links { grid-column: 2; min-width: 0; }
 
 .hero__text {
   display: flex; flex-direction: column; gap: 20px;
@@ -802,8 +804,8 @@ html.dark .sber-also-covering {
     min-height: calc(100vh - 52px);
     padding: 40px var(--pad);
   }
-  .hero__body { flex-direction: column; align-items: center; gap: 40px; width: 100%; }
-  .profile-frame { width: 100px; height: 138px; flex-shrink: 0; border-radius: 4px; overflow: visible; }
+  .hero__body { display: flex; flex-direction: column; align-items: center; gap: 40px; width: 100%; }
+  .profile-frame { width: 100px; height: 138px; align-self: center; flex-shrink: 0; border-radius: 4px; overflow: visible; }
   .photo-card { width: 88px; height: 120px; border-radius: 5px; }
   #cardA { transform: translate(-50%, -50%) scale(1); }
   #cardB { transform: translate(calc(-50% - 20px), calc(-50% + 10px)) scale(0.897) rotate(-4deg); --card-tint: rgba(0,0,0,0.45); }
