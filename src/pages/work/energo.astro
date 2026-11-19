@@ -5,7 +5,9 @@ import Layout from '../../layouts/Layout.astro';
   <Fragment slot="head">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet" />
+    <!-- Only the type-scale sample far down the page uses Inter, so load
+         it without blocking first paint (media swaps to "all" on load). -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   </Fragment>
   <main class="cs-main">
 
@@ -97,7 +99,7 @@ import Layout from '../../layouts/Layout.astro';
               <span class="cs-jtbd__card-face cs-jtbd__card-front">
                 <p class="cs-jtbd__label">job 1</p>
                 <p class="cs-jtbd__text">When running low on charge mid-shift, I want to find the nearest available station in real time, so I don't waste time driving to an occupied spot</p>
-                <img src="/assets/energo/v2/jtbd-quote.svg" alt="" class="cs-jtbd__quote" aria-hidden="true" />
+                <img loading="lazy" decoding="async" src="/assets/energo/v2/jtbd-quote.svg" alt="" class="cs-jtbd__quote" aria-hidden="true" />
               </span>
               <span class="cs-jtbd__card-face cs-jtbd__card-back">
                 <p class="cs-jtbd__label">WHY THIS MATTERS</p>
@@ -110,7 +112,7 @@ import Layout from '../../layouts/Layout.astro';
               <span class="cs-jtbd__card-face cs-jtbd__card-front">
                 <p class="cs-jtbd__label">job 2</p>
                 <p class="cs-jtbd__text">When planning my route, I want to reserve a specific connector in advance, so I have a guaranteed charging spot when I arrive</p>
-                <img src="/assets/energo/v2/jtbd-quote.svg" alt="" class="cs-jtbd__quote" aria-hidden="true" />
+                <img loading="lazy" decoding="async" src="/assets/energo/v2/jtbd-quote.svg" alt="" class="cs-jtbd__quote" aria-hidden="true" />
               </span>
               <span class="cs-jtbd__card-face cs-jtbd__card-back">
                 <p class="cs-jtbd__label">WHY THIS MATTERS</p>
@@ -123,7 +125,7 @@ import Layout from '../../layouts/Layout.astro';
               <span class="cs-jtbd__card-face cs-jtbd__card-front">
                 <p class="cs-jtbd__label">job 3</p>
                 <p class="cs-jtbd__text">When starting a charge, I want to set custom limits by budget, percentage, or duration, so I stay in full control of my schedule and spending</p>
-                <img src="/assets/energo/v2/jtbd-quote.svg" alt="" class="cs-jtbd__quote" aria-hidden="true" />
+                <img loading="lazy" decoding="async" src="/assets/energo/v2/jtbd-quote.svg" alt="" class="cs-jtbd__quote" aria-hidden="true" />
               </span>
               <span class="cs-jtbd__card-face cs-jtbd__card-back">
                 <p class="cs-jtbd__label">WHY THIS MATTERS</p>
@@ -136,7 +138,7 @@ import Layout from '../../layouts/Layout.astro';
               <span class="cs-jtbd__card-face cs-jtbd__card-front">
                 <p class="cs-jtbd__label">job 4</p>
                 <p class="cs-jtbd__text">When selecting a location, I want transparent pricing and live station availability upfront, so I can choose the most cost-effective open slot</p>
-                <img src="/assets/energo/v2/jtbd-quote.svg" alt="" class="cs-jtbd__quote" aria-hidden="true" />
+                <img loading="lazy" decoding="async" src="/assets/energo/v2/jtbd-quote.svg" alt="" class="cs-jtbd__quote" aria-hidden="true" />
               </span>
               <span class="cs-jtbd__card-face cs-jtbd__card-back">
                 <p class="cs-jtbd__label">WHY THIS MATTERS</p>
@@ -242,27 +244,27 @@ import Layout from '../../layouts/Layout.astro';
         </div>
         <div class="cs-wireframes">
           <div class="cs-wireframes__card">
-            <img src="/assets/energo/v2/wf-find-station.png" alt="Find a station wireframe" />
+            <img loading="lazy" decoding="async" src="/assets/energo/v2/wf-find-station.webp" alt="Find a station wireframe" />
             <p>Find a station</p>
           </div>
           <div class="cs-wireframes__card">
-            <img src="/assets/energo/v2/wf-pick-station.png" alt="Pick a station wireframe" />
+            <img loading="lazy" decoding="async" src="/assets/energo/v2/wf-pick-station.webp" alt="Pick a station wireframe" />
             <p>Pick a station</p>
           </div>
           <div class="cs-wireframes__card">
-            <img src="/assets/energo/v2/wf-pick-connector.png" alt="Pick a connector wireframe" />
+            <img loading="lazy" decoding="async" src="/assets/energo/v2/wf-pick-connector.webp" alt="Pick a connector wireframe" />
             <p>Pick a connector</p>
           </div>
           <div class="cs-wireframes__card">
-            <img src="/assets/energo/v2/wf-setup-charge.png" alt="Set up the charge wireframe" />
+            <img loading="lazy" decoding="async" src="/assets/energo/v2/wf-setup-charge.webp" alt="Set up the charge wireframe" />
             <p>Set up the charge</p>
           </div>
           <div class="cs-wireframes__card">
-            <img src="/assets/energo/v2/wf-connecting.png" alt="Connecting wireframe" />
+            <img loading="lazy" decoding="async" src="/assets/energo/v2/wf-connecting.webp" alt="Connecting wireframe" />
             <p>Connecting</p>
           </div>
           <div class="cs-wireframes__card">
-            <img src="/assets/energo/v2/wf-charging.png" alt="Charging wireframe" />
+            <img loading="lazy" decoding="async" src="/assets/energo/v2/wf-charging.webp" alt="Charging wireframe" />
             <p>Charging</p>
           </div>
         </div>
@@ -278,7 +280,7 @@ import Layout from '../../layouts/Layout.astro';
         </div>
         <div class="cs-editorial">
           <div class="cs-editorial__row">
-            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/onboarding.webm" autoplay muted loop playsinline aria-label="Onboarding screen recording"></video></div>
+            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/onboarding.webm" muted loop playsinline preload="none" aria-label="Onboarding screen recording"></video></div>
             <div class="cs-editorial__text">
               <p class="cs-editorial__tag">Onboarding</p>
               <p class="cs-editorial__title">Phone number, and nothing else</p>
@@ -286,7 +288,7 @@ import Layout from '../../layouts/Layout.astro';
             </div>
           </div>
           <div class="cs-editorial__row cs-editorial__row--reverse">
-            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/home-map-list.webm" autoplay muted loop playsinline aria-label="Home map and list screen recording"></video></div>
+            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/home-map-list.webm" muted loop playsinline preload="none" aria-label="Home map and list screen recording"></video></div>
             <div class="cs-editorial__text">
               <p class="cs-editorial__tag">Home · Map &amp; list</p>
               <p class="cs-editorial__title">Availability is the product</p>
@@ -294,7 +296,7 @@ import Layout from '../../layouts/Layout.astro';
             </div>
           </div>
           <div class="cs-editorial__row">
-            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/booking.webm" autoplay muted loop playsinline aria-label="Booking screen recording"></video></div>
+            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/booking.webm" muted loop playsinline preload="none" aria-label="Booking screen recording"></video></div>
             <div class="cs-editorial__text">
               <p class="cs-editorial__tag">Booking</p>
               <p class="cs-editorial__title">Designed against the occupied station</p>
@@ -302,7 +304,7 @@ import Layout from '../../layouts/Layout.astro';
             </div>
           </div>
           <div class="cs-editorial__row cs-editorial__row--reverse">
-            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/order.webm" autoplay muted loop playsinline aria-label="Order screen recording"></video></div>
+            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/order.webm" muted loop playsinline preload="none" aria-label="Order screen recording"></video></div>
             <div class="cs-editorial__text">
               <p class="cs-editorial__tag">Order</p>
               <p class="cs-editorial__title">Four ways to say how much</p>
@@ -310,7 +312,7 @@ import Layout from '../../layouts/Layout.astro';
             </div>
           </div>
           <div class="cs-editorial__row">
-            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/wallet-payments.webm" autoplay muted loop playsinline aria-label="Wallet and payments screen recording"></video></div>
+            <div class="cs-editorial__frame"><video src="/assets/energo/v2/screens/wallet-payments.webm" muted loop playsinline preload="none" aria-label="Wallet and payments screen recording"></video></div>
             <div class="cs-editorial__text">
               <p class="cs-editorial__tag">Wallet &amp; payments</p>
               <p class="cs-editorial__title">A wallet that speaks the local rails</p>
@@ -367,30 +369,30 @@ import Layout from '../../layouts/Layout.astro';
           <div class="cs-components__col">
             <div class="cs-components__card cs-components__card--tall">
               <p class="cs-components__label">Connectors</p>
-              <img src="/assets/energo/v2/comp-recipe1-v2.png" alt="Select connector bottom sheet component" class="cs-components__recipe-img" />
+              <img loading="lazy" decoding="async" src="/assets/energo/v2/comp-recipe1-v2.webp" alt="Select connector bottom sheet component" class="cs-components__recipe-img" />
             </div>
           </div>
           <div class="cs-components__col">
             <div class="cs-components__row">
               <div class="cs-components__card">
                 <div class="cs-components__content">
-                  <img src="/assets/energo/v2/comp-charging-v3.png" alt="Live charging session gauge" class="cs-components__charging-img" />
+                  <img loading="lazy" decoding="async" src="/assets/energo/v2/comp-charging-v3.png" alt="Live charging session gauge" class="cs-components__charging-img" />
                 </div>
                 <p class="cs-components__label">Live Session</p>
               </div>
               <div class="cs-components__card">
                 <div class="cs-components__content">
-                  <img src="/assets/energo/v2/comp-recipe2-v2.png" alt="Recipe component" class="cs-components__recipe-img2" />
+                  <img loading="lazy" decoding="async" src="/assets/energo/v2/comp-recipe2-v2.webp" alt="Recipe component" class="cs-components__recipe-img2" />
                 </div>
                 <p class="cs-components__label">Invoice</p>
               </div>
               <div class="cs-components__card">
                 <div class="cs-components__content">
                   <div class="cs-components__statuses">
-                    <img src="/assets/energo/v2/comp-status-available-img.png" alt="Available status badge" class="cs-components__status-badge" />
-                    <img src="/assets/energo/v2/comp-status-connected-img.png" alt="Connected status badge" class="cs-components__status-badge" />
-                    <img src="/assets/energo/v2/comp-status-reserved-img.png" alt="Reserved status badge" class="cs-components__status-badge" />
-                    <img src="/assets/energo/v2/comp-status-unavailable-img.png" alt="Unavailable status badge" class="cs-components__status-badge" />
+                    <img loading="lazy" decoding="async" src="/assets/energo/v2/comp-status-available-img.png" alt="Available status badge" class="cs-components__status-badge" />
+                    <img loading="lazy" decoding="async" src="/assets/energo/v2/comp-status-connected-img.png" alt="Connected status badge" class="cs-components__status-badge" />
+                    <img loading="lazy" decoding="async" src="/assets/energo/v2/comp-status-reserved-img.png" alt="Reserved status badge" class="cs-components__status-badge" />
+                    <img loading="lazy" decoding="async" src="/assets/energo/v2/comp-status-unavailable-img.png" alt="Unavailable status badge" class="cs-components__status-badge" />
                   </div>
                 </div>
                 <p class="cs-components__label">Status Badges</p>
@@ -399,13 +401,13 @@ import Layout from '../../layouts/Layout.astro';
             <div class="cs-components__row">
               <div class="cs-components__card cs-components__card--short">
                 <div class="cs-components__content">
-                  <img src="/assets/energo/v2/comp-active-booking-v3.png" alt="Active booking station item" class="cs-components__booking-img" />
+                  <img loading="lazy" decoding="async" src="/assets/energo/v2/comp-active-booking-v3.png" alt="Active booking station item" class="cs-components__booking-img" />
                 </div>
                 <p class="cs-components__label">Active Booking</p>
               </div>
               <div class="cs-components__card cs-components__card--short">
                 <div class="cs-components__content">
-                  <img src="/assets/energo/v2/comp-tabbar-v2.png" alt="Tab bar component" class="cs-components__tabbar-img" />
+                  <img loading="lazy" decoding="async" src="/assets/energo/v2/comp-tabbar-v2.png" alt="Tab bar component" class="cs-components__tabbar-img" />
                 </div>
                 <p class="cs-components__label">Navigation Bar</p>
               </div>
@@ -425,13 +427,13 @@ import Layout from '../../layouts/Layout.astro';
           <div class="cs-team">
             <div class="cs-team__member">
               <div class="cs-team__card">
-                <img src="/assets/energo/v2/team-head-me.webp" alt="Me" class="cs-team__head cs-team__head--me" />
+                <img loading="lazy" decoding="async" src="/assets/energo/v2/team-head-me.webp" alt="Me" class="cs-team__head cs-team__head--me" />
               </div>
               <p class="cs-team__name">Me</p>
             </div>
             <div class="cs-team__member">
               <div class="cs-team__card">
-                <img src="/assets/energo/v2/team-head-maxim.webp" alt="Maxim Sudorgin" class="cs-team__head cs-team__head--maxim" />
+                <img loading="lazy" decoding="async" src="/assets/energo/v2/team-head-maxim.webp" alt="Maxim Sudorgin" class="cs-team__head cs-team__head--maxim" />
               </div>
               <p class="cs-team__name">Maxim Sudorgin</p>
             </div>
@@ -447,7 +449,7 @@ import Layout from '../../layouts/Layout.astro';
           <div class="cs-closing__spacer"></div>
           <p class="cs-closing__text">Thanks</p>
           <button type="button" class="cs-closing__heart-btn" aria-label="Send some love">
-            <img src="/assets/energo/v2/icon-heart-v3.svg" alt="" class="cs-closing__heart" />
+            <img loading="lazy" decoding="async" src="/assets/energo/v2/icon-heart-v3.svg" alt="" class="cs-closing__heart" />
           </button>
           <p class="cs-closing__text">for watching</p>
         </div>
@@ -459,28 +461,28 @@ import Layout from '../../layouts/Layout.astro';
 
         <div class="cs-portfolio-teaser">
           <a href="/work/alphior" class="cs-portfolio-teaser__card" style="background:#35A8E0;" data-cursor="See Case">
-            <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-alphior.svg" alt="" /></div>
+            <div class="cs-portfolio-teaser__watermark"><img loading="lazy" decoding="async" src="/assets/logo-alphior.svg" alt="" /></div>
             <div class="cs-portfolio-teaser__title">
               <p class="cs-portfolio-teaser__name">Alphior</p>
               <p class="cs-portfolio-teaser__sub">B2B · HR Tech · SaaS</p>
             </div>
           </a>
           <a href="/#aci" class="cs-portfolio-teaser__card" style="background:#007395;" data-cursor="Sorry, NDA">
-            <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-aci.svg" alt="" /></div>
+            <div class="cs-portfolio-teaser__watermark"><img loading="lazy" decoding="async" src="/assets/logo-aci.svg" alt="" /></div>
             <div class="cs-portfolio-teaser__title">
               <p class="cs-portfolio-teaser__name">Alatau City Invest</p>
               <p class="cs-portfolio-teaser__sub">B2C/B2B · Fintech · Investments</p>
             </div>
           </a>
           <a href="/#citix" class="cs-portfolio-teaser__card" style="background:#D10D35;" data-cursor="Drop Soon">
-            <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-citix-mark.svg" alt="" /></div>
+            <div class="cs-portfolio-teaser__watermark"><img loading="lazy" decoding="async" src="/assets/logo-citix-mark.svg" alt="" /></div>
             <div class="cs-portfolio-teaser__title">
               <p class="cs-portfolio-teaser__name">Citix</p>
               <p class="cs-portfolio-teaser__sub">B2B · Adtech · SaaS</p>
             </div>
           </a>
           <a href="/#bereke" class="cs-portfolio-teaser__card" style="background:#023DFF;" data-cursor="Drop Soon">
-            <div class="cs-portfolio-teaser__watermark"><img src="/assets/logo-bereke.svg" alt="" /></div>
+            <div class="cs-portfolio-teaser__watermark"><img loading="lazy" decoding="async" src="/assets/logo-bereke.svg" alt="" /></div>
             <div class="cs-portfolio-teaser__title">
               <p class="cs-portfolio-teaser__name">Bereke Bank</p>
               <p class="cs-portfolio-teaser__sub">B2C · Fintech · ex-Sberbank Kazakhstan</p>
@@ -544,6 +546,20 @@ import Layout from '../../layouts/Layout.astro';
       // homepage does this itself, so this page must too.
       const footerEl = document.querySelector('.footer');
       if (footerEl) observeReveal([footerEl], { threshold: 0.04 });
+
+      // ── Editorial screen recordings: play only near view ──
+      // Five autoplaying recordings would all download on page load and
+      // compete with the hero. They're preload="none" instead, and start
+      // (which also triggers the download) once close to the viewport,
+      // pausing again when scrolled away.
+      const editorialVideos = document.querySelectorAll('.cs-editorial__frame video');
+      const videoIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.play().catch(() => {});
+          else e.target.pause();
+        });
+      }, { rootMargin: '300px 0px' });
+      editorialVideos.forEach(v => videoIO.observe(v));
 
       // ── Parallax on hero visual images ────────────
       // The EnerGo wordmark overlay stays put; only the product photo and

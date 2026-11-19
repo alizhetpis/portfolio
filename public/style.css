@@ -883,3 +883,10 @@ html.dark .sber-also-covering {
   .footer__links-col--nav a:not(:last-child) { display: none; }
   .footer__meta { flex-wrap: wrap; gap: 8px; font-size: 16px; }
 }
+
+/* Lenis 1.1.14 (lenis.css), inlined instead of loading it from a CDN */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-smooth iframe { pointer-events: none; }

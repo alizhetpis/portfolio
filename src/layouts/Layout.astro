@@ -54,7 +54,6 @@ const { title, homeHref, workHref, footer = true, cloudflareBeacon = false, oneP
       meta.content = bgDark;
     }
   </script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.css" />
 </head>
 <body class:list={{ 'one-page-mobile': onePageMobile }}>
 <Header homeHref={homeHref} workHref={workHref} />
@@ -67,7 +66,7 @@ const { title, homeHref, workHref, footer = true, cloudflareBeacon = false, oneP
 
 </div><!-- /page-wrap -->
 
-<script is:inline src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script is:inline src="/vendor/lenis-1.1.14.min.js"></script>
 <script is:inline>
   // ── Back/forward cache restore ────────────────
   // Leaving a page adds .page-leaving to fade it out before the real
