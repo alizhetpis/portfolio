@@ -425,13 +425,13 @@ import Layout from '../../layouts/Layout.astro';
           <div class="cs-team">
             <div class="cs-team__member">
               <div class="cs-team__card">
-                <img src="/assets/energo/v2/team-head-me.png" alt="Me" class="cs-team__head cs-team__head--me" />
+                <img src="/assets/energo/v2/team-head-me.webp" alt="Me" class="cs-team__head cs-team__head--me" />
               </div>
               <p class="cs-team__name">Me</p>
             </div>
             <div class="cs-team__member">
               <div class="cs-team__card">
-                <img src="/assets/energo/v2/team-head-maxim.png" alt="Maxim Sudorgin" class="cs-team__head cs-team__head--maxim" />
+                <img src="/assets/energo/v2/team-head-maxim.webp" alt="Maxim Sudorgin" class="cs-team__head cs-team__head--maxim" />
               </div>
               <p class="cs-team__name">Maxim Sudorgin</p>
             </div>
@@ -830,8 +830,12 @@ import Layout from '../../layouts/Layout.astro';
   .cs-visual-phone {
     position: absolute;
     left: 0; bottom: 0;
-    width: 1179px; height: 2044px;
+    /* image is the bottom 1000px of the original 2044px-tall mockup —
+       the top was never visible inside the 600px panel. transform-origin
+       keeps the hover zoom pivot where the full-height image had it. */
+    width: 1179px; height: 1000px;
     object-fit: cover;
+    transform-origin: 50% -22px;
     will-change: transform;
     transition: transform .4s cubic-bezier(.25,1,.5,1);
   }
